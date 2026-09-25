@@ -1,0 +1,4 @@
+# The full-size original. Kept on disk so the portrait can be recropped, but
+# it is 2.5 MB and nothing on the page loads it.
+assets/source.png
+.DS_Store
