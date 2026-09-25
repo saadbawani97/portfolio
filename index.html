@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muhammad Saad</title>
-<meta name="description" content="Muhammad Saad — Software Engineer and Implementation Manager. Five years across React, React Native and JavaScript, working where engineering meets product and delivery.">
+<meta name="description" content="Muhammad Saad — Software Engineer and Implementation Manager. Five years across React, React Native and JavaScript, building products from idea to ship.">
 <link rel="canonical" href="https://saadbawani97.github.io/portfolio/">
-<meta name="theme-color" content="#FBFAF8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#100F13" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#07070A">
+<meta name="color-scheme" content="dark">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Muhammad Saad — Software Engineer">
-<meta property="og:description" content="Five years across React, React Native and JavaScript, working where engineering meets product and delivery.">
+<meta property="og:description" content="Building products from idea to ship. React, React Native, product and delivery.">
 <meta property="og:url" content="https://saadbawani97.github.io/portfolio/">
+<meta property="og:image" content="https://saadbawani97.github.io/portfolio/assets/portrait.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
@@ -23,75 +24,59 @@
   "jobTitle": "Software Engineer & Implementation Manager",
   "url": "https://saadbawani97.github.io/portfolio/",
   "email": "saad.bawanyy97@gmail.com",
+  "image": "https://saadbawani97.github.io/portfolio/assets/portrait.jpg",
   "worksFor": { "@type": "Organization", "name": "5StarDesigners" },
   "knowsAbout": ["React","React Native","JavaScript","Product Management","Technical Project Management","Quality Assurance"]
 }
 </script>
 
-<!-- Set before first paint, so the reveal animations never flash their
-     finished state. Without JS the class is never added and everything below
-     stays plainly visible — the page does not depend on any of this. -->
 <script>document.documentElement.classList.add('js');</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ===========================================================================
-   Paper, ink, one accent.
+   A specification sheet that happens to be a website.
 
-   The page is meant to be read top to bottom, so the restraint is deliberate:
-   a single accent colour, one flourish (the italic serif), and motion that
-   only ever does one thing — bring a thing into view once, then get out of
-   the way.
+   The metaphor is deliberate and it drives everything: numbered sections,
+   monospace labels, precise measurements, a grid you can see. It suits
+   someone whose job is turning vague requirements into something a team can
+   actually build — and it keeps the page from drifting into the generic dark
+   gradient that every other developer site already is.
+
+   Dark only. A "technical" surface with a light mode bolted on reads as
+   neither, and this one is designed for the dark.
    =========================================================================== */
 
 :root {
-  --paper:      #FBFAF8;
-  --paper-sunk: #F3F1EC;
-  --ink:        #16151A;
-  --ink-soft:   #4F4C58;
-  --ink-faint:  #6E6B76;
-  --rule:       #E4E1DA;
-  --accent:     #9C4419;
-  --accent-bg:  rgba(156, 68, 25, 0.08);
-  --glow:       rgba(156, 68, 25, 0.055);
-  --grain:      0.030;
+  --void:     #07070A;
+  --panel:    #0C0C11;
+  --panel-2:  #121218;
+  --line:     #1C1C25;
+  --line-2:   #2B2B38;
 
-  --measure: 34rem;
-  --gutter: 1.5rem;
+  --text:     #E9E9F0;
+  --text-2:   #9C9CAC;
+  /* Measured: #74748A came in at 4.09:1 on the card background, under AA, and
+     this tone carries every label, chip and stack tag on the page. */
+  --text-3:   #7E7E92;
+  /* The dimmed half of the headline only ever appears at display size, where
+     AA asks for 3:1 — so it can stay darker than the labels and keep the
+     contrast the headline is built on. */
+  --dim:      #6E6E84;
 
-  /* One easing for everything. Mixed curves are what make motion feel
-     assembled rather than designed. */
-  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-}
+  --accent:   #6BA5FF;
+  --accent-d: #3E6FD6;
+  --glow:     rgba(107, 165, 255, 0.13);
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper:      #100F13;
-    --paper-sunk: #17161B;
-    --ink:        #EDEBE6;
-    --ink-soft:   #ADA9B4;
-    --ink-faint:  #837F8C;
-    --rule:       #272530;
-    --accent:     #E29063;
-    --accent-bg:  rgba(226, 144, 99, 0.11);
-    --glow:       rgba(226, 144, 99, 0.07);
-    --grain:      0.042;
-  }
-}
-:root[data-theme="dark"] {
-  --paper:      #100F13;
-  --paper-sunk: #17161B;
-  --ink:        #EDEBE6;
-  --ink-soft:   #ADA9B4;
-  --ink-faint:  #837F8C;
-  --rule:       #272530;
-  --accent:     #E29063;
-  --accent-bg:  rgba(226, 144, 99, 0.11);
-  --glow:       rgba(226, 144, 99, 0.07);
-  --grain:      0.042;
+  --live:     #4ADE9B;
+  --wip:      #FFB454;
+
+  --gutter:   clamp(1.25rem, 4vw, 3rem);
+  --max:      74rem;
+  --ease:     cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -103,745 +88,1004 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--void);
+  color: var(--text);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "cv05" 1, "ss01" 1;
   overflow-x: hidden;
 }
 
-/* A single soft wash behind the masthead. Not a decorative blob — it is there
-   so the top of the page has somewhere to start. */
+/* The grid, drawn once and fixed behind everything. Visible enough to read as
+   structure, faint enough that nothing has to compete with it. */
 body::before {
-  content: "";
-  position: absolute;
-  top: -18rem; right: -14rem;
-  width: 46rem; height: 46rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--glow) 0%, transparent 68%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Paper grain. Three per cent of noise is the difference between a screen and
-   a printed page; any more and it reads as a filter. */
-body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9;
-  opacity: var(--grain);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 78%);
 }
 
-a { color: inherit; }
-::selection { background: var(--accent-bg); }
-
-.page {
-  position: relative;
-  z-index: 1;
-  max-width: 46rem;
-  margin: 0 auto;
-  padding: 0 var(--gutter) 6rem;
-}
-
-/* --- Shared type ---------------------------------------------------------- */
-.serif {
-  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.12;
-}
-
-.label {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.measure { max-width: var(--measure); }
-
-p { margin: 0 0 1.1em; }
-p:last-child { margin-bottom: 0; }
-
-/* ===========================================================================
-   Motion
-   =========================================================================== */
-
-/* Each line of the name sits in a clipped box and rises into it. The oldest
-   trick in editorial typesetting, and still the one that makes a page feel
-   set rather than loaded. */
-.reveal-line { overflow: hidden; display: block; }
-.reveal-line > span {
-  display: block;
+/* A light that follows the pointer. Off on touch, where there is no pointer
+   to follow and the repaint would cost battery for nothing. */
+#spot {
+  position: fixed;
+  width: 42rem; height: 42rem;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle, var(--glow) 0%, transparent 62%);
+  transform: translate3d(-50%, -50%, 0);
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
   will-change: transform;
 }
-.js .reveal-line > span {
-  transform: translateY(105%);
-  animation: line-rise 1s var(--ease) forwards;
-  animation-delay: calc(var(--i, 0) * 110ms + 120ms);
-}
-@keyframes line-rise { to { transform: translateY(0); } }
+@media (hover: hover) and (pointer: fine) { #spot.on { opacity: 1; } }
 
-/* Everything below the fold fades up once, when it arrives, and is then left
-   alone — re-animating on the way back up is a nuisance, not a delight. */
-.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(14px);
+a { color: inherit; text-decoration: none; }
+::selection { background: rgba(107, 165, 255, 0.25); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* --- Type ----------------------------------------------------------------- */
+.dsp {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
 }
-.js [data-reveal].in {
-  opacity: 1;
-  transform: none;
-  transition:
-    opacity 0.7s var(--ease) calc(var(--i, 0) * 70ms),
-    transform 0.7s var(--ease) calc(var(--i, 0) * 70ms);
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.tag {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
 }
 
-/* The rules draw themselves in. It is the cheapest possible way to make a
-   long page feel like it is being built as you go down it. */
-.js .drawn { position: relative; }
-.js .drawn::after {
-  content: "";
-  position: absolute;
-  top: -1px; left: 0; right: 0;
-  height: 1px;
-  background: var(--rule);
+p { margin: 0 0 1.1em; }
+p:last-child { margin: 0; }
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* --- Scroll progress ------------------------------------------------------ */
+#bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 100%;
   transform: scaleX(0);
   transform-origin: left;
-}
-.js .drawn.in::after {
-  transform: scaleX(1);
-  transition: transform 1.1s var(--ease);
-}
-.js section.drawn { border-top-color: transparent; }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .js .reveal-line > span { transform: none; animation: none; }
-  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .js .drawn::after { transform: scaleX(1); transition: none; }
-  .js section.drawn { border-top-color: var(--rule); }
-  * { transition-duration: 0.01ms !important; }
+  background: linear-gradient(90deg, var(--accent-d), var(--accent));
+  z-index: 50;
 }
 
 /* ===========================================================================
-   Masthead
+   Hero
    =========================================================================== */
-.masthead { padding: 5.5rem 0 3.5rem; }
-
-.masthead-top {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2.5rem;
-  align-items: start;
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(5rem, 11vh, 7rem) 0 clamp(2rem, 5vh, 3rem);
 }
 
-.masthead h1 {
-  font-size: clamp(2.75rem, 9.5vw, 4.25rem);
-  margin: 0 0 1.25rem;
-}
-.masthead h1 .accent {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.portrait {
-  margin: 0;
-  width: clamp(7rem, 22vw, 10.5rem);
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 10px;
-  background: var(--paper-sunk);
-  border: 1px solid var(--rule);
-  flex: none;
-}
-.portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  /* Wiped in rather than faded: a portrait that fades up looks like it is
-     still loading. */
-  clip-path: inset(0 0 100% 0);
-}
-.js .portrait img { animation: portrait-wipe 1.1s var(--ease) 0.35s forwards; }
-@keyframes portrait-wipe { to { clip-path: inset(0 0 0 0); } }
-@media (prefers-reduced-motion: reduce) {
-  .portrait img, .js .portrait img { clip-path: none; animation: none; }
-}
-
-.standfirst {
-  font-size: 1.1875rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: var(--measure);
-  margin: 0 0 2rem;
-}
-
-.facts {
+.topline {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.25rem;
-  padding: 0; margin: 0;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+  margin-bottom: clamp(1.5rem, 4vh, 2.75rem);
+}
+.topline span::before { content: "// "; color: var(--line-2); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+/* The prompt. Typed for real by the script below, so the caret sits where a
+   caret would actually be. */
+.prompt {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  margin-bottom: 1.25rem;
+  min-height: 1.4em;
+}
+.prompt i { color: var(--accent); font-style: normal; }
+.caret {
+  display: inline-block;
+  width: 0.55em; height: 1.05em;
+  vertical-align: -0.18em;
+  background: var(--accent);
+  margin-left: 2px;
+  animation: blink 1.05s steps(2, start) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  margin: 0 0 1.35rem;
+}
+.line { display: block; overflow: hidden; }
+.line > span { display: block; }
+.js .line > span {
+  transform: translateY(102%);
+  animation: rise 1s var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 100ms + 250ms);
+}
+@keyframes rise { to { transform: translateY(0); } }
+
+h1 .dim { color: var(--dim); }
+
+.lede {
+  font-size: clamp(1rem, 1.6vw, 1.1875rem);
+  color: var(--text-2);
+  max-width: 32rem;
+  margin: 0 0 1.85rem;
+}
+.lede b { color: var(--text); font-weight: 500; }
+
+/* --- Portrait panel ------------------------------------------------------- */
+.shot {
+  position: relative;
+  width: clamp(11rem, 24vw, 18rem);
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line-2);
+  background: var(--panel);
+  padding: 8px;
+}
+/* Corner ticks, the way a spec drawing marks a crop. */
+.shot::before, .shot::after {
+  content: "";
+  position: absolute;
+  width: 14px; height: 14px;
+  border: 1px solid var(--accent);
+}
+.shot::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.shot::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+.shot img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.35) contrast(1.06);
+  clip-path: inset(0 0 100% 0);
+}
+.js .shot img { animation: wipe 1.1s var(--ease) 0.6s forwards; }
+@keyframes wipe { to { clip-path: inset(0 0 0 0); } }
+
+.shot figcaption {
+  position: absolute;
+  left: 8px; bottom: -1.9rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* --- Stats ---------------------------------------------------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  max-width: 34rem;
+}
+.stat { background: var(--void); padding: 1.1rem 1.25rem; }
+.stat .n {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.stat .n s { text-decoration: none; color: var(--accent); }
+.stat .k { margin-top: 0.4rem; }
+
+.cue {
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-3);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: "JetBrains Mono", monospace;
+}
+.cue i {
+  display: block;
+  width: 1px; height: 26px;
+  background: linear-gradient(var(--accent), transparent);
+  animation: drop 1.8s var(--ease) infinite;
+}
+@keyframes drop {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* --- Marquee -------------------------------------------------------------- */
+.ticker {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  overflow: hidden;
+  padding: 0.85rem 0;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker ul {
+  display: flex;
+  gap: 2.75rem;
   list-style: none;
+  margin: 0; padding: 0;
+  width: max-content;
+  animation: slide 38s linear infinite;
 }
-.facts li {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
-  color: var(--ink-faint);
+.ticker li {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  white-space: nowrap;
 }
+.ticker li::before { content: "◆"; color: var(--accent-d); margin-right: 2.75rem; }
+@keyframes slide { to { transform: translateX(-50%); } }
+.ticker:hover ul { animation-play-state: paused; }
 
 /* ===========================================================================
    Sections
    =========================================================================== */
-section {
-  border-top: 1px solid var(--rule);
-  padding: 3.25rem 0 0;
-  margin-bottom: 3.25rem;
-}
+section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 
-.section-head {
+.head {
   display: flex;
   align-items: baseline;
-  gap: 0.75rem;
-  margin: 0 0 1.75rem;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
 }
-.section-head h2 { font-size: 1.5rem; margin: 0; }
-
-/* --- Definition rows ------------------------------------------------------ */
-.rows { margin: 2rem 0 0; }
-
-.row {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 0 1.5rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid var(--rule);
-}
-.row:first-child { border-top: 0; padding-top: 0; }
-.row dt {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+.head .num {
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--accent);
-  padding-top: 0.28em;
+  letter-spacing: 0.1em;
 }
-.row dd { margin: 0; color: var(--ink-soft); }
-
-/* --- Experience ----------------------------------------------------------- */
-.job { padding: 1.75rem 0; border-top: 1px solid var(--rule); }
-.job:first-of-type { border-top: 0; padding-top: 0; }
-
-.job-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.25rem 1rem;
-  margin-bottom: 0.15rem;
-}
-.job-head h3 {
-  font-size: 1.0625rem;
+.head h2 {
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
   margin: 0;
-  letter-spacing: -0.005em;
+  flex: 1;
 }
-.job-when {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
-  color: var(--ink-faint);
-  white-space: nowrap;
-}
-.job-role { color: var(--accent); font-size: 0.9375rem; margin: 0 0 0.75rem; }
-.job p { color: var(--ink-soft); }
+.head .of { color: var(--text-3); font-size: 0.75rem; font-family: "JetBrains Mono", monospace; }
 
-.tags {
-  display: flex; flex-wrap: wrap; gap: 0.4rem;
-  padding: 0; margin: 0.9rem 0 0; list-style: none;
+/* --- Profile -------------------------------------------------------------- */
+.profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); }
+.profile p { color: var(--text-2); font-size: 1.0625rem; }
+
+.spec { border-top: 1px solid var(--line); }
+.specrow {
+  display: grid;
+  grid-template-columns: 1.5rem 7rem 1fr;
+  gap: 0 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
 }
-.tags li {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.6875rem;
-  color: var(--ink-soft);
-  background: var(--paper-sunk);
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  padding: 0.2rem 0.6rem;
-}
+.specrow .i { font-family: "JetBrains Mono", monospace; font-size: 0.6875rem; color: var(--text-3); padding-top: 0.35em; }
+.specrow .k { font-family: "JetBrains Mono", monospace; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding-top: 0.3em; }
+.specrow .v { color: var(--text-2); font-size: 0.9375rem; }
 
 /* --- Work ----------------------------------------------------------------- */
-.work {
-  position: relative;
-  padding: 1.75rem 0 1.75rem 1.25rem;
-  margin-left: -1.25rem;
-  border-top: 1px solid var(--rule);
-  border-radius: 8px;
-  transition: background-color 0.35s var(--ease);
-}
-.work:first-of-type { border-top: 0; }
-@media (hover: hover) {
-  .work:hover { background: var(--accent-bg); }
-  /* A marker in the margin, which only exists while you are reading that
-     entry. Quieter than moving the card. */
-  .work::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 1.75rem; bottom: 1.75rem;
-    width: 2px;
-    border-radius: 2px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.4s var(--ease);
-  }
-  .work:hover::before { transform: scaleY(1); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
 }
 
-.work-head {
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  gap: 0.6rem 0.9rem; margin-bottom: 0.5rem;
+.card {
+  position: relative;
+  background: var(--panel);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 21rem;
+  transition: background-color 0.4s var(--ease);
+  overflow: hidden;
 }
-.work-head h3 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-weight: 400;
-  font-size: 1.625rem;
-  line-height: 1.1;
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px transparent;
+  transition: box-shadow 0.4s var(--ease);
+}
+@media (hover: hover) {
+  .card:hover { background: var(--panel-2); }
+  .card:hover::after { box-shadow: inset 0 0 0 1px var(--accent-d); }
+}
+
+.card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 1.375rem;
   margin: 0;
 }
+.card p { color: var(--text-2); font-size: 0.9375rem; }
 
-.status {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.625rem;
-  letter-spacing: 0.1em;
+.chip {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  background: var(--paper-sunk);
-  color: var(--ink-faint);
-  border: 1px solid var(--rule);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--line-2);
+  color: var(--text-3);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
-.status.live {
-  background: var(--accent-bg);
-  color: var(--accent);
-  border-color: transparent;
+.chip::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.chip.live { color: var(--live); border-color: rgba(74, 222, 155, 0.35); }
+.chip.wip  { color: var(--wip);  border-color: rgba(255, 180, 84, 0.3); }
+
+.stack {
+  display: flex; flex-wrap: wrap; gap: 0.35rem;
+  list-style: none; margin: auto 0 0; padding: 0.85rem 0 0;
+  border-top: 1px solid var(--line);
+}
+.stack li {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+  border: 1px solid var(--line);
+  padding: 0.18rem 0.45rem;
 }
 
-.work p { color: var(--ink-soft); max-width: var(--measure); }
-
-.work-link {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  margin-top: 0.85rem;
-  font-size: 0.9375rem; font-weight: 500;
+.gos { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.go {
+  display: inline-flex; align-items: center; gap: 0.45rem;
   color: var(--accent);
-  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
 }
-.work-link span {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  padding-bottom: 2px;
-  transition: background-size 0.35s var(--ease);
+.go svg { width: 0.85em; height: 0.85em; transition: transform 0.35s var(--ease); }
+.card:hover .go svg { transform: translate(3px, -3px); }
+
+/* Brainic's real game tiles, floating on a slow loop. The only ornament on
+   the page, and it is made of the actual product. */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.5rem;
 }
-.work-link:hover span, .work-link:focus-visible span { background-size: 100% 1px; }
-.work-link svg { width: 0.8em; height: 0.8em; transition: transform 0.35s var(--ease); }
-.work-link:hover svg { transform: translate(2px, -2px); }
+.tiles img {
+  width: 100%; height: auto;
+  display: block;
+  border-radius: 9px;
+}
+.js .tiles img { animation: float 5.5s var(--ease) infinite; animation-delay: calc(var(--t) * 240ms); }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+/* Redacted. Two products are still unannounced, and a portfolio is not the
+   place to give them away — so the page says exactly that, visually. */
+.redact { display: flex; flex-direction: column; gap: 0.45rem; margin: 0.25rem 0 0.35rem; }
+.redact span {
+  height: 0.7rem;
+  background: repeating-linear-gradient(
+    -45deg, var(--line-2) 0 6px, transparent 6px 12px
+  );
+  border: 1px solid var(--line);
+}
+.redact span:nth-child(1) { width: 86%; }
+.redact span:nth-child(2) { width: 64%; }
+.redact span:nth-child(3) { width: 74%; }
+.sealed { color: var(--text-3); font-size: 0.8125rem; font-style: italic; }
+
+/* --- Experience ----------------------------------------------------------- */
+.rail { position: relative; padding-left: 1.75rem; }
+.rail::before {
+  content: "";
+  position: absolute;
+  left: 3px; top: 0.6rem; bottom: 0.6rem;
+  width: 1px;
+  background: linear-gradient(var(--accent-d), var(--line));
+}
+.stop { position: relative; padding: 0 0 2.5rem; }
+.stop:last-child { padding-bottom: 0; }
+.stop::before {
+  content: "";
+  position: absolute;
+  left: -1.75rem; top: 0.55rem;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--void), 0 0 14px var(--glow);
+}
+.stop-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 1rem; justify-content: space-between; }
+.stop h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600; font-size: 1.25rem; margin: 0; letter-spacing: -0.02em;
+}
+.stop .when { font-family: "JetBrains Mono", monospace; font-size: 0.75rem; color: var(--text-3); white-space: nowrap; }
+.stop .role { color: var(--accent); font-size: 0.9375rem; margin: 0.15rem 0 0.75rem; font-family: "JetBrains Mono", monospace; }
+.stop p { color: var(--text-2); font-size: 0.9375rem; max-width: 44rem; }
 
 /* --- Process -------------------------------------------------------------- */
 .steps {
-  counter-reset: step;
-  list-style: none;
-  padding: 0; margin: 2rem 0 0;
-  display: grid; gap: 0.9rem;
-}
-.steps li {
-  counter-increment: step;
   display: grid;
-  grid-template-columns: 2.25rem 1fr;
-  gap: 0.75rem;
-  align-items: baseline;
-  color: var(--ink-soft);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  counter-reset: s;
 }
-.steps li::before {
-  content: counter(step, decimal-leading-zero);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
-  color: var(--ink-faint);
-}
-.steps b { color: var(--ink); font-weight: 600; }
-
-/* --- Skills --------------------------------------------------------------- */
-.skills { margin: 2rem 0 0; }
-.skill-group { padding: 1.25rem 0; border-top: 1px solid var(--rule); }
-.skill-group:first-child { border-top: 0; padding-top: 0; }
-.skill-group h3 {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 500;
+.step { background: var(--panel); padding: 1.35rem; counter-increment: s; }
+.step::before {
+  content: counter(s, decimal-leading-zero);
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
   color: var(--accent);
-  margin: 0 0 0.6rem;
+  margin-bottom: 0.5rem;
 }
-.skill-group p { margin: 0; color: var(--ink-soft); }
+.step b { display: block; font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
+.step span { color: var(--text-2); font-size: 0.875rem; }
+
+/* --- Stack ---------------------------------------------------------------- */
+.groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem 3rem; }
+.group h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); font-weight: 500; margin: 0 0 0.75rem;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--line);
+}
+.group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.group li { font-size: 0.8125rem; color: var(--text-2); }
+.group li::after { content: "·"; color: var(--line-2); margin-left: 0.4rem; }
+.group li:last-child::after { content: ""; }
 
 /* --- Contact -------------------------------------------------------------- */
-.contact-lede {
-  font-size: 1.1875rem;
-  line-height: 1.55;
-  max-width: var(--measure);
-  margin: 0 0 1.75rem;
+.cta { max-width: 40rem; }
+.cta h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600; letter-spacing: -0.035em;
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  line-height: 1.02; margin: 0 0 1.25rem;
 }
-.contact-list { list-style: none; padding: 0; margin: 0; }
-.contact-list li { border-top: 1px solid var(--rule); }
-.contact-list a {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 1rem; padding: 0.95rem 0;
-  text-decoration: none; color: var(--ink);
-  transition: color 0.25s var(--ease), padding-left 0.35s var(--ease);
-}
-.contact-list a:hover, .contact-list a:focus-visible {
-  color: var(--accent);
-  padding-left: 0.5rem;
-}
-.contact-list .who {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.6875rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--ink-faint);
-}
-.contact-list .what { font-size: 0.9375rem; text-align: right; word-break: break-word; }
+.cta h2 s { text-decoration: none; color: var(--accent); }
+.cta p { color: var(--text-2); font-size: 1.0625rem; margin-bottom: 2.25rem; }
 
-footer { border-top: 1px solid var(--rule); padding-top: 1.5rem; margin-top: 3.25rem; }
-footer p {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.6875rem; color: var(--ink-faint); margin: 0;
+.links { display: flex; flex-wrap: wrap; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.links a {
+  flex: 1 1 14rem;
+  background: var(--panel);
+  padding: 1.15rem 1.35rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.links a:hover { background: var(--panel-2); color: var(--accent); }
+.links .k { font-family: "JetBrains Mono", monospace; font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+.links .v { font-size: 0.9375rem; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0 3rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between;
+}
+footer p { font-family: "JetBrains Mono", monospace; font-size: 0.6875rem; color: var(--text-3); margin: 0; }
+
+/* ===========================================================================
+   Reveal
+   =========================================================================== */
+.js [data-r] { opacity: 0; transform: translateY(16px); }
+.js [data-r].in {
+  opacity: 1; transform: none;
+  transition: opacity 0.75s var(--ease) calc(var(--i, 0) * 65ms),
+              transform 0.75s var(--ease) calc(var(--i, 0) * 65ms);
 }
 
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-
-/* --- Narrow screens ------------------------------------------------------- */
-@media (max-width: 40rem) {
-  .masthead-top { grid-template-columns: 1fr; gap: 1.75rem; }
-  .portrait { width: 7.5rem; order: -1; }
+/* --- Narrow --------------------------------------------------------------- */
+@media (max-width: 62rem) {
+  .profile { grid-template-columns: 1fr; }
 }
-@media (max-width: 34rem) {
-  .masthead { padding-top: 3.5rem; }
-  .row { grid-template-columns: 1fr; gap: 0.3rem; }
-  .row dt { padding-top: 0; }
-  .contact-list a { flex-direction: column; gap: 0.15rem; }
-  .contact-list .what { text-align: left; }
-  .work { padding-left: 0.9rem; margin-left: -0.9rem; }
+@media (max-width: 48rem) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .shot { width: min(11rem, 42vw); order: -1; }
+  .shot figcaption { display: none; }
+  .stats { max-width: none; }
+  .stat { padding: 0.9rem 1rem; }
+  .specrow { grid-template-columns: 1.5rem 1fr; }
+  .specrow .k { grid-column: 2; padding-top: 0; }
+  .specrow .v { grid-column: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .line > span { transform: none; animation: none; }
+  .js .shot img { clip-path: none; animation: none; }
+  .js [data-r] { opacity: 1; transform: none; transition: none; }
+  .ticker ul, .js .tiles img, .cue i, .caret { animation: none; }
+  #spot { display: none; }
 }
 </style>
 </head>
 
 <body>
-<main class="page">
 
-  <header class="masthead">
-    <div class="masthead-top">
-      <h1 class="serif">
-        <span class="reveal-line" style="--i:0"><span>Muhammad Saad</span></span>
-        <span class="reveal-line" style="--i:1"><span class="accent">Software Engineer</span></span>
-      </h1>
+<div id="bar"></div>
+<div id="spot"></div>
 
-      <!-- Removed by the script below if the image is not there, so the page
-           is never broken while a photo is being swapped out. -->
-      <figure class="portrait" id="portrait">
-        <img src="assets/portrait.jpg" alt="Muhammad Saad" width="420" height="525">
+<!-- ======================================================================= -->
+<header class="hero">
+  <div class="wrap">
+
+    <div class="topline tag">
+      <span>Muhammad Saad</span>
+      <span>Software Engineer</span>
+      <span>Implementation Manager</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="prompt mono"><i>$</i> <span id="typed"></span><b class="caret"></b></p>
+
+        <h1 class="dsp">
+          <span class="line" style="--i:0"><span>BUILDING</span></span>
+          <span class="line" style="--i:1"><span>PRODUCTS</span></span>
+          <span class="line" style="--i:2"><span class="dim">FROM IDEA</span></span>
+          <span class="line" style="--i:3"><span class="dim">TO SHIP.</span></span>
+        </h1>
+
+        <p class="lede" data-r style="--i:5">
+          Five years across <b>React</b>, <b>React Native</b> and <b>JavaScript</b>
+          — spent as much on requirements, planning and QA as on the code.
+          I don't hand a build over and hope; I get it out the door.
+        </p>
+
+        <div class="stats" data-r style="--i:6">
+          <div class="stat">
+            <div class="n"><span data-count="5">0</span><s>+</s></div>
+            <div class="k tag">Years</div>
+          </div>
+          <div class="stat">
+            <div class="n"><span data-count="6">0</span></div>
+            <div class="k tag">Products</div>
+          </div>
+          <div class="stat">
+            <div class="n"><span data-count="6">0</span><s>w</s></div>
+            <div class="k tag">Fastest MVP</div>
+          </div>
+        </div>
+
+        <div class="cue" aria-hidden="true"><i></i> Scroll</div>
+      </div>
+
+      <figure class="shot" data-r style="--i:4">
+        <img src="assets/portrait.jpg" alt="Muhammad Saad" width="840" height="1050">
+        <figcaption class="mono">Fig. 01 — the engineer</figcaption>
       </figure>
     </div>
 
-    <p class="standfirst" data-reveal style="--i:2">
-      I build digital products — and then I make sure they actually ship.
-      Around five years across React, React Native and JavaScript, spent as
-      much on requirements, planning and QA as on the code itself.
-    </p>
+  </div>
+</header>
 
-    <ul class="facts" data-reveal style="--i:3">
-      <li>~5 years in industry</li>
-      <li>React &amp; React Native</li>
-      <li>Product &amp; delivery</li>
-    </ul>
-  </header>
+<!-- ======================================================================= -->
+<div class="ticker" aria-hidden="true">
+  <ul id="tick">
+    <li>React</li><li>React Native</li><li>JavaScript</li><li>Product Architecture</li>
+    <li>MVP Delivery</li><li>Technical PM</li><li>Manual QA</li><li>User Stories</li>
+    <li>API Integration</li><li>Performance</li><li>Team Coordination</li><li>SaaS</li>
+  </ul>
+</div>
 
-  <section id="about" class="drawn">
-    <div class="section-head" data-reveal>
-      <span class="label">01</span>
-      <h2 class="serif">Where I sit</h2>
+<!-- ======================================================================= -->
+<main>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="head" data-r>
+      <span class="num">01</span>
+      <h2>Profile</h2>
+      <span class="of">/ where I sit</span>
     </div>
 
-    <div class="measure" data-reveal>
-      <p>
-        I'm a Software Engineer and Implementation Manager. I don't describe
-        myself as purely a developer or purely a project manager, because in
-        practice I've never been able to do one without the other — the
-        requirements decide the architecture, and the architecture decides
-        what's realistic to promise.
-      </p>
-      <p>
-        So I work across the whole path: turning an idea into something a team
-        can execute, building alongside them, testing it properly, and getting
-        it out the door.
-      </p>
+    <div class="profile">
+      <div data-r>
+        <p>
+          I'm a Software Engineer and Implementation Manager. I don't describe
+          myself as purely a developer or purely a project manager, because in
+          practice I've never been able to do one without the other — the
+          requirements decide the architecture, and the architecture decides
+          what's realistic to promise.
+        </p>
+        <p>
+          So I work the whole path: turning an idea into something a team can
+          execute, building alongside them, testing it properly, and shipping it.
+        </p>
+      </div>
+
+      <div class="spec">
+        <div class="specrow" data-r style="--i:0">
+          <span class="i">01</span><span class="k">Engineering</span>
+          <span class="v">React, React Native and JavaScript. Mobile and web, API integration, performance work, and mentoring the developers around me.</span>
+        </div>
+        <div class="specrow" data-r style="--i:1">
+          <span class="i">02</span><span class="k">Product</span>
+          <span class="v">Requirements into user stories, architecture, and an MVP scope that says what stays out of V1 as clearly as what goes in.</span>
+        </div>
+        <div class="specrow" data-r style="--i:2">
+          <span class="i">03</span><span class="k">Delivery</span>
+          <span class="v">Planning, estimation, dependencies, team coordination and release — keeping the work aligned with what was actually asked for.</span>
+        </div>
+        <div class="specrow" data-r style="--i:3">
+          <span class="i">04</span><span class="k">Quality</span>
+          <span class="v">Hands-on manual QA: functional, regression, mobile, performance, edge cases. Not "does the feature work" but "does the journey work".</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="head" data-r>
+      <span class="num">02</span>
+      <h2>Work</h2>
+      <span class="of">/ 06 products</span>
     </div>
 
-    <dl class="rows">
-      <div class="row" data-reveal style="--i:0">
-        <dt>Engineering</dt>
-        <dd>React, React Native and JavaScript. Mobile and web, API integration,
-            performance work, and mentoring the developers around me.</dd>
-      </div>
-      <div class="row" data-reveal style="--i:1">
-        <dt>Product</dt>
-        <dd>Requirements into user stories, architecture, and an MVP scope that
-            says what stays out of V1 as clearly as what goes in.</dd>
-      </div>
-      <div class="row" data-reveal style="--i:2">
-        <dt>Delivery</dt>
-        <dd>Planning, estimation, dependencies, team coordination and release —
-            keeping the work aligned with what was actually asked for.</dd>
-      </div>
-      <div class="row" data-reveal style="--i:3">
-        <dt>Quality</dt>
-        <dd>Hands-on manual QA: functional, regression, mobile, performance and
-            edge cases. Not "does the feature work" but "does the journey work".</dd>
-      </div>
-    </dl>
-  </section>
+    <div class="cards">
 
-  <section id="experience" class="drawn">
-    <div class="section-head" data-reveal>
-      <span class="label">02</span>
-      <h2 class="serif">Experience</h2>
+      <article class="card" data-r style="--i:0">
+        <div class="card-top">
+          <h3>Brainic</h3>
+          <span class="chip live">Live</span>
+        </div>
+        <p>A hub of mind games — 2048, Sudoku, Connect Four, Battleship and more — with leaderboards and online play.</p>
+        <div class="tiles">
+          <img src="assets/brainic/2048.png" alt="" style="--t:0" loading="lazy">
+          <img src="assets/brainic/sudoku.png" alt="" style="--t:1" loading="lazy">
+          <img src="assets/brainic/connect_four.png" alt="" style="--t:2" loading="lazy">
+          <img src="assets/brainic/battleship.png" alt="" style="--t:3" loading="lazy">
+          <img src="assets/brainic/block_blast.png" alt="" style="--t:4" loading="lazy">
+          <img src="assets/brainic/hangman.png" alt="" style="--t:5" loading="lazy">
+          <img src="assets/brainic/dots_and_boxes.png" alt="" style="--t:6" loading="lazy">
+          <img src="assets/brainic/ultimate_tic_tac_toe.png" alt="" style="--t:7" loading="lazy">
+        </div>
+        <a class="go" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">
+          GOOGLE PLAY
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg>
+        </a>
+        <ul class="stack"><li>React Native</li><li>Leaderboards</li><li>Online play</li><li>Monetisation</li></ul>
+      </article>
+
+      <article class="card" data-r style="--i:1">
+        <div class="card-top">
+          <h3>Wayzos</h3>
+          <span class="chip live">Live</span>
+        </div>
+        <p>Peer-to-peer carpooling for Pakistan — matches riders and drivers already heading the same way, even for part of a route. Cars and motorbikes, every member verified by a person before they can post or message.</p>
+        <p>Female-only matching is enforced on the server, not the screen, and chat works without anyone handing over a phone number.</p>
+        <div class="gos">
+          <a class="go" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener">GOOGLE PLAY <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+          <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener">WAYZOS.COM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+        </div>
+        <ul class="stack"><li>React Native</li><li>Matching</li><li>In-app chat</li><li>Verification</li></ul>
+      </article>
+
+      <article class="card" data-r style="--i:2">
+        <div class="card-top">
+          <h3>SalonPro</h3>
+          <span class="chip wip">Building</span>
+        </div>
+        <p>A multi-tenant SaaS booking platform for beauty salons — appointments, staff and clients under one roof.</p>
+        <ul class="stack"><li>SaaS</li><li>Multi-tenant</li><li>Booking</li><li>Web</li></ul>
+      </article>
+
+      <article class="card" data-r style="--i:3">
+        <div class="card-top">
+          <h3>Restaurant SaaS</h3>
+          <span class="chip wip">Building</span>
+        </div>
+        <p>A SaaS platform for restaurants, built on the same multi-tenant thinking — one product, many businesses running on it.</p>
+        <ul class="stack"><li>SaaS</li><li>Multi-tenant</li><li>Web</li></ul>
+      </article>
+
+      <article class="card" data-r style="--i:4">
+        <div class="card-top">
+          <h3>QuickStop</h3>
+          <span class="chip wip">Unannounced</span>
+        </div>
+        <div class="redact" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="sealed">Details held back until launch.</p>
+        <ul class="stack"><li>React Native</li><li>Realtime</li><li>Mobile</li></ul>
+      </article>
+
+      <article class="card" data-r style="--i:5">
+        <div class="card-top">
+          <h3>Khatmly</h3>
+          <span class="chip wip">Unannounced</span>
+        </div>
+        <div class="redact" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="sealed">Details held back until launch.</p>
+        <ul class="stack"><li>React Native</li><li>Mobile</li></ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="head" data-r>
+      <span class="num">03</span>
+      <h2>Experience</h2>
+      <span class="of">/ ~5 years</span>
     </div>
 
-    <article class="job" data-reveal style="--i:0">
-      <div class="job-head">
-        <h3>5StarDesigners</h3>
-        <span class="job-when">Apr 2025 — Present</span>
-      </div>
-      <p class="job-role">Implementation Manager</p>
-      <p>
-        Running product initiatives end to end, several at a time: requirements
-        analysis, product architecture, user stories, development planning, QA
-        and delivery, plus the client communication that surrounds all of it.
-        Managed product development with junior developers and delivered an MVP
-        in roughly six weeks.
-      </p>
-      <ul class="tags">
-        <li>Product management</li><li>Technical PM</li><li>Architecture</li>
-        <li>Team coordination</li><li>QA</li><li>Delivery</li>
-      </ul>
-    </article>
+    <div class="rail">
+      <article class="stop" data-r style="--i:0">
+        <div class="stop-top">
+          <h3>5StarDesigners</h3>
+          <span class="when">APR 2025 — PRESENT</span>
+        </div>
+        <p class="role">Implementation Manager</p>
+        <p>
+          Running product initiatives end to end, several at a time: requirements
+          analysis, product architecture, user stories, development planning, QA
+          and delivery, plus the client communication around all of it. Managed
+          product development with junior developers and delivered an MVP in
+          roughly six weeks.
+        </p>
+      </article>
 
-    <article class="job" data-reveal style="--i:1">
-      <div class="job-head">
-        <h3>Code Avenue</h3>
-        <span class="job-when">~3 yrs 10 mos</span>
-      </div>
-      <p class="job-role">Senior Software Engineer · Associate Project Coordinator</p>
-      <p>
-        Started in engineering — React, React Native, mobile and web
-        development, API integration, performance optimisation and manual QA —
-        and moved into coordination alongside it: requirements, planning,
-        delivery tracking and cross-functional work. Holding both is what made
-        the current role possible.
-      </p>
-      <ul class="tags">
-        <li>React</li><li>React Native</li><li>JavaScript</li>
-        <li>API integration</li><li>Performance</li><li>Mentoring</li>
-      </ul>
-    </article>
-  </section>
+      <article class="stop" data-r style="--i:1">
+        <div class="stop-top">
+          <h3>Code Avenue</h3>
+          <span class="when">~3 YRS 10 MOS</span>
+        </div>
+        <p class="role">Senior Software Engineer · Associate Project Coordinator</p>
+        <p>
+          Started in engineering — React, React Native, mobile and web
+          development, API integration, performance optimisation and manual QA —
+          then moved into coordination alongside it: requirements, planning,
+          delivery tracking and cross-functional work. Holding both is what made
+          the current role possible.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <section id="work" class="drawn">
-    <div class="section-head" data-reveal>
-      <span class="label">03</span>
-      <h2 class="serif">Selected work</h2>
+<!-- ======================================================================= -->
+<section id="process">
+  <div class="wrap">
+    <div class="head" data-r>
+      <span class="num">04</span>
+      <h2>Process</h2>
+      <span class="of">/ idea → ship → iterate</span>
     </div>
 
-    <article class="work" data-reveal style="--i:0">
-      <div class="work-head">
-        <h3>Brainic</h3>
-        <span class="status live">Live on Play Store</span>
-      </div>
-      <p>
-        A mobile brain and mind-games app — a hub of small games with
-        leaderboards and a competitive edge. Building it taught me more about
-        retention, rewards and monetisation than about games: launching an app
-        is the beginning, and giving people a reason to come back is the
-        actual product problem.
-      </p>
-      <a class="work-link" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">
-        <span>View on Google Play</span>
-        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <path d="M3 9L9 3M9 3H4.5M9 3v4.5"/>
-        </svg>
-      </a>
-    </article>
+    <div class="steps">
+      <div class="step" data-r style="--i:0"><b>Understand</b><span>The problem, the users, the requirements.</span></div>
+      <div class="step" data-r style="--i:1"><b>Define</b><span>Clear features and user stories, not a wish list.</span></div>
+      <div class="step" data-r style="--i:2"><b>Plan</b><span>Architecture, dependencies, resources, delivery.</span></div>
+      <div class="step" data-r style="--i:3"><b>Build</b><span>With the team, not over the top of it.</span></div>
+      <div class="step" data-r style="--i:4"><b>Test</b><span>Functionality, UX, edge cases, real-world use.</span></div>
+      <div class="step" data-r style="--i:5"><b>Launch</b><span>A usable MVP beats waiting for perfect.</span></div>
+      <div class="step" data-r style="--i:6"><b>Learn</b><span>From what people actually do with it.</span></div>
+      <div class="step" data-r style="--i:7"><b>Iterate</b><span>And keep going.</span></div>
+    </div>
+  </div>
+</section>
 
-    <article class="work" data-reveal style="--i:1">
-      <div class="work-head">
-        <h3>Wayzos</h3>
-        <span class="status">Concept · MVP</span>
-      </div>
-      <p>
-        A carpooling product built around connecting people for a journey.
-        Mobile-first, simple onboarding, and an MVP scope that deliberately
-        left out complexity so the core idea could be tested before anything
-        was built on top of it.
-      </p>
-    </article>
-
-    <article class="work" data-reveal style="--i:2">
-      <div class="work-head">
-        <h3>Khatmly</h3>
-        <span class="status">In development</span>
-      </div>
-      <p>
-        A Quran companion for tracking reading and completion across the 30
-        paras. Still being built, and presented as such — the point is a
-        focused, quiet experience rather than a feature list.
-      </p>
-    </article>
-  </section>
-
-  <section id="approach" class="drawn">
-    <div class="section-head" data-reveal>
-      <span class="label">04</span>
-      <h2 class="serif">How I work</h2>
+<!-- ======================================================================= -->
+<section id="stack">
+  <div class="wrap">
+    <div class="head" data-r>
+      <span class="num">05</span>
+      <h2>Stack</h2>
+      <span class="of">/ what I work with</span>
     </div>
 
-    <div class="measure" data-reveal>
-      <p>
-        Build the smallest useful version, launch it, learn from real usage,
-        then iterate. Most early complexity turns out to be a guess about a
-        problem nobody had yet.
-      </p>
-    </div>
-
-    <ol class="steps">
-      <li data-reveal style="--i:0"><span><b>Understand</b> — the problem, the users, the requirements.</span></li>
-      <li data-reveal style="--i:1"><span><b>Define</b> — clear features and user stories, not a wish list.</span></li>
-      <li data-reveal style="--i:2"><span><b>Plan</b> — architecture, dependencies, resources, delivery.</span></li>
-      <li data-reveal style="--i:3"><span><b>Build</b> — with the team, not over the top of it.</span></li>
-      <li data-reveal style="--i:4"><span><b>Test</b> — functionality, UX, edge cases, real-world use.</span></li>
-      <li data-reveal style="--i:5"><span><b>Launch</b> — a usable MVP beats waiting for perfect.</span></li>
-      <li data-reveal style="--i:6"><span><b>Learn</b> — from what people actually do with it.</span></li>
-      <li data-reveal style="--i:7"><span><b>Iterate</b> — and keep going.</span></li>
-    </ol>
-
-    <div class="measure" data-reveal style="margin-top:2rem">
-      <p>
-        I use AI-assisted tools heavily to move faster, and I'm deliberate
-        about where they stop: architecture, requirements, code review, QA and
-        the technical trade-offs stay human. The tool accelerates the work; it
-        doesn't make the judgement calls.
-      </p>
-    </div>
-  </section>
-
-  <section id="skills" class="drawn">
-    <div class="section-head" data-reveal>
-      <span class="label">05</span>
-      <h2 class="serif">Skills</h2>
-    </div>
-
-    <div class="skills">
-      <div class="skill-group" data-reveal style="--i:0">
+    <div class="groups">
+      <div class="group" data-r style="--i:0">
         <h3>Frontend &amp; mobile</h3>
-        <p>React · React Native · JavaScript · Cross-platform mobile · Web
-           applications · API integration · UI implementation · Performance
-           optimisation</p>
+        <ul><li>React</li><li>React Native</li><li>JavaScript</li><li>Cross-platform</li><li>Web apps</li><li>API integration</li><li>UI implementation</li><li>Performance</li></ul>
       </div>
-      <div class="skill-group" data-reveal style="--i:1">
-        <h3>Product &amp; engineering</h3>
-        <p>Product architecture · MVP development · User stories · Requirements
-           analysis · Feature breakdown · Technical feasibility · Estimation ·
-           Product planning</p>
+      <div class="group" data-r style="--i:1">
+        <h3>Product</h3>
+        <ul><li>Architecture</li><li>MVP scoping</li><li>User stories</li><li>Requirements</li><li>Feature breakdown</li><li>Feasibility</li><li>Estimation</li></ul>
       </div>
-      <div class="skill-group" data-reveal style="--i:2">
-        <h3>Project &amp; delivery</h3>
-        <p>Technical project management · Development planning · Task
-           breakdown · Resource planning · Dependencies · Delivery tracking ·
-           Cross-functional coordination</p>
+      <div class="group" data-r style="--i:2">
+        <h3>Delivery</h3>
+        <ul><li>Technical PM</li><li>Dev planning</li><li>Task breakdown</li><li>Resourcing</li><li>Dependencies</li><li>Delivery tracking</li><li>Cross-functional</li></ul>
       </div>
-      <div class="skill-group" data-reveal style="--i:3">
-        <h3>Quality assurance</h3>
-        <p>Manual QA · Functional testing · Regression testing · Mobile testing ·
-           Performance and stress testing · Edge-case testing · Release
-           validation</p>
+      <div class="group" data-r style="--i:3">
+        <h3>Quality</h3>
+        <ul><li>Manual QA</li><li>Functional</li><li>Regression</li><li>Mobile</li><li>Performance</li><li>Stress</li><li>Edge cases</li><li>Release validation</li></ul>
       </div>
-      <div class="skill-group" data-reveal style="--i:4">
+      <div class="group" data-r style="--i:4">
         <h3>Ways of working</h3>
-        <p>AI-assisted development (Claude, Cursor) · Process and workflow
-           improvement · Automation of repetitive work · Developer mentoring</p>
+        <ul><li>AI-assisted dev</li><li>Claude</li><li>Cursor</li><li>Workflow design</li><li>Automation</li><li>Mentoring</li></ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" class="drawn">
-    <div class="section-head" data-reveal>
-      <span class="label">06</span>
-      <h2 class="serif">Get in touch</h2>
+<!-- ======================================================================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="head" data-r>
+      <span class="num">06</span>
+      <h2>Contact</h2>
+      <span class="of">/ say hello</span>
     </div>
 
-    <p class="contact-lede" data-reveal>
-      If you're building something and need someone who can hold the
-      engineering and the delivery at the same time, I'd like to hear about it.
-    </p>
+    <div class="cta">
+      <h2 class="dsp" data-r>Got something<br>worth <s>shipping?</s></h2>
+      <p data-r style="--i:1">
+        If you're building something and need someone who can hold the
+        engineering and the delivery at the same time, I'd like to hear about it.
+      </p>
 
-    <ul class="contact-list">
-      <li data-reveal style="--i:0">
+      <div class="links" data-r style="--i:2">
         <a href="mailto:saad.bawanyy97@gmail.com">
-          <span class="who">Email</span>
-          <span class="what">saad.bawanyy97@gmail.com</span>
+          <span class="k">Email</span><span class="v">saad.bawanyy97@gmail.com</span>
         </a>
-      </li>
-      <li data-reveal style="--i:1">
         <a href="https://github.com/saadbawani97" target="_blank" rel="noopener">
-          <span class="who">GitHub</span>
-          <span class="what">saadbawani97</span>
+          <span class="k">GitHub</span><span class="v">saadbawani97</span>
         </a>
-      </li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>Muhammad Saad · <span id="year">2026</span></p>
-  </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;width:100%">
+    <p>MUHAMMAD SAAD</p>
+    <p>© <span id="yr">2026</span> — BUILT BY HAND</p>
+  </div>
+</footer>
+
 <script>
 (function () {
-  document.getElementById('year').textContent = new Date().getFullYear();
+  'use strict';
 
-  // Drop the portrait frame entirely rather than leave an empty box, so the
-  // masthead reads correctly while there is no photo in assets/.
-  var figure = document.getElementById('portrait');
-  var img = figure && figure.querySelector('img');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // --- Portrait ------------------------------------------------------------
+  // Drop the whole frame rather than leave an empty panel, so the hero still
+  // composes while a photo is being swapped out.
+  var shot = document.querySelector('.shot');
+  var img = shot && shot.querySelector('img');
   if (img) {
-    img.addEventListener('error', function () { figure.remove(); });
-    if (img.complete && img.naturalWidth === 0) figure.remove();
+    img.addEventListener('error', function () { shot.remove(); });
+    if (img.complete && img.naturalWidth === 0) shot.remove();
   }
 
-  var targets = document.querySelectorAll('[data-reveal], .drawn');
+  // --- The prompt ----------------------------------------------------------
+  // Typed one character at a time. Faked with a CSS animation it always looks
+  // faked; the caret ends up in the wrong place and the width is a guess.
+  var TEXT = 'whoami --full';
+  var out = document.getElementById('typed');
+  if (out) {
+    if (reduced) {
+      out.textContent = TEXT;
+    } else {
+      var n = 0;
+      (function type() {
+        out.textContent = TEXT.slice(0, ++n);
+        if (n < TEXT.length) setTimeout(type, 55 + Math.random() * 45);
+      })();
+    }
+  }
 
-  // No observer (or motion turned off): show everything and stop.
-  if (!('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // --- Marquee -------------------------------------------------------------
+  // The list is duplicated so the -50% loop lands exactly where it started.
+  var tick = document.getElementById('tick');
+  if (tick) tick.innerHTML += tick.innerHTML;
+
+  // --- Scroll progress -----------------------------------------------------
+  var bar = document.getElementById('bar');
+  var ticking = false;
+  function progress() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(progress); }
+  }, { passive: true });
+  progress();
+
+  // --- Pointer light -------------------------------------------------------
+  var spot = document.getElementById('spot');
+  if (spot && !reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var x = 0, y = 0, queued = false;
+    window.addEventListener('mousemove', function (e) {
+      x = e.clientX; y = e.clientY;
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () {
+        spot.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0) translate(-50%,-50%)';
+        spot.classList.add('on');
+        queued = false;
+      });
+    }, { passive: true });
+  }
+
+  // --- Counters ------------------------------------------------------------
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (reduced || !target) { el.textContent = String(target || 0); return; }
+    var start = performance.now(), dur = 1100;
+    (function frame(now) {
+      var p = Math.min(1, (now - start) / dur);
+      // Ease out, so it decelerates into the final number instead of stopping.
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(frame);
+    })(start);
+  }
+
+  // --- Reveal --------------------------------------------------------------
+  var targets = document.querySelectorAll('[data-r]');
+  var counters = document.querySelectorAll('[data-count]');
+
+  if (!('IntersectionObserver' in window) || reduced) {
     targets.forEach(function (el) { el.classList.add('in'); });
-    document.querySelectorAll('.drawn').forEach(function (el) { el.classList.add('in'); });
+    counters.forEach(countUp);
     return;
   }
 
@@ -849,29 +1093,29 @@ footer p {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('in');
+      entry.target.querySelectorAll('[data-count]').forEach(countUp);
       // Once only. Re-animating on the way back up is a nuisance.
       io.unobserve(entry.target);
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
 
   targets.forEach(function (el) { io.observe(el); });
 
-  // Anything already on screen at load should not wait to be scrolled to.
+  // Anything already on screen should not wait to be scrolled to.
   requestAnimationFrame(function () {
     targets.forEach(function (el) {
-      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add('in');
+        el.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(el);
+      }
     });
   });
 })();
 </script>
 
-<!-- Visitor counting. Sign up free at goatcounter.com, then replace MYCODE
-     with the code you pick there. Until then this line does nothing.
-
-     To see who opened a link you sent, add ?ref= and a name:
-       .../portfolio/?ref=ali      .../portfolio/?ref=linkedin
-     GoatCounter lists those under Referrers. -->
-<!--
+<!-- Visitor counting. Sign up free at goatcounter.com, replace MYCODE, and
+     uncomment. Add ?ref=name to a link to see who opened it.
 <script data-goatcounter="https://MYCODE.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 -->
