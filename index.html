@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ===========================================================================
@@ -81,31 +81,33 @@ window.addEventListener('load', function () {
    =========================================================================== */
 
 :root {
-  --void:     #F7F7F4;
-  --panel:    #FFFFFF;
-  --panel-2:  #F1F2EE;
-  --line:     #E3E4DF;
-  --line-2:   #CDD0CA;
+  --void:     #ECEBE6;
+  --panel:    #FAF9F6;
+  --panel-2:  #F2F1EC;
+  --line:     #D9D8D1;
+  --line-2:   #C2C1B9;
 
-  --text:     #15171C;
-  --text-2:   #4A4F5A;
+  --text:     #111318;
+  --text-2:   #353A44;
   /* This tone carries every label, chip and stack tag on the page, so it is
-     held at AA everywhere it sits: 5.0:1 on the hover tone, its worst case. */
-  --text-3:   #626875;
+     held at AA everywhere it sits: 6.4:1 on the page, its worst case. */
+  --text-3:   #4E5461;
   /* The dimmed half of the headline only ever appears at display size, where
      AA asks for 3:1 — so it can stay darker than the labels and keep the
      contrast the headline is built on. */
-  --dim:      #858A95;
+  --dim:      #666C78;
 
-  --accent:   #2457C5;
-  --accent-d: #7C9BDB;
-  --glow:     rgba(36, 87, 197, 0.07);
+  --accent:   #1F4FB8;
+  --accent-d: #6A8BD0;
+  --glow:     rgba(31, 79, 184, 0.07);
 
-  --live:     #127A4B;
-  --wip:      #9A5200;
+  --live:     #0F6B41;
+  --wip:      #8A4900;
 
   --gutter:   clamp(1.25rem, 4vw, 3rem);
   --max:      74rem;
+  --sans:     Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono:     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease:     cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -120,9 +122,9 @@ body {
   margin: 0;
   background: var(--void);
   color: var(--text);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -161,23 +163,23 @@ body::before {
 @media (hover: hover) and (pointer: fine) { #spot.on { opacity: 1; } }
 
 a { color: inherit; text-decoration: none; }
-::selection { background: rgba(36, 87, 197, 0.18); }
+::selection { background: rgba(31, 79, 184, 0.18); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 /* --- Type ----------------------------------------------------------------- */
 .dsp {
-  font-family: "Space Grotesk", Inter, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 0.95;
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 .mono {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--mono);
 }
 .tag {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-3);
 }
@@ -236,7 +238,7 @@ p:last-child { margin: 0; }
 /* The prompt. Typed for real by the script below, so the caret sits where a
    caret would actually be. */
 .prompt {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: var(--text-2);
   margin-bottom: 1.25rem;
   min-height: 1.4em;
@@ -276,13 +278,13 @@ h1 .dim { color: var(--dim); }
 .lede b { color: var(--text); font-weight: 500; }
 
 .roles {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.8125rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
   color: var(--text);
   max-width: 34rem;
   margin: 0 0 1rem;
 }
-.roles span { color: var(--text-2); display: block; margin-top: 0.35rem; font-family: Inter, sans-serif; font-size: 0.9375rem; }
+.roles span { color: var(--text-2); display: block; margin-top: 0.35rem; font-family: var(--sans); font-size: 1rem; }
 
 /* --- Buttons -------------------------------------------------------------- */
 .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0 0 1.85rem; }
@@ -290,9 +292,9 @@ h1 .dim { color: var(--dim); }
   display: inline-flex; align-items: center; gap: 0.55rem;
   min-height: 2.75rem;
   padding: 0.7rem 1.15rem;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   border: 1px solid var(--line-2);
   color: var(--text);
@@ -301,7 +303,7 @@ h1 .dim { color: var(--dim); }
 }
 .btn svg { width: 0.9em; height: 0.9em; }
 .btn:hover { border-color: var(--accent); color: var(--accent); }
-/* White on the accent measures 6.5:1. */
+/* White on the accent measures 7.3:1. */
 .btn.pri { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
 .btn.pri:hover { background: var(--text); border-color: var(--text); color: #FFFFFF; }
 
@@ -337,8 +339,8 @@ h1 .dim { color: var(--dim); }
 .shot figcaption {
   position: absolute;
   left: 8px; bottom: -1.9rem;
-  font-size: 0.625rem;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-3);
 }
@@ -354,7 +356,7 @@ h1 .dim { color: var(--dim); }
 }
 .stat { background: var(--void); padding: 1.1rem 1.25rem; }
 .stat .n {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--sans);
   font-weight: 600;
   font-size: clamp(1.6rem, 4vw, 2.25rem);
   line-height: 1;
@@ -370,10 +372,10 @@ h1 .dim { color: var(--dim); }
   align-items: center;
   gap: 0.6rem;
   color: var(--text-3);
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--sans);
 }
 .cue i {
   display: block;
@@ -409,9 +411,9 @@ h1 .dim { color: var(--dim); }
   animation: slide 38s linear infinite;
 }
 .ticker li {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.8125rem;
-  letter-spacing: 0.1em;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-2);
   white-space: nowrap;
@@ -434,20 +436,20 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
   margin-bottom: clamp(2rem, 5vh, 3.5rem);
 }
 .head .num {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
   color: var(--accent);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 .head h2 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--sans);
   font-weight: 600;
   letter-spacing: -0.03em;
   font-size: clamp(1.5rem, 3.4vw, 2.25rem);
   margin: 0;
   flex: 1;
 }
-.head .of { color: var(--text-3); font-size: 0.75rem; font-family: "JetBrains Mono", monospace; }
+.head .of { color: var(--text-3); font-size: 0.8125rem; font-family: var(--sans); }
 
 /* --- Profile -------------------------------------------------------------- */
 .profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); }
@@ -462,9 +464,9 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
   border-bottom: 1px solid var(--line);
   align-items: start;
 }
-.specrow .i { font-family: "JetBrains Mono", monospace; font-size: 0.6875rem; color: var(--text-3); padding-top: 0.35em; }
-.specrow .k { font-family: "JetBrains Mono", monospace; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding-top: 0.3em; }
-.specrow .v { color: var(--text-2); font-size: 0.9375rem; }
+.specrow .i { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); padding-top: 0.35em; }
+.specrow .k { font-family: var(--sans); font-size: 0.8125rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--accent); padding-top: 0.3em; }
+.specrow .v { color: var(--text-2); font-size: 1rem; }
 
 /* --- Work ----------------------------------------------------------------- */
 .cards {
@@ -501,18 +503,18 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 
 .card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .card h3 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--sans);
   font-weight: 600;
   letter-spacing: -0.02em;
   font-size: 1.375rem;
   margin: 0;
 }
-.card p { color: var(--text-2); font-size: 0.9375rem; }
+.card p { color: var(--text-2); font-size: 1rem; }
 
 .chip {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.5625rem;
-  letter-spacing: 0.14em;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--line-2);
@@ -537,9 +539,9 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
   border-top: 1px solid var(--line);
 }
 .stack li {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.625rem;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
   color: var(--text-3);
   border: 1px solid var(--line);
   padding: 0.18rem 0.45rem;
@@ -549,9 +551,9 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 .go {
   display: inline-flex; align-items: center; gap: 0.45rem;
   color: var(--accent);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
   min-height: 2rem;
 }
 .go svg { width: 0.85em; height: 0.85em; transition: transform 0.35s var(--ease); }
@@ -586,16 +588,16 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 .redact span:nth-child(1) { width: 86%; }
 .redact span:nth-child(2) { width: 64%; }
 .redact span:nth-child(3) { width: 74%; }
-.sealed { color: var(--text-3); font-size: 0.8125rem; font-style: italic; }
+.sealed { color: var(--text-3); font-size: 0.875rem; font-style: italic; }
 
 /* Case study, folded into the card so the grid stays even until it is asked for. */
 .case { border-top: 1px solid var(--line); padding-top: 0.75rem; }
 .case summary {
   cursor: pointer;
   list-style: none;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
   color: var(--text);
   display: flex; align-items: center; gap: 0.5rem;
   min-height: 2rem;
@@ -604,8 +606,8 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 .case summary::before { content: "+"; color: var(--accent); width: 0.8em; }
 .case[open] summary::before { content: "−"; }
 .case dl { margin: 0.6rem 0 0; display: grid; gap: 0.65rem; }
-.case dt { font-family: "JetBrains Mono", monospace; font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-.case dd { margin: 0.15rem 0 0; color: var(--text-2); font-size: 0.875rem; }
+.case dt { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.case dd { margin: 0.15rem 0 0; color: var(--text-2); font-size: 0.9375rem; }
 
 .note {
   margin-top: 1.5rem;
@@ -615,15 +617,15 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
   background: var(--panel);
   max-width: 48rem;
 }
-.note b { display: block; font-family: "JetBrains Mono", monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.35rem; }
-.note p { color: var(--text-2); font-size: 0.9375rem; }
+.note b { display: block; font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.35rem; }
+.note p { color: var(--text-2); font-size: 1rem; }
 
 /* --- Services ------------------------------------------------------------- */
 .cards.svc .card { min-height: 0; }
 /* Seven cards leave the last one alone at both two and three columns; let it
    take the row instead of leaving a grey hole beside it. */
 .cards.svc .card:last-child { grid-column: 1 / -1; }
-.card .n0 { font-family: "JetBrains Mono", monospace; font-size: 0.6875rem; color: var(--accent); }
+.card .n0 { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
 .cards.svc .go { margin-top: auto; padding-top: 0.5rem; min-height: 2rem; }
 
 /* --- Experience ----------------------------------------------------------- */
@@ -648,19 +650,19 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 }
 .stop-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 1rem; justify-content: space-between; }
 .stop h3 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--sans);
   font-weight: 600; font-size: 1.25rem; margin: 0; letter-spacing: -0.02em;
 }
-.stop .when { font-family: "JetBrains Mono", monospace; font-size: 0.75rem; color: var(--text-3); white-space: nowrap; }
-.stop .role { color: var(--accent); font-size: 0.9375rem; margin: 0.15rem 0 0.75rem; font-family: "JetBrains Mono", monospace; }
-.stop p { color: var(--text-2); font-size: 0.9375rem; max-width: 44rem; }
-.stop .co { color: var(--text-3); font-size: 0.8125rem; margin: 0.1rem 0 0; }
+.stop .when { font-family: var(--sans); font-size: 0.8125rem; color: var(--text-3); white-space: nowrap; }
+.stop .role { color: var(--accent); font-size: 1rem; margin: 0.15rem 0 0.75rem; font-family: var(--sans); }
+.stop p { color: var(--text-2); font-size: 1rem; max-width: 44rem; }
+.stop .co { color: var(--text-3); font-size: 0.875rem; margin: 0.1rem 0 0; }
 /* One company, several roles: each role gets its own title, dates and points. */
 .post { margin-top: 1rem; }
 .post-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 1rem; }
 .post-top .role { margin: 0; }
 .pts { margin: 0.6rem 0 0; padding: 0 0 0 1.1rem; max-width: 44rem; }
-.pts li { color: var(--text-2); font-size: 0.9375rem; margin-bottom: 0.4rem; }
+.pts li { color: var(--text-2); font-size: 1rem; margin-bottom: 0.4rem; }
 .pts li::marker { color: var(--accent-d); }
 
 /* --- Process -------------------------------------------------------------- */
@@ -676,32 +678,32 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 .step::before {
   content: counter(s, decimal-leading-zero);
   display: block;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.6875rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
-.step b { display: block; font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
-.step span { color: var(--text-2); font-size: 0.875rem; }
+.step b { display: block; font-family: var(--sans); font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
+.step span { color: var(--text-2); font-size: 0.9375rem; }
 
 /* --- Stack ---------------------------------------------------------------- */
 .groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem 3rem; }
 .group h3 {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--sans);
+  font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase;
   color: var(--accent); font-weight: 500; margin: 0 0 0.75rem;
   padding-bottom: 0.6rem; border-bottom: 1px solid var(--line);
 }
 .group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.group li { font-size: 0.8125rem; color: var(--text-2); }
+.group li { font-size: 0.875rem; color: var(--text-2); }
 .group li::after { content: "·"; color: var(--line-2); margin-left: 0.4rem; }
 .group li:last-child::after { content: ""; }
 
 /* --- Contact -------------------------------------------------------------- */
 .cta { max-width: 40rem; }
 .cta h2 {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 600; letter-spacing: -0.035em;
+  font-family: var(--sans);
+  font-weight: 600; letter-spacing: -0.03em;
   font-size: clamp(2rem, 6vw, 3.75rem);
   line-height: 1.02; margin: 0 0 1.25rem;
 }
@@ -717,15 +719,15 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
   transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 .links a:hover { background: var(--panel-2); color: var(--accent); }
-.links .k { font-family: "JetBrains Mono", monospace; font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
-.links .v { font-size: 0.9375rem; }
+.links .k { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
+.links .v { font-size: 1rem; }
 
 footer {
   border-top: 1px solid var(--line);
   padding: 2rem 0 3rem;
   display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between;
 }
-footer p { font-family: "JetBrains Mono", monospace; font-size: 0.6875rem; color: var(--text-3); margin: 0; }
+footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); margin: 0; }
 
 /* ===========================================================================
    Reveal
