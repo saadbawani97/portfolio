@@ -581,6 +581,61 @@ section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
 .js .tiles img { animation: float 5.5s var(--ease) infinite; animation-delay: calc(var(--t) * 240ms); }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
+/* Shipped products take the full row, with a picture of the real thing beside
+   the words. Captioned like a figure, because this is still a spec sheet. */
+.cards.work { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.card.feat {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  align-items: center;
+  min-height: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+.card.feat.flip { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.card.feat.flip .frame { order: -1; }
+/* A phone is tall; give it a narrower column so it sits at the same height. */
+.card.feat.narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 25rem); }
+.card.feat.narrow.flip { grid-template-columns: minmax(0, 25rem) minmax(0, 1fr); }
+.feat .txt { display: flex; flex-direction: column; gap: 0.85rem; min-width: 0; }
+.feat .stack { margin-top: 0.25rem; }
+.cards.work .card:not(.feat) { min-height: 16rem; }
+
+.frame {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  overflow: hidden;
+}
+.frame > img { display: block; width: 100%; height: auto; transition: transform 0.9s var(--ease); }
+@media (hover: hover) { .card.feat:hover .frame > img { transform: scale(1.025); } }
+.frame figcaption {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: 0.55rem 0.8rem;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  color: var(--text-3);
+}
+.frame figcaption b { font-weight: 500; color: var(--accent); }
+.frame .tiles { padding: clamp(1rem, 3vw, 1.75rem); margin: 0; gap: 0.75rem; }
+
+.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.points li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text-2);
+  font-size: 0.9375rem;
+}
+.points li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.62em;
+  width: 6px; height: 6px;
+  background: var(--accent);
+}
+
 /* Redacted. Two products are still unannounced, and a portfolio is not the
    place to give them away — so the page says exactly that, visually. */
 .redact { display: flex; flex-direction: column; gap: 0.45rem; margin: 0.25rem 0 0.35rem; }
@@ -748,6 +803,14 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 /* --- Narrow --------------------------------------------------------------- */
 @media (max-width: 62rem) {
   .profile { grid-template-columns: 1fr; }
+  .cards.work { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards.work > .card:last-child { grid-column: 1 / -1; }
+  .card.feat, .card.feat.flip, .card.feat.narrow, .card.feat.narrow.flip { grid-template-columns: minmax(0, 1fr); }
+  .card.feat .frame { order: -1; }
+  .card.feat.narrow .frame { width: min(100%, 26rem); justify-self: center; }
+}
+@media (max-width: 40rem) {
+  .cards.work { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 48rem) {
   .hero-grid { grid-template-columns: 1fr; gap: 1.75rem; }
@@ -925,77 +988,103 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
       <span class="of">/ 06 products</span>
     </div>
 
-    <div class="cards">
+    <div class="cards work">
 
-      <article class="card" data-r style="--i:0">
-        <div class="card-top">
-          <h3>Brainic</h3>
-          <span class="chip live">Live</span>
+      <article class="card feat" data-r style="--i:0">
+        <div class="txt">
+          <div class="card-top">
+            <h3>Kaiora</h3>
+            <span class="chip live">Live</span>
+          </div>
+          <p>Booking and front-desk software for salons, barbers, spas and independent pros. Every booking lands in one calendar, reminders cut no-shows, and loyalty brings clients back.</p>
+          <ul class="points">
+            <li>A booking page that looks like the business: ten templates, prices, team, gallery and map.</li>
+            <li>One calendar with a column per stylist. Online, phone, WhatsApp and walk-in bookings in one place.</li>
+            <li>Day-before reminders, a review loop that sends happy clients to Google, loyalty cards and gift vouchers.</li>
+          </ul>
+          <!-- TODO [ADD]: My role and a real result (salons signed up, bookings taken). Only if real. -->
+          <div class="gos">
+            <a class="go" href="https://kaiora.co/" target="_blank" rel="noopener">KAIORA.CO <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+          </div>
+          <ul class="stack"><li>SaaS</li><li>Multi-tenant</li><li>Booking</li><li>Web</li></ul>
         </div>
-        <p>A hub of mind games — 2048, Sudoku, Connect Four, Battleship and more — with leaderboards and online play.</p>
-        <div class="tiles">
-          <img src="assets/brainic/2048.webp" alt="" width="168" height="180" style="--t:0" loading="lazy">
-          <img src="assets/brainic/sudoku.webp" alt="" width="168" height="180" style="--t:1" loading="lazy">
-          <img src="assets/brainic/connect_four.webp" alt="" width="168" height="180" style="--t:2" loading="lazy">
-          <img src="assets/brainic/battleship.webp" alt="" width="168" height="180" style="--t:3" loading="lazy">
-          <img src="assets/brainic/block_blast.webp" alt="" width="168" height="180" style="--t:4" loading="lazy">
-          <img src="assets/brainic/hangman.webp" alt="" width="168" height="180" style="--t:5" loading="lazy">
-          <img src="assets/brainic/dots_and_boxes.webp" alt="" width="168" height="180" style="--t:6" loading="lazy">
-          <img src="assets/brainic/ultimate_tic_tac_toe.webp" alt="" width="168" height="180" style="--t:7" loading="lazy">
-        </div>
-        <a class="go" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">
-          GOOGLE PLAY
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg>
-        </a>
-        <!-- TODO [ADD]: one line of real results, e.g. "<p>X downloads · Y★ on Google Play</p>". Only if real. -->
-        <details class="case">
-          <summary>Case study</summary>
-          <dl>
-            <!-- TODO [CONFIRM]: problem wording. Written from the product description, not from you. -->
-            <dt>Problem</dt><dd>Quick mind games scattered across many apps; one place to play them solo or against friends.</dd>
-            <dt>My role</dt><dd>Owned it end to end, from concept to launch.</dd>
-            <dt>What I built</dt><dd>A React Native hub of mind games, including 2048, Sudoku, Connect Four and Battleship, with leaderboards and online play.</dd>
-            <!-- TODO [ADD]: downloads, rating or active users to add to the result. -->
-            <dt>Result</dt><dd>Live on Google Play.</dd>
-          </dl>
-        </details>
-        <ul class="stack"><li>React Native</li><li>Leaderboards</li><li>Online play</li><li>Monetisation</li></ul>
+        <figure class="frame">
+          <img src="assets/kaiora/calendar.webp" alt="Kaiora's team calendar with a day of appointments per stylist, beside a barbershop's booking page on a phone." width="1200" height="826" loading="lazy">
+          <figcaption><span><b>fig. 01</b> Team calendar and booking page</span><span>kaiora.co</span></figcaption>
+        </figure>
       </article>
 
-      <article class="card" data-r style="--i:1">
-        <div class="card-top">
-          <h3>Wayzos</h3>
-          <span class="chip live">Live</span>
+      <article class="card feat narrow flip" data-r style="--i:1">
+        <div class="txt">
+          <div class="card-top">
+            <h3>Wayzos</h3>
+            <span class="chip live">Live</span>
+          </div>
+          <p>Peer-to-peer carpooling for Pakistan. It matches riders and drivers already heading the same way, even for part of a route. Cars and motorbikes, every member verified by a person before they can post or message.</p>
+          <p>Female-only matching is enforced on the server, not the screen, and chat works without anyone handing over a phone number.</p>
+          <div class="gos">
+            <a class="go" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener">GOOGLE PLAY <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+            <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener">WAYZOS.COM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+          </div>
+          <!-- TODO [ADD]: one line of real results (downloads, rating, active users). Only if real. -->
+          <details class="case">
+            <summary>Case study</summary>
+            <dl>
+              <!-- TODO [CONFIRM]: problem wording. Written from the product description, not from you. -->
+              <dt>Problem</dt><dd>Carpooling only works if people trust who they ride with, and in Pakistan that has to hold for women riders too.</dd>
+              <!-- TODO [ADD]: My role. Not stated anywhere yet (solo, lead, with a team?). Template:
+              <dt>My role</dt><dd>…</dd> -->
+              <dt>What I built</dt><dd>Route matching that pairs riders and drivers even for part of a route, person-verified members, female-only matching enforced on the server, and chat that never exposes a phone number.</dd>
+              <!-- TODO [ADD]: downloads, rating or active users to add to the result. -->
+              <dt>Result</dt><dd>Live on Google Play and wayzos.com.</dd>
+            </dl>
+          </details>
+          <ul class="stack"><li>React Native</li><li>Matching</li><li>In-app chat</li><li>Verification</li></ul>
         </div>
-        <p>Peer-to-peer carpooling for Pakistan — matches riders and drivers already heading the same way, even for part of a route. Cars and motorbikes, every member verified by a person before they can post or message.</p>
-        <p>Female-only matching is enforced on the server, not the screen, and chat works without anyone handing over a phone number.</p>
-        <div class="gos">
-          <a class="go" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener">GOOGLE PLAY <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-          <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener">WAYZOS.COM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-        </div>
-        <!-- TODO [ADD]: one line of real results (downloads, rating, active users). Only if real. -->
-        <details class="case">
-          <summary>Case study</summary>
-          <dl>
-            <!-- TODO [CONFIRM]: problem wording. Written from the product description, not from you. -->
-            <dt>Problem</dt><dd>Carpooling only works if people trust who they ride with, and in Pakistan that has to hold for women riders too.</dd>
-            <!-- TODO [ADD]: My role. Not stated anywhere yet (solo, lead, with a team?). Template:
-            <dt>My role</dt><dd>…</dd> -->
-            <dt>What I built</dt><dd>Route matching that pairs riders and drivers even for part of a route, person-verified members, female-only matching enforced on the server, and chat that never exposes a phone number.</dd>
-            <!-- TODO [ADD]: downloads, rating or active users to add to the result. -->
-            <dt>Result</dt><dd>Live on Google Play and wayzos.com.</dd>
-          </dl>
-        </details>
-        <ul class="stack"><li>React Native</li><li>Matching</li><li>In-app chat</li><li>Verification</li></ul>
+        <figure class="frame">
+          <img src="assets/wayzos/find-a-ride.webp" alt="The Wayzos app showing three verified matches on a route from Gulberg to DHA Phase 5, one marked female-only." width="1000" height="974" loading="lazy">
+          <figcaption><span><b>fig. 02</b> Matches on your route</span><span>Android</span></figcaption>
+        </figure>
       </article>
 
-      <article class="card" data-r style="--i:2">
-        <div class="card-top">
-          <h3>SalonPro</h3>
-          <span class="chip wip">Building</span>
+      <article class="card feat" data-r style="--i:2">
+        <div class="txt">
+          <div class="card-top">
+            <h3>Brainic</h3>
+            <span class="chip live">Live</span>
+          </div>
+          <p>A hub of mind games — 2048, Sudoku, Connect Four, Battleship and more — with leaderboards and online play.</p>
+          <a class="go" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">
+            GOOGLE PLAY
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg>
+          </a>
+          <!-- TODO [ADD]: one line of real results, e.g. "<p>X downloads · Y★ on Google Play</p>". Only if real. -->
+          <details class="case">
+            <summary>Case study</summary>
+            <dl>
+              <!-- TODO [CONFIRM]: problem wording. Written from the product description, not from you. -->
+              <dt>Problem</dt><dd>Quick mind games scattered across many apps; one place to play them solo or against friends.</dd>
+              <dt>My role</dt><dd>Owned it end to end, from concept to launch.</dd>
+              <dt>What I built</dt><dd>A React Native hub of mind games, including 2048, Sudoku, Connect Four and Battleship, with leaderboards and online play.</dd>
+              <!-- TODO [ADD]: downloads, rating or active users to add to the result. -->
+              <dt>Result</dt><dd>Live on Google Play.</dd>
+            </dl>
+          </details>
+          <ul class="stack"><li>React Native</li><li>Leaderboards</li><li>Online play</li><li>Monetisation</li></ul>
         </div>
-        <p>A multi-tenant SaaS booking platform for beauty salons — appointments, staff and clients under one roof.</p>
-        <ul class="stack"><li>SaaS</li><li>Multi-tenant</li><li>Booking</li><li>Web</li></ul>
+        <figure class="frame">
+          <div class="tiles">
+            <img src="assets/brainic/2048.webp" alt="" width="168" height="180" style="--t:0" loading="lazy">
+            <img src="assets/brainic/sudoku.webp" alt="" width="168" height="180" style="--t:1" loading="lazy">
+            <img src="assets/brainic/connect_four.webp" alt="" width="168" height="180" style="--t:2" loading="lazy">
+            <img src="assets/brainic/battleship.webp" alt="" width="168" height="180" style="--t:3" loading="lazy">
+            <img src="assets/brainic/block_blast.webp" alt="" width="168" height="180" style="--t:4" loading="lazy">
+            <img src="assets/brainic/hangman.webp" alt="" width="168" height="180" style="--t:5" loading="lazy">
+            <img src="assets/brainic/dots_and_boxes.webp" alt="" width="168" height="180" style="--t:6" loading="lazy">
+            <img src="assets/brainic/ultimate_tic_tac_toe.webp" alt="" width="168" height="180" style="--t:7" loading="lazy">
+          </div>
+          <figcaption><span><b>fig. 03</b> Eight of the games</span><span>Android</span></figcaption>
+        </figure>
       </article>
 
       <article class="card" data-r style="--i:3">
