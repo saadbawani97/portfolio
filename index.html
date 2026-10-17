@@ -6,8 +6,8 @@
 <title>Muhammad Saad Bawany | Software Engineer, Technical Project Manager, Product Manager</title>
 <meta name="description" content="Muhammad Saad Bawany: Software Engineer, Technical Project Manager and Product Manager in Karachi. React Native, React, MVPs and delivery.">
 <link rel="canonical" href="https://saadbawani97.github.io/portfolio/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232457C5'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
-<meta name="theme-color" content="#F7F7F4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='14' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FAF8F4">
 <meta name="color-scheme" content="light">
 
 <meta property="og:type" content="profile">
@@ -64,51 +64,48 @@ window.addEventListener('load', function () {
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ===========================================================================
-   A specification sheet that happens to be a website.
+   Warm paper, one indigo, and each product in its own colours.
 
-   The metaphor is deliberate and it drives everything: numbered sections,
-   monospace labels, precise measurements, a grid you can see. It suits
-   someone whose job is turning vague requirements into something a team can
-   actually build — and it keeps the page from drifting into the generic dark
-   gradient that every other developer site already is.
-
-   Light only: paper, ink and one blue, so it reads like a well-set document
-   to the recruiters and clients it is written for.
+   The page is written for recruiters and clients who skim first and read
+   second, so everything that matters is big enough to catch on a skim: a
+   characterful display face for the headings, a serif italic for the one
+   word in each that carries the feeling, and body copy set large and loose
+   enough to read for a while without effort.
    =========================================================================== */
 
 :root {
-  --void:     #ECEBE6;
-  --panel:    #FAF9F6;
-  --panel-2:  #F2F1EC;
-  --line:     #D9D8D1;
-  --line-2:   #C2C1B9;
+  --bg:        #FAF8F4;
+  --surface:   #FFFFFF;
+  --surface-2: #F3F0EA;
+  --line:      rgba(15, 18, 34, 0.09);
+  --line-2:    rgba(15, 18, 34, 0.16);
 
-  --text:     #111318;
-  --text-2:   #353A44;
-  /* This tone carries every label, chip and stack tag on the page, so it is
-     held at AA everywhere it sits: 6.4:1 on the page, its worst case. */
-  --text-3:   #4E5461;
-  /* The dimmed half of the headline only ever appears at display size, where
-     AA asks for 3:1 — so it can stay darker than the labels and keep the
-     contrast the headline is built on. */
-  --dim:      #666C78;
+  --ink:       #0F1222;
+  --ink-2:     #3F4557;
+  /* Labels and captions. 5.1:1 on the page background. */
+  --ink-3:     #626879;
 
-  --accent:   #1F4FB8;
-  --accent-d: #6A8BD0;
-  --glow:     rgba(31, 79, 184, 0.07);
+  --accent:    #4F46E5;
+  --accent-2:  #FF6B4A;
+  --accent-bg: #EEEDFD;
 
-  --live:     #0F6B41;
-  --wip:      #8A4900;
+  --live:      #0B7A4B;
+  --wip:       #9A5200;
 
-  --gutter:   clamp(1.25rem, 4vw, 3rem);
-  --max:      74rem;
-  --sans:     Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --mono:     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --ease:     cubic-bezier(0.22, 0.61, 0.36, 1);
+  --gutter:    clamp(1rem, 4vw, 2.5rem);
+  --max:       72rem;
+  --radius:    22px;
+
+  --display:   "Bricolage Grotesque", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif:     "Instrument Serif", Georgia, serif;
+  --sans:      Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --shadow:    0 1px 2px rgba(15, 18, 34, 0.04), 0 8px 28px -12px rgba(15, 18, 34, 0.14);
+  --shadow-lg: 0 2px 4px rgba(15, 18, 34, 0.04), 0 28px 60px -24px rgba(15, 18, 34, 0.28);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -116,727 +113,916 @@ window.addEventListener('load', function () {
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
+  position: relative;
   margin: 0;
-  background: var(--void);
-  color: var(--text);
+  background: var(--bg);
+  color: var(--ink);
   font-family: var(--sans);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* The grid, drawn once and fixed behind everything. Visible enough to read as
-   structure, faint enough that nothing has to compete with it. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-  background-size: 72px 72px;
-  opacity: 0.4;
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 78%);
-}
-
-/* A light that follows the pointer. Off on touch, where there is no pointer
-   to follow and the repaint would cost battery for nothing. */
-#spot {
-  position: fixed;
-  width: 42rem; height: 42rem;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(circle, var(--glow) 0%, transparent 62%);
-  transform: translate3d(-50%, -50%, 0);
-  opacity: 0;
-  transition: opacity 0.6s var(--ease);
-  will-change: transform;
-}
-@media (hover: hover) and (pointer: fine) { #spot.on { opacity: 1; } }
-
 a { color: inherit; text-decoration: none; }
-::selection { background: rgba(31, 79, 184, 0.18); }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-
-/* --- Type ----------------------------------------------------------------- */
-.dsp {
-  font-family: var(--sans);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-.mono {
-  font-family: var(--mono);
-}
-.tag {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
+img { max-width: 100%; }
+::selection { background: rgba(79, 70, 229, 0.18); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
 p { margin: 0 0 1.1em; }
 p:last-child { margin: 0; }
 
+em.s {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
 .wrap {
   position: relative;
-  z-index: 1;
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
 
+svg.i { width: 1.15em; height: 1.15em; flex: none; }
+
 /* --- Scroll progress ------------------------------------------------------ */
 #bar {
   position: fixed;
   top: 0; left: 0;
-  height: 2px;
+  height: 3px;
   width: 100%;
   transform: scaleX(0);
   transform-origin: left;
-  background: linear-gradient(90deg, var(--accent-d), var(--accent));
-  z-index: 50;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  z-index: 60;
 }
+
+/* ===========================================================================
+   Nav
+   =========================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.nav.solid {
+  background: rgba(250, 248, 244, 0.82);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+}
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 4.25rem;
+}
+.brand { display: inline-flex; align-items: center; gap: 0.65rem; font-family: var(--display); font-weight: 700; font-size: 1.0625rem; letter-spacing: -0.01em; }
+.brand i {
+  display: grid; place-items: center;
+  width: 2.1rem; height: 2.1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #7C3AED);
+  color: #fff;
+  font-style: normal;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+.nav ul { display: flex; gap: 0.25rem; list-style: none; margin: 0; padding: 0; }
+.nav ul a {
+  display: block;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  transition: color 0.2s, background-color 0.2s;
+}
+.nav ul a:hover { color: var(--ink); background: var(--surface-2); }
+.nav ul a.on { color: var(--accent); background: var(--accent-bg); }
+
+/* --- Buttons -------------------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 2.9rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.9688rem;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--ink);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background-color 0.25s, border-color 0.25s, color 0.25s;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--ink-3); }
+.btn.pri { background: var(--ink); border-color: var(--ink); color: #fff; }
+.btn.pri:hover { background: var(--accent); border-color: var(--accent); }
+.btn.sm { min-height: 2.4rem; padding: 0.45rem 1rem; font-size: 0.875rem; }
+.btn svg { width: 1em; height: 1em; transition: transform 0.25s var(--ease); }
+.btn:hover svg.arrow { transform: translate(2px, -2px); }
 
 /* ===========================================================================
    Hero
    =========================================================================== */
 .hero {
   position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(3.5rem, 8vh, 5rem) 0 clamp(2rem, 5vh, 3rem);
+  padding: clamp(2rem, 6vh, 4.5rem) 0 clamp(3.5rem, 9vh, 6rem);
 }
+.hero .wrap { z-index: 1; }
 
-.topline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  align-items: center;
-  margin-bottom: clamp(1.5rem, 4vh, 2.75rem);
+/* Two soft lights behind the top of the page, under the nav as well, so the
+   colour never stops at a hard edge. */
+.glow {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 62rem;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
-.topline span::before { content: "// "; color: var(--line-2); }
+.glow::before, .glow::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+.glow::before { width: 36rem; height: 36rem; right: -8rem; top: -12rem; background: rgba(124, 58, 237, 0.16); }
+.glow::after  { width: 26rem; height: 26rem; right: 20%; bottom: 4rem; background: rgba(255, 107, 74, 0.13); }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
   align-items: center;
 }
 
-/* The prompt. Typed for real by the script below, so the caret sits where a
-   caret would actually be. */
+.badge {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  font-size: 0.875rem;
+  color: var(--ink-2);
+}
+.pulse {
+  position: relative;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #16A34A;
+}
+.pulse::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: #16A34A;
+  animation: ping 2s var(--ease) infinite;
+}
+@keyframes ping { 0% { transform: scale(1); opacity: 0.6; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
+
 .hello {
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
-  color: var(--text-2);
-  margin: 0 0 1rem;
+  margin: 1.6rem 0 0.6rem;
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  color: var(--ink-2);
 }
-.hello b { color: var(--text); font-weight: 600; }
-.prompt {
-  font-size: 0.9375rem;
-  color: var(--text-2);
-  margin-bottom: 1.25rem;
-  min-height: 1.4em;
-}
-.prompt i { color: var(--accent); font-style: normal; }
-.caret {
-  display: inline-block;
-  width: 0.55em; height: 1.05em;
-  vertical-align: -0.18em;
-  background: var(--accent);
-  margin-left: 2px;
-  animation: blink 1.05s steps(2, start) infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
+.hello b { color: var(--ink); font-weight: 600; }
 
 h1 {
-  font-size: clamp(2.25rem, 5.4vw, 4.25rem);
-  margin: 0 0 1.1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5.6vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.4rem;
 }
-.line { display: block; overflow: hidden; }
+h1 em.s { color: var(--accent); font-size: 1.08em; }
+h1 em.s.c2 { color: var(--accent-2); }
+.line { display: block; overflow: hidden; padding-bottom: 0.06em; }
 .line > span { display: block; }
 .js .line > span {
-  transform: translateY(102%);
+  transform: translateY(105%);
   animation: rise 1s var(--ease) forwards;
-  animation-delay: calc(var(--i, 0) * 100ms + 250ms);
+  animation-delay: calc(var(--i, 0) * 110ms + 150ms);
 }
 @keyframes rise { to { transform: translateY(0); } }
 
-h1 .dim { color: var(--dim); }
+.roles {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  list-style: none; margin: 0 0 1.4rem; padding: 0;
+}
+.roles li {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
 
 .lede {
-  font-size: clamp(1rem, 1.6vw, 1.1875rem);
-  color: var(--text-2);
-  max-width: 32rem;
-  margin: 0 0 1.85rem;
-}
-.lede b { color: var(--text); font-weight: 500; }
-
-.roles {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  color: var(--text);
+  font-size: clamp(1.0625rem, 1.7vw, 1.1875rem);
+  color: var(--ink-2);
   max-width: 34rem;
-  margin: 0 0 1rem;
+  margin: 0 0 1.9rem;
 }
-.roles span { color: var(--text-2); display: block; margin-top: 0.35rem; font-family: var(--sans); font-size: 1rem; }
+.lede b { color: var(--ink); font-weight: 600; }
 
-/* --- Buttons -------------------------------------------------------------- */
-.btns { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0 0 1.85rem; }
-.btn {
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  min-height: 2.75rem;
-  padding: 0.7rem 1.15rem;
-  font-family: var(--sans);
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border: 1px solid var(--line-2);
-  color: var(--text);
-  background: var(--panel);
-  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease);
-}
-.btn svg { width: 0.9em; height: 0.9em; }
-.btn:hover { border-color: var(--accent); color: var(--accent); }
-/* White on the accent measures 7.3:1. */
-.btn.pri { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
-.btn.pri:hover { background: var(--text); border-color: var(--text); color: #FFFFFF; }
+.btns { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 0 0 2.25rem; }
 
-/* --- Portrait panel ------------------------------------------------------- */
-.shot {
-  position: relative;
-  width: clamp(11rem, 24vw, 18rem);
-  aspect-ratio: 1 / 1;
-  border: 1px solid var(--line-2);
-  background: var(--panel);
-  padding: 8px;
-}
-/* Corner ticks, the way a spec drawing marks a crop. */
-.shot::before, .shot::after {
-  content: "";
-  position: absolute;
-  width: 14px; height: 14px;
-  border: 1px solid var(--accent);
-}
-.shot::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
-.shot::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
-
-.shot img {
-  display: block;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: grayscale(0.1) contrast(1.03);
-}
-/* Hidden only when the script is there to wipe it in. */
-.js .shot img { clip-path: inset(0 0 100% 0); animation: wipe 1.1s var(--ease) 0.6s forwards; }
-@keyframes wipe { to { clip-path: inset(0 0 0 0); } }
-
-.shot figcaption {
-  position: absolute;
-  left: 8px; bottom: -1.9rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-
-/* --- Stats ---------------------------------------------------------------- */
 .stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  max-width: 34rem;
+  gap: 0.75rem;
+  max-width: 32rem;
 }
-.stat { background: var(--void); padding: 1.1rem 1.25rem; }
+.stat {
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
 .stat .n {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.6vw, 2.25rem);
   line-height: 1;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
 }
 .stat .n s { text-decoration: none; color: var(--accent); }
-.stat .k { margin-top: 0.4rem; }
+.stat .k { margin-top: 0.4rem; font-size: 0.8125rem; color: var(--ink-3); }
 
-.cue {
-  margin-top: clamp(1.5rem, 4vh, 2.5rem);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--text-3);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-family: var(--sans);
+/* --- Portrait ------------------------------------------------------------- */
+.me { position: relative; margin: 0; justify-self: center; width: min(100%, 24rem); }
+.me .pic {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, #E9E6FF, #FFE7DF);
+  box-shadow: var(--shadow-lg);
+  transform: rotate(2deg);
 }
-.cue i {
-  display: block;
-  width: 1px; height: 26px;
-  background: linear-gradient(var(--accent), transparent);
-  animation: drop 1.8s var(--ease) infinite;
+.me img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.js .me .pic { clip-path: inset(100% 0 0 0 round 32px); animation: wipe 1.1s var(--ease) 0.45s forwards; }
+@keyframes wipe { to { clip-path: inset(0 0 0 0 round 32px); } }
+
+.float {
+  position: absolute;
+  display: flex; align-items: center; gap: 0.65rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: var(--ink-2);
+  white-space: nowrap;
 }
-@keyframes drop {
-  0% { transform: scaleY(0); transform-origin: top; }
-  45% { transform: scaleY(1); transform-origin: top; }
-  55% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+.float b { display: block; color: var(--ink); font-size: 0.9375rem; font-weight: 600; }
+.float .ic {
+  display: grid; place-items: center;
+  width: 2.2rem; height: 2.2rem;
+  border-radius: 11px;
+  background: var(--accent-bg);
+  color: var(--accent);
 }
+.float.f1 { left: -2.25rem; top: 14%; }
+.float.f2 { right: -1.75rem; bottom: 12%; }
+.float.f2 .ic { background: #FFEDE7; color: #D9431F; }
+.js .float { animation: bob 6s ease-in-out infinite; }
+.js .float.f2 { animation-delay: -3s; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+/* --- Live now ------------------------------------------------------------- */
+.shipped {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.75rem;
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.shipped > span { font-size: 0.875rem; color: var(--ink-3); margin-right: 0.35rem; }
+.prod {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.4rem 0.95rem 0.4rem 0.4rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.prod:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.prod i {
+  display: grid; place-items: center;
+  width: 1.85rem; height: 1.85rem;
+  border-radius: 50%;
+  color: #fff;
+  font-style: normal;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.prod small { color: var(--ink-3); font-weight: 400; font-size: 0.8125rem; }
 
 /* --- Marquee -------------------------------------------------------------- */
 .ticker {
-  position: relative;
-  z-index: 1;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--panel);
   overflow: hidden;
-  padding: 0.85rem 0;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  padding: 1.1rem 0;
+  background: var(--ink);
+  color: #fff;
+  transform: rotate(-1deg);
+  margin: 0 -2rem;
 }
 .ticker ul {
   display: flex;
-  gap: 2.75rem;
+  gap: 2.25rem;
   list-style: none;
   margin: 0; padding: 0;
   width: max-content;
-  animation: slide 38s linear infinite;
+  animation: slide 42s linear infinite;
 }
 .ticker li {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-2);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.125rem;
   white-space: nowrap;
+  display: flex; align-items: center; gap: 2.25rem;
 }
-.ticker li::before { content: "◆"; color: var(--accent-d); margin-right: 2.75rem; }
+.ticker li::after { content: "✦"; color: var(--accent-2); font-size: 0.875rem; }
 @keyframes slide { to { transform: translateX(-50%); } }
-.ticker:hover ul { animation-play-state: paused; }
 
 /* ===========================================================================
    Sections
    =========================================================================== */
-section { padding: clamp(4.5rem, 12vh, 8rem) 0; }
+section { padding: clamp(3.5rem, 8vh, 5.5rem) 0; }
 
-.head {
-  display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(2rem, 5vh, 3.5rem);
-}
-.head .num {
-  font-family: var(--mono);
+.head { margin-bottom: clamp(2.25rem, 5vh, 3.5rem); max-width: 44rem; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 0.6rem;
   font-size: 0.8125rem;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-}
-.head h2 {
-  font-family: var(--sans);
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.kicker::before { content: ""; width: 1.5rem; height: 2px; border-radius: 2px; background: currentColor; }
+.head h2 {
+  font-family: var(--display);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+  line-height: 1.05;
+  font-size: clamp(2rem, 4.6vw, 3.25rem);
   margin: 0;
-  flex: 1;
 }
-.head .of { color: var(--text-3); font-size: 0.8125rem; font-family: var(--sans); }
+.head h2 em.s { color: var(--accent); }
+.head p { margin-top: 1rem; color: var(--ink-2); font-size: 1.125rem; }
 
-/* --- Profile -------------------------------------------------------------- */
-.profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); }
-.profile p { color: var(--text-2); font-size: 1.0625rem; }
-
-.spec { border-top: 1px solid var(--line); }
-.specrow {
-  display: grid;
-  grid-template-columns: 1.5rem 7rem 1fr;
-  gap: 0 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
+/* --- About ---------------------------------------------------------------- */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.about .copy p { color: var(--ink-2); font-size: 1.125rem; }
+.about .copy p:first-child {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--ink);
 }
-.specrow .i { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); padding-top: 0.35em; }
-.specrow .k { font-family: var(--sans); font-size: 0.8125rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--accent); padding-top: 0.3em; }
-.specrow .v { color: var(--text-2); font-size: 1rem; }
+
+.caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+.cap {
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.cap:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.cap h3 { font-family: var(--display); font-weight: 600; font-size: 1.1875rem; margin: 0.9rem 0 0.35rem; letter-spacing: -0.01em; }
+.cap p { font-size: 0.9688rem; color: var(--ink-2); line-height: 1.6; }
+
+.ico {
+  display: grid; place-items: center;
+  width: 2.75rem; height: 2.75rem;
+  border-radius: 14px;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+.ico svg { width: 1.3rem; height: 1.3rem; }
+.ico.t2 { background: #FFEDE7; color: #D9431F; }
+.ico.t3 { background: #E3F5EC; color: #0B7A4B; }
+.ico.t4 { background: #FFF4DC; color: #9A5200; }
 
 /* --- Work ----------------------------------------------------------------- */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
+.projects { display: grid; gap: clamp(1.25rem, 3vw, 2rem); }
 
-.card {
+/* Each shipped product gets a panel in its own colours. The variables below
+   are all a panel needs, so the dark one and the light ones share every rule. */
+.proj {
+  --p-bg: var(--surface);
+  --p-ink: var(--ink);
+  --p-ink-2: var(--ink-2);
+  --p-accent: var(--accent);
+  --p-line: var(--line);
+  --p-chip: rgba(15, 18, 34, 0.05);
+
   position: relative;
-  background: var(--panel);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  min-height: 21rem;
-  transition: background-color 0.4s var(--ease);
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 3.25rem);
+  border-radius: 30px;
+  background: var(--p-bg);
+  color: var(--p-ink);
   overflow: hidden;
+  isolation: isolate;
 }
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px transparent;
-  transition: box-shadow 0.4s var(--ease);
+.proj.flip { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.95fr); }
+.proj.flip .media { order: -1; }
+.proj.narrow { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.8fr); }
+.proj.narrow.flip { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr); }
+
+.proj.kaiora {
+  --p-bg: radial-gradient(ellipse 80% 90% at 85% 15%, #3B2A9C 0%, rgba(59, 42, 156, 0) 60%), radial-gradient(ellipse 60% 60% at 10% 100%, rgba(255, 138, 101, 0.22), transparent 70%), #0E0B26;
+  --p-ink: #FFFFFF;
+  --p-ink-2: #CFCBEF;
+  --p-accent: #B9AEFF;
+  --p-line: rgba(255, 255, 255, 0.13);
+  --p-chip: rgba(255, 255, 255, 0.08);
 }
-@media (hover: hover) {
-  .card:hover { background: var(--panel-2); }
-  .card:hover::after { box-shadow: inset 0 0 0 1px var(--accent-d); }
+.proj.wayzos {
+  --p-bg: radial-gradient(ellipse 70% 80% at 0% 0%, #D3F1E2 0%, transparent 60%), #EAF7F0;
+  --p-ink: #0A2118;
+  --p-ink-2: #2D4A3E;
+  --p-accent: #0A7149;
+  --p-line: rgba(10, 113, 73, 0.16);
+  --p-chip: rgba(10, 113, 73, 0.07);
+}
+.proj.brainic {
+  --p-bg: radial-gradient(ellipse 70% 80% at 100% 100%, #FFD9B8 0%, transparent 60%), #FFF2E6;
+  --p-ink: #24150A;
+  --p-ink-2: #574333;
+  --p-accent: #A8410A;
+  --p-line: rgba(168, 65, 10, 0.16);
+  --p-chip: rgba(168, 65, 10, 0.07);
 }
 
-.card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.card h3 {
-  font-family: var(--sans);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 1.375rem;
+.proj .txt { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.proj .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; font-size: 0.8125rem; color: var(--p-ink-2); }
+.proj h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4.4vw, 3rem);
+  letter-spacing: -0.035em;
+  line-height: 1;
   margin: 0;
 }
-.card p { color: var(--text-2); font-size: 1rem; }
+.proj .tagline { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.55rem); line-height: 1.3; color: var(--p-accent); margin: -0.25rem 0 0; }
+.proj p { color: var(--p-ink-2); }
 
 .chip {
-  font-family: var(--sans);
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--line-2);
-  color: var(--text-3);
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.chip::before {
-  content: "";
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: currentColor;
-}
-.chip.live { color: var(--live); border-color: rgba(18, 122, 75, 0.35); background: rgba(18, 122, 75, 0.06); }
-.chip.wip  { color: var(--wip);  border-color: rgba(154, 82, 0, 0.3); background: rgba(154, 82, 0, 0.06); }
-
-.stack {
-  display: flex; flex-wrap: wrap; gap: 0.35rem;
-  list-style: none; margin: auto 0 0; padding: 0.85rem 0 0;
-  border-top: 1px solid var(--line);
-}
-.stack li {
-  font-family: var(--sans);
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
   font-size: 0.75rem;
-  letter-spacing: 0.03em;
-  color: var(--text-3);
-  border: 1px solid var(--line);
-  padding: 0.18rem 0.45rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
+.chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.chip.live { color: #0B7A4B; background: #DDF4E8; }
+.kaiora .chip.live { color: #7EE2B0; background: rgba(126, 226, 176, 0.12); }
+.chip.wip { color: var(--wip); background: #FFF0D6; }
 
-.gos { display: flex; flex-wrap: wrap; gap: 1.25rem; }
-.go {
-  display: inline-flex; align-items: center; gap: 0.45rem;
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 0.8125rem;
-  letter-spacing: 0.03em;
-  min-height: 2rem;
-}
-.go svg { width: 0.85em; height: 0.85em; transition: transform 0.35s var(--ease); }
-.card:hover .go svg { transform: translate(3px, -3px); }
-
-/* Brainic's real game tiles, floating on a slow loop. The only ornament on
-   the page, and it is made of the actual product. */
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  margin: 0.25rem 0 0.5rem;
-}
-.tiles img {
-  width: 100%; height: auto;
-  display: block;
-  border-radius: 9px;
-}
-.js .tiles img { animation: float 5.5s var(--ease) infinite; animation-delay: calc(var(--t) * 240ms); }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-
-/* Shipped products take the full row, with a picture of the real thing beside
-   the words. Captioned like a figure, because this is still a spec sheet. */
-.cards.work { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.card.feat {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
-  gap: clamp(1.5rem, 4vw, 3.25rem);
-  align-items: center;
-  min-height: 0;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-}
-.card.feat.flip { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
-.card.feat.flip .frame { order: -1; }
-/* A phone is tall; give it a narrower column so it sits at the same height. */
-.card.feat.narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 25rem); }
-.card.feat.narrow.flip { grid-template-columns: minmax(0, 25rem) minmax(0, 1fr); }
-.feat .txt { display: flex; flex-direction: column; gap: 0.85rem; min-width: 0; }
-.feat .stack { margin-top: 0.25rem; }
-.cards.work .card:not(.feat) { min-height: 16rem; }
-
-.frame {
-  margin: 0;
-  border: 1px solid var(--line);
-  background: var(--panel-2);
-  overflow: hidden;
-}
-.frame > img { display: block; width: 100%; height: auto; transition: transform 0.9s var(--ease); }
-@media (hover: hover) { .card.feat:hover .frame > img { transform: scale(1.025); } }
-.frame figcaption {
-  display: flex; justify-content: space-between; gap: 1rem;
-  padding: 0.55rem 0.8rem;
-  border-top: 1px solid var(--line);
-  background: var(--panel);
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  color: var(--text-3);
-}
-.frame figcaption b { font-weight: 500; color: var(--accent); }
-.frame .tiles { padding: clamp(1rem, 3vw, 1.75rem); margin: 0; gap: 0.75rem; }
-
-.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-.points li {
-  position: relative;
-  padding-left: 1.1rem;
-  color: var(--text-2);
-  font-size: 0.9375rem;
-}
+.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.points li { position: relative; padding-left: 1.75rem; color: var(--p-ink-2); font-size: 1rem; line-height: 1.6; }
 .points li::before {
   content: "";
-  position: absolute; left: 0; top: 0.62em;
-  width: 6px; height: 6px;
-  background: var(--accent);
+  position: absolute; left: 0; top: 0.3em;
+  width: 1.1rem; height: 1.1rem;
+  border-radius: 50%;
+  background: var(--p-chip);
+  box-shadow: inset 0 0 0 1px var(--p-line);
+}
+.points li::after {
+  content: "";
+  position: absolute; left: 0.36rem; top: calc(0.3em + 0.3rem);
+  width: 0.38rem; height: 0.22rem;
+  border-left: 2px solid var(--p-accent);
+  border-bottom: 2px solid var(--p-accent);
+  transform: rotate(-45deg);
 }
 
-/* Redacted. Two products are still unannounced, and a portfolio is not the
-   place to give them away — so the page says exactly that, visually. */
-.redact { display: flex; flex-direction: column; gap: 0.45rem; margin: 0.25rem 0 0.35rem; }
-.redact span {
-  height: 0.7rem;
-  background: repeating-linear-gradient(
-    -45deg, var(--line-2) 0 6px, transparent 6px 12px
-  );
-  border: 1px solid var(--line);
+.gos { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.go {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  min-height: 2.6rem;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  font-size: 0.9063rem;
+  font-weight: 500;
+  border: 1px solid var(--p-line);
+  color: var(--p-ink);
+  transition: background-color 0.25s, transform 0.25s var(--ease);
 }
-.redact span:nth-child(1) { width: 86%; }
-.redact span:nth-child(2) { width: 64%; }
-.redact span:nth-child(3) { width: 74%; }
-.sealed { color: var(--text-3); font-size: 0.875rem; font-style: italic; }
+.go:hover { background: var(--p-chip); transform: translateY(-2px); }
+.go.pri { background: var(--p-ink); color: var(--p-bg-solid, #fff); border-color: var(--p-ink); }
+.kaiora .go.pri { color: #0E0B26; }
+.go.pri:hover { background: var(--p-accent); border-color: var(--p-accent); color: #fff; }
+.kaiora .go.pri:hover { color: #0E0B26; }
+.go svg { width: 0.9em; height: 0.9em; transition: transform 0.25s var(--ease); }
+.go:hover svg { transform: translate(2px, -2px); }
 
-/* Case study, folded into the card so the grid stays even until it is asked for. */
-.case { border-top: 1px solid var(--line); padding-top: 0.75rem; }
+.stack { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
+.stack li {
+  font-size: 0.8125rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 8px;
+  background: var(--p-chip, rgba(15, 18, 34, 0.05));
+  color: var(--p-ink-2, var(--ink-2));
+}
+
+/* Case study, folded so the panel stays a showcase until it is asked for. */
+.case { border-top: 1px solid var(--p-line); padding-top: 0.6rem; }
 .case summary {
   cursor: pointer;
   list-style: none;
-  font-family: var(--sans);
-  font-size: 0.8125rem;
-  letter-spacing: 0.03em;
-  color: var(--text);
-  display: flex; align-items: center; gap: 0.5rem;
-  min-height: 2rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  display: flex; align-items: center; gap: 0.55rem;
+  min-height: 2.25rem;
 }
 .case summary::-webkit-details-marker { display: none; }
-.case summary::before { content: "+"; color: var(--accent); width: 0.8em; }
-.case[open] summary::before { content: "−"; }
-.case dl { margin: 0.6rem 0 0; display: grid; gap: 0.65rem; }
-.case dt { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
-.case dd { margin: 0.15rem 0 0; color: var(--text-2); font-size: 0.9375rem; }
+.case summary::before {
+  content: "+";
+  display: grid; place-items: center;
+  width: 1.4rem; height: 1.4rem;
+  border-radius: 50%;
+  background: var(--p-chip);
+  color: var(--p-accent);
+  font-weight: 500;
+  transition: transform 0.3s var(--ease);
+}
+.case[open] summary::before { transform: rotate(45deg); }
+.case dl { margin: 0.5rem 0 0.25rem; display: grid; gap: 0.75rem; }
+.case dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--p-accent); }
+.case dd { margin: 0.15rem 0 0; color: var(--p-ink-2); font-size: 0.9688rem; }
+
+.media { margin: 0; position: relative; min-width: 0; }
+.media img { display: block; width: 100%; height: auto; border-radius: 18px; transition: transform 0.9s var(--ease); }
+.kaiora .media img { box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.wayzos .media img { box-shadow: var(--shadow-lg), 0 0 0 1px var(--p-line); }
+@media (hover: hover) { .proj:hover .media img { transform: translateY(-6px) scale(1.01); } }
+.media figcaption { margin-top: 0.85rem; font-size: 0.8125rem; color: var(--p-ink-2); text-align: center; }
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.6rem, 1.6vw, 1rem);
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+}
+.tiles img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: 0 14px 26px -14px rgba(90, 40, 0, 0.45); }
+.js .tiles img { animation: float 5.5s ease-in-out infinite; animation-delay: calc(var(--t) * 260ms); }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-7px) rotate(-1.5deg); } }
+
+/* --- In the works ------------------------------------------------------- */
+.soon-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; margin: clamp(3rem, 7vh, 4.5rem) 0 1.25rem; }
+.soon-h h3 { font-family: var(--display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; margin: 0; white-space: nowrap; }
+.soon-h span { color: var(--ink-3); font-size: 0.9375rem; }
+.soon { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.mini {
+  display: flex; flex-direction: column; gap: 0.8rem;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.mini:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.mini-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.mini h4 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.02em; margin: 0; }
+.mini p { color: var(--ink-2); font-size: 1rem; line-height: 1.6; }
+.mini .stack { margin-top: auto; padding-top: 0.4rem; }
+
+/* Redacted. Two products are still unannounced, and a portfolio is not the
+   place to give them away — so the page says exactly that, visually. */
+.redact { display: flex; flex-direction: column; gap: 0.5rem; }
+.redact span {
+  height: 0.75rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--surface-2) 0%, #E6E2D9 50%, var(--surface-2) 100%);
+  background-size: 200% 100%;
+}
+.js .redact span { animation: shimmer 2.4s linear infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+.redact span:nth-child(1) { width: 88%; }
+.redact span:nth-child(2) { width: 64%; }
+.redact span:nth-child(3) { width: 76%; }
+.sealed { color: var(--ink-3); font-size: 0.9375rem; font-style: italic; }
 
 .note {
-  margin-top: 1.5rem;
-  padding: 1.1rem 1.35rem;
-  border: 1px solid var(--line);
-  border-left: 2px solid var(--accent);
-  background: var(--panel);
-  max-width: 48rem;
+  display: flex; gap: 1.1rem; align-items: flex-start;
+  margin-top: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--accent-bg);
 }
-.note b { display: block; font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.35rem; }
-.note p { color: var(--text-2); font-size: 1rem; }
+.note b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.125rem; margin-bottom: 0.2rem; }
+.note p { color: var(--ink-2); font-size: 1rem; }
+.note .ico { background: var(--surface); }
 
 /* --- Services ------------------------------------------------------------- */
-.cards.svc .card { min-height: 0; }
-/* Seven cards leave the last one alone at both two and three columns; let it
-   take the row instead of leaving a grey hole beside it. */
-.cards.svc .card:last-child { grid-column: 1 / -1; }
-.card .n0 { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
-.cards.svc .go { margin-top: auto; padding-top: 0.5rem; min-height: 2rem; }
+.svc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.svc a {
+  display: flex; flex-direction: column; gap: 0.6rem;
+  padding: 1.6rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+}
+.svc a:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.svc h3 { font-family: var(--display); font-weight: 600; font-size: 1.25rem; letter-spacing: -0.015em; margin: 0.55rem 0 0; line-height: 1.25; }
+.svc p { color: var(--ink-2); font-size: 1rem; line-height: 1.6; }
+.svc .more {
+  margin-top: auto; padding-top: 0.6rem;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.9063rem; font-weight: 500; color: var(--accent);
+}
+.svc .more svg { width: 0.95em; height: 0.95em; transition: transform 0.25s var(--ease); }
+.svc a:hover .more svg { transform: translateX(4px); }
+/* Seven services: the last takes the row, set as a wide banner. */
+.svc a:last-child {
+  grid-column: 1 / -1;
+  flex-direction: row; align-items: center; gap: 1.25rem;
+  background: linear-gradient(120deg, #FFF1EC, #F1EFFF);
+  border-color: transparent;
+}
+.svc a:last-child h3 { margin: 0; }
+.svc a:last-child .more { margin: 0 0 0 auto; padding: 0; white-space: nowrap; }
 
 /* --- Experience ----------------------------------------------------------- */
-.rail { position: relative; padding-left: 1.75rem; }
-.rail::before {
-  content: "";
-  position: absolute;
-  left: 3px; top: 0.6rem; bottom: 0.6rem;
-  width: 1px;
-  background: linear-gradient(var(--accent-d), var(--line));
+.jobs { position: relative; display: grid; gap: 1.1rem; }
+.job {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
 }
-.stop { position: relative; padding: 0 0 2.5rem; }
-.stop:last-child { padding-bottom: 0; }
-.stop::before {
+.job-id { display: flex; flex-direction: column; gap: 0.55rem; align-items: flex-start; position: sticky; top: 6rem; align-self: start; }
+.logo {
+  display: grid; place-items: center;
+  width: 3rem; height: 3rem;
+  border-radius: 14px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+.job h3 { font-family: var(--display); font-weight: 700; font-size: 1.4rem; letter-spacing: -0.02em; margin: 0; line-height: 1.15; }
+.job .co { color: var(--ink-3); font-size: 0.9063rem; margin: 0; }
+.when {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.post + .post { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dashed var(--line-2); }
+.post-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 1rem; }
+.role { font-family: var(--display); font-weight: 600; font-size: 1.1875rem; color: var(--accent); margin: 0; letter-spacing: -0.01em; }
+.pts { margin: 0.75rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+.pts li { position: relative; padding-left: 1.3rem; color: var(--ink-2); font-size: 1rem; line-height: 1.6; }
+.pts li::before {
   content: "";
-  position: absolute;
-  left: -1.75rem; top: 0.55rem;
+  position: absolute; left: 0.1rem; top: 0.62em;
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--void), 0 0 14px var(--glow);
+  background: var(--accent-2);
 }
-.stop-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 1rem; justify-content: space-between; }
-.stop h3 {
-  font-family: var(--sans);
-  font-weight: 600; font-size: 1.25rem; margin: 0; letter-spacing: -0.02em;
-}
-.stop .when { font-family: var(--sans); font-size: 0.8125rem; color: var(--text-3); white-space: nowrap; }
-.stop .role { color: var(--accent); font-size: 1rem; margin: 0.15rem 0 0.75rem; font-family: var(--sans); }
-.stop p { color: var(--text-2); font-size: 1rem; max-width: 44rem; }
-.stop .co { color: var(--text-3); font-size: 0.875rem; margin: 0.1rem 0 0; }
-/* One company, several roles: each role gets its own title, dates and points. */
-.post { margin-top: 1rem; }
-.post-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 1rem; }
-.post-top .role { margin: 0; }
-.pts { margin: 0.6rem 0 0; padding: 0 0 0 1.1rem; max-width: 44rem; }
-.pts li { color: var(--text-2); font-size: 1rem; margin-bottom: 0.4rem; }
-.pts li::marker { color: var(--accent-d); }
+.pts b { color: var(--ink); font-weight: 600; }
 
 /* --- Process -------------------------------------------------------------- */
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
   counter-reset: s;
+  list-style: none; margin: 0; padding: 0;
 }
-.step { background: var(--panel); padding: 1.35rem; counter-increment: s; }
+.step {
+  position: relative;
+  padding: 1.4rem 1.4rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  counter-increment: s;
+  overflow: hidden;
+}
 .step::before {
   content: counter(s, decimal-leading-zero);
   display: block;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 2.6rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.9rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.step b { display: block; font-family: var(--sans); font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
-.step span { color: var(--text-2); font-size: 0.9375rem; }
+.step b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.1875rem; margin-bottom: 0.2rem; }
+.step span { color: var(--ink-2); font-size: 0.9688rem; line-height: 1.55; }
 
 /* --- Stack ---------------------------------------------------------------- */
-.groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem 3rem; }
-.group h3 {
-  font-family: var(--sans);
-  font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase;
-  color: var(--accent); font-weight: 500; margin: 0 0 0.75rem;
-  padding-bottom: 0.6rem; border-bottom: 1px solid var(--line);
+.groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.group {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
 }
+.group h3 { display: flex; align-items: center; gap: 0.75rem; font-family: var(--display); font-weight: 600; font-size: 1.1875rem; margin: 0 0 1rem; }
+.group h3 .ico { width: 2.3rem; height: 2.3rem; border-radius: 12px; }
+.group h3 .ico svg { width: 1.1rem; height: 1.1rem; }
 .group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.group li { font-size: 0.875rem; color: var(--text-2); }
-.group li::after { content: "·"; color: var(--line-2); margin-left: 0.4rem; }
-.group li:last-child::after { content: ""; }
+.group li {
+  font-size: 0.875rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  transition: background-color 0.2s, color 0.2s;
+}
+.group li:hover { background: var(--accent-bg); color: var(--accent); }
 
 /* --- Contact -------------------------------------------------------------- */
-.cta { max-width: 40rem; }
+.cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(2rem, 6vw, 4.5rem);
+  border-radius: 36px;
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(124, 58, 237, 0.55), transparent 65%),
+    radial-gradient(ellipse 50% 70% at 0% 100%, rgba(255, 107, 74, 0.35), transparent 70%),
+    #110E2A;
+  color: #fff;
+  overflow: hidden;
+}
+.cta .badge { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.14); color: #E4E1FA; box-shadow: none; }
 .cta h2 {
-  font-family: var(--sans);
-  font-weight: 600; letter-spacing: -0.03em;
-  font-size: clamp(2rem, 6vw, 3.75rem);
-  line-height: 1.02; margin: 0 0 1.25rem;
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  font-size: clamp(2.25rem, 5.6vw, 4rem);
+  line-height: 1.02;
+  margin: 1.25rem 0 1.25rem;
 }
-.cta h2 s { text-decoration: none; color: var(--accent); }
-.cta p { color: var(--text-2); font-size: 1.0625rem; margin-bottom: 2.25rem; }
+.cta h2 em.s { color: #FFB39F; }
+.cta p { color: #CFCBEF; font-size: 1.0625rem; }
+.cta p b { color: #fff; font-weight: 600; }
 
-.links { display: flex; flex-wrap: wrap; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.links a {
-  flex: 1 1 14rem;
-  background: var(--panel);
-  padding: 1.15rem 1.35rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+.links { display: grid; gap: 0.75rem; align-content: center; }
+.links a, .links button {
+  display: flex; align-items: center; gap: 1rem;
+  width: 100%;
+  padding: 1.05rem 1.2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.25s var(--ease), border-color 0.25s;
 }
-.links a:hover { background: var(--panel-2); color: var(--accent); }
-.links .k { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
-.links .v { font-size: 1rem; }
+.links a:hover, .links button:hover { background: rgba(255, 255, 255, 0.12); transform: translateX(4px); border-color: rgba(255, 255, 255, 0.24); }
+.links .ic {
+  display: grid; place-items: center;
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  flex: none;
+}
+.links .ic svg { width: 1.2rem; height: 1.2rem; }
+.links .k { display: block; font-size: 0.8125rem; color: #B9B4DE; }
+.links .v { display: block; font-weight: 500; font-size: 1rem; word-break: break-all; }
+.links .end { margin-left: auto; opacity: 0.6; flex: none; }
+.links a.mail { background: #fff; color: var(--ink); border-color: #fff; }
+.links a.mail .k { color: var(--ink-3); }
+.links a.mail .ic { background: var(--accent-bg); color: var(--accent); }
+.links a.mail:hover { background: #fff; }
 
-footer {
-  border-top: 1px solid var(--line);
-  padding: 2rem 0 3rem;
-  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between;
+footer { padding: 2.5rem 0 3rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: space-between; align-items: center; }
+footer p { font-size: 0.875rem; color: var(--ink-3); margin: 0; }
+footer a:hover { color: var(--accent); }
+
+#toast {
+  position: fixed;
+  left: 50%; bottom: 1.5rem;
+  transform: translate(-50%, 1rem);
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.9063rem;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  z-index: 70;
 }
-footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); margin: 0; }
+#toast.on { opacity: 1; transform: translate(-50%, 0); }
 
 /* ===========================================================================
    Reveal
    =========================================================================== */
-.js [data-r] { opacity: 0; transform: translateY(16px); }
+.js [data-r] { opacity: 0; transform: translateY(22px); }
 .js [data-r].in {
   opacity: 1; transform: none;
-  transition: opacity 0.75s var(--ease) calc(var(--i, 0) * 65ms),
-              transform 0.75s var(--ease) calc(var(--i, 0) * 65ms);
+  transition: opacity 0.8s var(--ease) calc(var(--i, 0) * 70ms),
+              transform 0.8s var(--ease) calc(var(--i, 0) * 70ms);
 }
 
 /* --- Narrow --------------------------------------------------------------- */
-@media (max-width: 62rem) {
-  .profile { grid-template-columns: 1fr; }
-  .cards.work { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cards.work > .card:last-child { grid-column: 1 / -1; }
-  .card.feat, .card.feat.flip, .card.feat.narrow, .card.feat.narrow.flip { grid-template-columns: minmax(0, 1fr); }
-  .card.feat .frame { order: -1; }
-  .card.feat.narrow .frame { width: min(100%, 26rem); justify-self: center; }
+@media (max-width: 64rem) {
+  .nav ul { display: none; }
+  .svc, .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .job { grid-template-columns: minmax(0, 1fr); }
+  .job-id { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem; }
+  .job-id .logo { margin: 0; }
+  .job-id > div { flex: 1 1 10rem; }
 }
-@media (max-width: 40rem) {
-  .cards.work { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 56rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .me { width: min(78%, 20rem); order: -1; }
+  .float.f1 { left: -1.25rem; }
+  .float.f2 { right: -1.25rem; }
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .proj, .proj.flip, .proj.narrow, .proj.narrow.flip { grid-template-columns: minmax(0, 1fr); }
+  .proj .media { order: -1; }
+  .proj.narrow .media { width: min(100%, 24rem); justify-self: center; }
+  .soon { grid-template-columns: minmax(0, 1fr); }
+  .cta { grid-template-columns: minmax(0, 1fr); }
 }
-@media (max-width: 48rem) {
-  .hero-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-  .shot { width: min(8.5rem, 36vw); order: -1; }
-  /* On a phone the buttons come straight after who and what, before the
-     longer paragraph, so they are on the first screen. */
-  .hero-grid > div { display: flex; flex-direction: column; }
-  .hero-grid .lede { order: 2; }
-  .hero-grid .stats { order: 3; }
-  .hero-grid .cue { order: 4; }
-  .hero-grid .btns { order: 1; }
-  .shot figcaption { display: none; }
-  .stats { max-width: none; }
-  .stat { padding: 0.9rem 1rem; }
-  .specrow { grid-template-columns: 1.5rem 1fr; }
-  .specrow .k { grid-column: 2; padding-top: 0; }
-  .specrow .v { grid-column: 2; }
+@media (max-width: 36rem) {
+  body { font-size: 1rem; }
+  .nav .brand span { display: none; }
+  .svc, .groups, .caps { grid-template-columns: minmax(0, 1fr); }
+  .svc a:last-child { flex-direction: column; align-items: flex-start; }
+  .svc a:last-child .more { margin: 0; }
+  .steps { gap: 0.6rem; }
+  .step { padding: 1.1rem; }
+  .step::before { font-size: 1.9rem; margin-bottom: 0.6rem; }
+  .step span { font-size: 0.9063rem; }
+  .stats { gap: 0.5rem; }
+  .stat { padding: 0.85rem 0.8rem; }
+  .float { font-size: 0.75rem; padding: 0.5rem 0.7rem; }
+  .float b { font-size: 0.8438rem; }
+  .float .ic { width: 1.9rem; height: 1.9rem; }
+  .btns .btn { flex: 1 1 auto; }
+  .tiles { grid-template-columns: repeat(4, 1fr); padding: 0; }
+  .tiles img { border-radius: 12px; }
+  .cta { border-radius: 26px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .line > span { transform: none; animation: none; }
-  .js .shot img { clip-path: none; animation: none; }
+  .js .me .pic { clip-path: none; animation: none; }
   .js [data-r] { opacity: 1; transform: none; transition: none; }
-  .ticker ul, .js .tiles img, .cue i, .caret { animation: none; }
-  #spot { display: none; }
+  .ticker ul, .js .tiles img, .js .float, .pulse::after, .js .redact span { animation: none; }
 }
 </style>
 </head>
@@ -844,73 +1030,120 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <body>
 
 <div id="bar"></div>
-<div id="spot"></div>
+<div class="glow" aria-hidden="true"></div>
+
+<!-- Icons, drawn once and reused with <use>. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 11.5l7-7M6 4.5h5.5V10"/></symbol>
+    <symbol id="i-right" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 000-7H8a3.5 3.5 0 010-7h7.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></symbol>
+    <symbol id="i-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="15" rx="2.5"/><path d="M2.5 8.5h19M6 6.3h.01M8.5 6.3h.01"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></symbol>
+    <symbol id="i-board" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3.5" width="18" height="17" rx="2.5"/><path d="M9 3.5v17M15 3.5v17M5.5 7.5h1.5M11 7.5h2M11 11h2M17 7.5h1.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="13" rx="5"/><path d="M9.5 7a2.5 2.5 0 015 0M12 11v9M3 13h4M17 13h4M4 7.5l3 2M20 7.5l-3 2M4 19l3-2M20 19l-3-2"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4a1 1 0 001 1h3l6 4V5L7 9H4a1 1 0 00-1 1zM17 9a4 4 0 010 6M19.5 6.5a7.5 7.5 0 010 11"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.1 2.1 0 00-2.9-.1z"/><path d="M12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></symbol>
+    <symbol id="i-gh" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2.5"/><path d="M16 8V5.5A2.5 2.5 0 0013.5 3h-8A2.5 2.5 0 003 5.5v8A2.5 2.5 0 005.5 16H8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.6a3.5 3.5 0 010 6.8M21.5 20a6.5 6.5 0 00-4-6"/></symbol>
+  </defs>
+</svg>
 
 <!-- ======================================================================= -->
-<header class="hero">
+<nav class="nav" id="nav" aria-label="Main">
   <div class="wrap">
+    <a class="brand" href="#top" aria-label="Muhammad Saad Bawany, back to top"><i>SB</i><span>Saad Bawany</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#stack">Stack</a></li>
+    </ul>
+    <a class="btn pri sm" href="#contact">Let's talk</a>
+  </div>
+</nav>
 
-    <div class="topline tag">
-      <span>Karachi, Pakistan</span>
-      <span>Open to work</span>
-    </div>
-
+<!-- ======================================================================= -->
+<header class="hero" id="top">
+  <div class="wrap">
     <div class="hero-grid">
       <div>
-        <p class="hello">Hi, I'm <b>Muhammad Saad Bawany</b></p>
+        <span class="badge" data-r><span class="pulse"></span>Open to work · Karachi, Pakistan</span>
 
-        <h1 class="dsp">
-          <span class="line" style="--i:0"><span>BUILDING</span></span>
-          <span class="line" style="--i:1"><span>PRODUCTS</span></span>
-          <span class="line" style="--i:2"><span class="dim">FROM IDEA</span></span>
-          <span class="line" style="--i:3"><span class="dim">TO SHIP.</span></span>
+        <p class="hello" data-r style="--i:1">Hi, I'm <b>Muhammad Saad Bawany</b> 👋</p>
+
+        <h1>
+          <span class="line" style="--i:0"><span>Building products</span></span>
+          <span class="line" style="--i:1"><span>from <em class="s">idea</em> to <em class="s c2">ship.</em></span></span>
         </h1>
 
-        <p class="roles" data-r style="--i:4">
-          Software Engineer · Technical Project Manager · Product Manager.
-          <span>Based in Karachi. Open to full-time roles (onsite, hybrid or remote) and select freelance projects.</span>
-        </p>
+        <ul class="roles" data-r style="--i:3">
+          <li>Software Engineer</li><li>Technical Project Manager</li><li>Product Manager</li>
+        </ul>
 
-        <p class="lede" data-r style="--i:5">
-          5+ years across <b>React</b>, <b>React Native</b> and <b>JavaScript</b>
-          — spent as much on requirements, planning and QA as on the code.
+        <p class="lede" data-r style="--i:4">
+          5+ years across <b>React</b>, <b>React Native</b> and <b>JavaScript</b>,
+          spent as much on requirements, planning and QA as on the code.
           I don't hand a build over and hope; I get it out the door.
+          Open to full-time roles (onsite, hybrid or remote) and select freelance projects.
         </p>
 
-        <div class="btns" data-r style="--i:6">
-          <a class="btn pri" href="#contact">Contact me</a>
-          <a class="btn" href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener">
-            LinkedIn
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg>
-          </a>
+        <div class="btns" data-r style="--i:5">
+          <a class="btn pri" href="#contact">Contact me <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn" href="#work">See my work</a>
+          <a class="btn" href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-in"/></svg> LinkedIn</a>
         </div>
 
         <!-- The final values are in the markup, so they read correctly with no
              script at all. The script only animates up to them. -->
-        <div class="stats" data-r style="--i:7">
+        <div class="stats" data-r style="--i:6">
           <div class="stat">
             <div class="n"><span data-count="5">5</span><s>+</s></div>
-            <div class="k tag">Years</div>
+            <div class="k">Years building</div>
           </div>
           <div class="stat">
             <div class="n"><span data-count="6">6</span></div>
-            <div class="k tag">Products</div>
+            <div class="k">Products</div>
           </div>
           <div class="stat">
             <div class="n"><span data-count="6">6</span><s>w</s></div>
-            <div class="k tag">Fastest MVP</div>
+            <div class="k">Fastest MVP</div>
           </div>
         </div>
-
-        <div class="cue" aria-hidden="true"><i></i> Scroll</div>
       </div>
 
-      <figure class="shot" data-r style="--i:4">
-        <img src="assets/portrait.jpg" alt="Portrait of Muhammad Saad Bawany" width="600" height="600">
-        <figcaption class="mono">Fig. 01 — the engineer</figcaption>
+      <figure class="me" data-r style="--i:2">
+        <div class="pic">
+          <img src="assets/portrait.jpg" alt="Portrait of Muhammad Saad Bawany" width="600" height="600">
+        </div>
+        <div class="float f1">
+          <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
+          <span><b>React · React Native</b>iOS, Android &amp; web</span>
+        </div>
+        <div class="float f2">
+          <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-rocket"/></svg></span>
+          <span><b>Idea to MVP</b>in 6 weeks</span>
+        </div>
       </figure>
     </div>
 
+    <div class="shipped" data-r style="--i:7">
+      <span>Live now</span>
+      <a class="prod" href="https://kaiora.co/" target="_blank" rel="noopener"><i style="background:linear-gradient(135deg,#5B3DF5,#8B5CF6)">K</i>Kaiora <small>salon software</small></a>
+      <a class="prod" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener"><i style="background:linear-gradient(135deg,#0F9D63,#34C38F)">W</i>Wayzos <small>carpooling</small></a>
+      <a class="prod" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener"><i style="background:linear-gradient(135deg,#F97316,#FBBF24)">B</i>Brainic <small>mind games</small></a>
+    </div>
   </div>
 </header>
 
@@ -926,24 +1159,25 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <!-- ======================================================================= -->
 <main>
 
-<section id="profile">
+<section id="about">
   <div class="wrap">
     <div class="head" data-r>
-      <span class="num">01</span>
-      <h2>Profile</h2>
-      <span class="of">/ where I sit</span>
+      <div class="kicker">About</div>
+      <h2>Engineer and delivery lead, <em class="s">at the same time.</em></h2>
     </div>
 
-    <div class="profile">
-      <div data-r>
+    <div class="about">
+      <div class="copy" data-r>
         <p>
           I'm a Software Engineer who also leads delivery and builds products,
           currently Implementation Manager and Lead Frontend Engineer at
-          5StarDesigners. I don't describe
-          myself as purely a developer or purely a project manager, because in
-          practice I've never been able to do one without the other — the
-          requirements decide the architecture, and the architecture decides
-          what's realistic to promise.
+          5StarDesigners.
+        </p>
+        <p>
+          I don't describe myself as purely a developer or purely a project
+          manager, because in practice I've never been able to do one without
+          the other. The requirements decide the architecture, and the
+          architecture decides what's realistic to promise.
         </p>
         <p>
           So I work the whole path: turning an idea into something a team can
@@ -957,22 +1191,26 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
         </p>
       </div>
 
-      <div class="spec">
-        <div class="specrow" data-r style="--i:0">
-          <span class="i">01</span><span class="k">Engineering</span>
-          <span class="v">React, React Native and JavaScript. Mobile and web, API integration, performance work, and mentoring the developers around me.</span>
+      <div class="caps">
+        <div class="cap" data-r style="--i:0">
+          <span class="ico"><svg aria-hidden="true"><use href="#i-code"/></svg></span>
+          <h3>Engineering</h3>
+          <p>React, React Native and JavaScript. Mobile and web, API integration, performance work, and mentoring the developers around me.</p>
         </div>
-        <div class="specrow" data-r style="--i:1">
-          <span class="i">02</span><span class="k">Product</span>
-          <span class="v">Requirements into user stories, architecture, and an MVP scope that says what stays out of V1 as clearly as what goes in.</span>
+        <div class="cap" data-r style="--i:1">
+          <span class="ico t2"><svg aria-hidden="true"><use href="#i-compass"/></svg></span>
+          <h3>Product</h3>
+          <p>Requirements into user stories, architecture, and an MVP scope that says what stays out of V1 as clearly as what goes in.</p>
         </div>
-        <div class="specrow" data-r style="--i:2">
-          <span class="i">03</span><span class="k">Delivery</span>
-          <span class="v">Planning, estimation, dependencies, team coordination and release — keeping the work aligned with what was actually asked for.</span>
+        <div class="cap" data-r style="--i:2">
+          <span class="ico t3"><svg aria-hidden="true"><use href="#i-route"/></svg></span>
+          <h3>Delivery</h3>
+          <p>Planning, estimation, dependencies, team coordination and release, keeping the work aligned with what was actually asked for.</p>
         </div>
-        <div class="specrow" data-r style="--i:3">
-          <span class="i">04</span><span class="k">Quality</span>
-          <span class="v">Hands-on manual QA: functional, regression, mobile, performance, edge cases. Not "does the feature work" but "does the journey work".</span>
+        <div class="cap" data-r style="--i:3">
+          <span class="ico t4"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+          <h3>Quality</h3>
+          <p>Hands-on manual QA: functional, regression, mobile, performance, edge cases. Not "does the feature work" but "does the journey work".</p>
         </div>
       </div>
     </div>
@@ -983,19 +1221,18 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <section id="work">
   <div class="wrap">
     <div class="head" data-r>
-      <span class="num">02</span>
-      <h2>Work</h2>
-      <span class="of">/ 06 products</span>
+      <div class="kicker">Selected work</div>
+      <h2>Products I've <em class="s">shipped.</em></h2>
+      <p>Three live, three on the way. Real screens from the real products.</p>
     </div>
 
-    <div class="cards work">
+    <div class="projects">
 
-      <article class="card feat" data-r style="--i:0">
+      <article class="proj kaiora" data-r>
         <div class="txt">
-          <div class="card-top">
-            <h3>Kaiora</h3>
-            <span class="chip live">Live</span>
-          </div>
+          <div class="meta"><span class="chip live">Live</span><span>SaaS · Web</span></div>
+          <h3>Kaiora</h3>
+          <p class="tagline">Run your salon, beautifully.</p>
           <p>Booking and front-desk software for salons, barbers, spas and independent pros. Every booking lands in one calendar, reminders cut no-shows, and loyalty brings clients back.</p>
           <ul class="points">
             <li>A booking page that looks like the business: ten templates, prices, team, gallery and map.</li>
@@ -1004,27 +1241,25 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
           </ul>
           <!-- TODO [ADD]: My role and a real result (salons signed up, bookings taken). Only if real. -->
           <div class="gos">
-            <a class="go" href="https://kaiora.co/" target="_blank" rel="noopener">KAIORA.CO <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+            <a class="go pri" href="https://kaiora.co/" target="_blank" rel="noopener">Visit kaiora.co <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
           <ul class="stack"><li>SaaS</li><li>Multi-tenant</li><li>Booking</li><li>Web</li></ul>
         </div>
-        <figure class="frame">
+        <figure class="media">
           <img src="assets/kaiora/calendar.webp" alt="Kaiora's team calendar with a day of appointments per stylist, beside a barbershop's booking page on a phone." width="1200" height="826" loading="lazy">
-          <figcaption><span><b>fig. 01</b> Team calendar and booking page</span><span>kaiora.co</span></figcaption>
         </figure>
       </article>
 
-      <article class="card feat narrow flip" data-r style="--i:1">
+      <article class="proj wayzos narrow flip" data-r>
         <div class="txt">
-          <div class="card-top">
-            <h3>Wayzos</h3>
-            <span class="chip live">Live</span>
-          </div>
+          <div class="meta"><span class="chip live">Live</span><span>Android · React Native</span></div>
+          <h3>Wayzos</h3>
+          <p class="tagline">Carpool with people already on your route.</p>
           <p>Peer-to-peer carpooling for Pakistan. It matches riders and drivers already heading the same way, even for part of a route. Cars and motorbikes, every member verified by a person before they can post or message.</p>
           <p>Female-only matching is enforced on the server, not the screen, and chat works without anyone handing over a phone number.</p>
           <div class="gos">
-            <a class="go" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener">GOOGLE PLAY <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-            <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener">WAYZOS.COM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
+            <a class="go pri" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener">Google Play <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener">wayzos.com <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
           <!-- TODO [ADD]: one line of real results (downloads, rating, active users). Only if real. -->
           <details class="case">
@@ -1041,23 +1276,20 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
           </details>
           <ul class="stack"><li>React Native</li><li>Matching</li><li>In-app chat</li><li>Verification</li></ul>
         </div>
-        <figure class="frame">
+        <figure class="media">
           <img src="assets/wayzos/find-a-ride.webp" alt="The Wayzos app showing three verified matches on a route from Gulberg to DHA Phase 5, one marked female-only." width="1000" height="974" loading="lazy">
-          <figcaption><span><b>fig. 02</b> Matches on your route</span><span>Android</span></figcaption>
         </figure>
       </article>
 
-      <article class="card feat" data-r style="--i:2">
+      <article class="proj brainic" data-r>
         <div class="txt">
-          <div class="card-top">
-            <h3>Brainic</h3>
-            <span class="chip live">Live</span>
-          </div>
+          <div class="meta"><span class="chip live">Live</span><span>Android · React Native</span></div>
+          <h3>Brainic</h3>
+          <p class="tagline">Every mind game, in one place.</p>
           <p>A hub of mind games — 2048, Sudoku, Connect Four, Battleship and more — with leaderboards and online play.</p>
-          <a class="go" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">
-            GOOGLE PLAY
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg>
-          </a>
+          <div class="gos">
+            <a class="go pri" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">Google Play <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
           <!-- TODO [ADD]: one line of real results, e.g. "<p>X downloads · Y★ on Google Play</p>". Only if real. -->
           <details class="case">
             <summary>Case study</summary>
@@ -1072,7 +1304,7 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
           </details>
           <ul class="stack"><li>React Native</li><li>Leaderboards</li><li>Online play</li><li>Monetisation</li></ul>
         </div>
-        <figure class="frame">
+        <figure class="media">
           <div class="tiles">
             <img src="assets/brainic/2048.webp" alt="" width="168" height="180" style="--t:0" loading="lazy">
             <img src="assets/brainic/sudoku.webp" alt="" width="168" height="180" style="--t:1" loading="lazy">
@@ -1083,13 +1315,21 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
             <img src="assets/brainic/dots_and_boxes.webp" alt="" width="168" height="180" style="--t:6" loading="lazy">
             <img src="assets/brainic/ultimate_tic_tac_toe.webp" alt="" width="168" height="180" style="--t:7" loading="lazy">
           </div>
-          <figcaption><span><b>fig. 03</b> Eight of the games</span><span>Android</span></figcaption>
+          <figcaption>Eight of the games in the hub</figcaption>
         </figure>
       </article>
 
-      <article class="card" data-r style="--i:3">
-        <div class="card-top">
-          <h3>Kitchen Ping</h3>
+    </div>
+
+    <div class="soon-h" data-r>
+      <h3>In the works</h3>
+      <span>Building now, or held back until launch</span>
+    </div>
+
+    <div class="soon">
+      <article class="mini" data-r style="--i:0">
+        <div class="mini-top">
+          <h4>Kitchen Ping</h4>
           <!-- TODO [CONFIRM]: status is still "Building". -->
           <span class="chip wip">Building</span>
         </div>
@@ -1097,9 +1337,9 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
         <ul class="stack"><li>SaaS</li><li>QR ordering</li><li>Web</li></ul>
       </article>
 
-      <article class="card" data-r style="--i:4">
-        <div class="card-top">
-          <h3>QuickStop</h3>
+      <article class="mini" data-r style="--i:1">
+        <div class="mini-top">
+          <h4>QuickStop</h4>
           <span class="chip wip">Coming soon</span>
         </div>
         <div class="redact" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -1107,9 +1347,9 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
         <ul class="stack"><li>React Native</li><li>Realtime</li><li>Mobile</li></ul>
       </article>
 
-      <article class="card" data-r style="--i:5">
-        <div class="card-top">
-          <h3>Khatmly</h3>
+      <article class="mini" data-r style="--i:2">
+        <div class="mini-top">
+          <h4>Khatmly</h4>
           <!-- TODO [CONFIRM]: status. Kept as "Coming soon" until you say otherwise. -->
           <span class="chip wip">Coming soon</span>
         </div>
@@ -1118,14 +1358,16 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
         <p class="sealed">More at launch.</p>
         <ul class="stack"><li>React Native</li><li>Mobile</li></ul>
       </article>
-
     </div>
 
     <div class="note" data-r>
-      <b>Growth &amp; marketing</b>
-      <p>I don't stop at the build. I've run marketing campaigns across
-      platforms, including for my own products: paid campaigns on Meta, store
-      listing work (ASO) and social media.</p>
+      <span class="ico t2"><svg aria-hidden="true"><use href="#i-mega"/></svg></span>
+      <div>
+        <b>Growth &amp; marketing</b>
+        <p>I don't stop at the build. I've run marketing campaigns across
+        platforms, including for my own products: paid campaigns on Meta, store
+        listing work (ASO) and social media.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1134,54 +1376,55 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <section id="services">
   <div class="wrap">
     <div class="head" data-r>
-      <span class="num">03</span>
-      <h2>What I can do for you</h2>
-      <span class="of">/ freelance &amp; contract</span>
+      <div class="kicker">Freelance &amp; contract</div>
+      <h2>What I can <em class="s">do for you.</em></h2>
     </div>
 
-    <div class="cards svc">
-      <article class="card" data-r style="--i:0">
-        <span class="n0">01</span>
+    <div class="svc">
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Mobile%20app" data-r style="--i:0">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>
         <h3>Mobile app development</h3>
         <p>iOS and Android apps in React Native, from first screen to store release.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Mobile%20app">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
-      <article class="card" data-r style="--i:1">
-        <span class="n0">02</span>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Web%20app" data-r style="--i:1">
+        <span class="ico t3"><svg aria-hidden="true"><use href="#i-web"/></svg></span>
         <h3>Web app development</h3>
         <p>Responsive web apps and dashboards in React, wired to your APIs.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Web%20app">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
-      <article class="card" data-r style="--i:2">
-        <span class="n0">03</span>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20MVP%20planning" data-r style="--i:2">
+        <span class="ico t4"><svg aria-hidden="true"><use href="#i-bulb"/></svg></span>
         <h3>MVP planning &amp; product scoping</h3>
         <p>An idea turned into user stories, architecture and a V1 scope a team can build.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20MVP%20planning">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
-      <article class="card" data-r style="--i:3">
-        <span class="n0">04</span>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Delivery%20and%20coordination" data-r style="--i:3">
+        <span class="ico t2"><svg aria-hidden="true"><use href="#i-board"/></svg></span>
         <h3>Project delivery &amp; coordination</h3>
         <p>Sprint planning, resourcing, dependencies and tracking, so the work actually ships.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Delivery%20and%20coordination">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
-      <article class="card" data-r style="--i:4">
-        <span class="n0">05</span>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Presales%20support" data-r style="--i:4">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
         <h3>Presales support</h3>
         <p>Requirement discovery, effort estimates, timelines, cost breakdowns and proposals.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Presales%20support">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
-      <article class="card" data-r style="--i:5">
-        <span class="n0">06</span>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Manual%20QA" data-r style="--i:5">
+        <span class="ico t3"><svg aria-hidden="true"><use href="#i-bug"/></svg></span>
         <h3>Manual QA</h3>
         <p>Functional, regression, mobile and edge-case testing before your users find the bugs.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Manual%20QA">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
-      <article class="card" data-r style="--i:6">
-        <span class="n0">07</span>
-        <h3>Growth &amp; marketing</h3>
-        <p>Meta Ads, ASO and social media to get a launched app in front of people.</p>
-        <a class="go" href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Growth%20and%20marketing">DISCUSS A PROJECT <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.5M9 3v4.5"/></svg></a>
-      </article>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
+      <a href="mailto:saad.bawanyy@gmail.com?subject=Project%3A%20Growth%20and%20marketing" data-r style="--i:6">
+        <span class="ico t2"><svg aria-hidden="true"><use href="#i-mega"/></svg></span>
+        <div>
+          <h3>Growth &amp; marketing</h3>
+          <p>Meta Ads, ASO and social media to get a launched app in front of people.</p>
+        </div>
+        <span class="more">Discuss a project <svg aria-hidden="true"><use href="#i-right"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -1190,85 +1433,97 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <section id="experience">
   <div class="wrap">
     <div class="head" data-r>
-      <span class="num">04</span>
-      <h2>Experience</h2>
-      <span class="of">/ 5+ years</span>
+      <div class="kicker">Experience · 5+ years</div>
+      <h2>Where I've <em class="s">done the work.</em></h2>
     </div>
 
-    <div class="rail">
-      <article class="stop" data-r style="--i:0">
-        <div class="stop-top">
-          <h3>5StarDesigners</h3>
-          <span class="when">JAN 2025 — PRESENT</span>
-        </div>
-        <p class="co">Sister company of Code Avenue</p>
-
-        <div class="post">
-          <div class="post-top">
-            <p class="role">Implementation Manager + Lead Frontend Engineer</p>
-            <span class="when">JAN 2026 — PRESENT</span>
+    <div class="jobs">
+      <article class="job" data-r style="--i:0">
+        <div class="job-id">
+          <span class="logo" style="background:linear-gradient(135deg,#4F46E5,#7C3AED)">5S</span>
+          <div>
+            <h3>5StarDesigners</h3>
+            <p class="co">Sister company of Code Avenue</p>
           </div>
-          <ul class="pts">
-            <li>Took a product from user stories and architecture to a working MVP in 6 weeks with a junior engineering team.</li>
-            <li>Lead delivery across concurrent projects with teams of 4–6 developers: sprint planning, resource allocation, dependencies and delivery tracking.</li>
-            <li>Support presales with requirement discovery, feasibility checks, effort estimates, timelines, cost breakdowns, proposals and pricing input.</li>
-            <li>Own client communication from first inquiry to delivery.</li>
-            <li>Ran a Meta Ads campaign that brought 120+ downloads in 19 days, and partner with marketing on ASO and social media.</li>
-          </ul>
+          <span class="when">Jan 2025 — Present</span>
         </div>
 
-        <div class="post">
-          <div class="post-top">
-            <p class="role">Lead Frontend Engineer</p>
-            <span class="when">JAN 2025 — DEC 2025</span>
+        <div>
+          <div class="post">
+            <div class="post-top">
+              <p class="role">Implementation Manager + Lead Frontend Engineer</p>
+              <span class="when">Jan 2026 — Present</span>
+            </div>
+            <ul class="pts">
+              <li>Took a product from user stories and architecture to <b>a working MVP in 6 weeks</b> with a junior engineering team.</li>
+              <li>Lead delivery across concurrent projects with <b>teams of 4–6 developers</b>: sprint planning, resource allocation, dependencies and delivery tracking.</li>
+              <li>Support presales with requirement discovery, feasibility checks, effort estimates, timelines, cost breakdowns, proposals and pricing input.</li>
+              <li>Own client communication from first inquiry to delivery.</li>
+              <li>Ran a Meta Ads campaign that brought <b>120+ downloads in 19 days</b>, and partner with marketing on ASO and social media.</li>
+            </ul>
           </div>
-          <ul class="pts">
-            <li>Led React and React Native development across several concurrent projects for iOS, Android and web.</li>
-            <li>Turned designs and requirements into responsive interfaces with the product and design teams.</li>
-            <li>Mentored junior developers on code quality and architecture.</li>
-          </ul>
+
+          <div class="post">
+            <div class="post-top">
+              <p class="role">Lead Frontend Engineer</p>
+              <span class="when">Jan 2025 — Dec 2025</span>
+            </div>
+            <ul class="pts">
+              <li>Led React and React Native development across several concurrent projects for iOS, Android and web.</li>
+              <li>Turned designs and requirements into responsive interfaces with the product and design teams.</li>
+              <li>Mentored junior developers on code quality and architecture.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
-      <article class="stop" data-r style="--i:1">
-        <div class="stop-top">
-          <h3>Code Avenue</h3>
-          <span class="when">JUN 2021 — DEC 2024</span>
+      <article class="job" data-r style="--i:1">
+        <div class="job-id">
+          <span class="logo" style="background:linear-gradient(135deg,#0EA5E9,#2563EB)">CA</span>
+          <div>
+            <h3>Code Avenue</h3>
+          </div>
+          <span class="when">Jun 2021 — Dec 2024</span>
         </div>
 
-        <div class="post">
-          <div class="post-top">
-            <!-- TODO [CONFIRM]: the old site also listed "Associate Project
-                 Coordinator" here. It is not on your resume, so it is left out.
-                 If it was a real title, add " · Associate Project Coordinator". -->
-            <p class="role">Senior Software Engineer</p>
-            <span class="when">OCT 2022 — DEC 2024</span>
+        <div>
+          <div class="post">
+            <div class="post-top">
+              <!-- TODO [CONFIRM]: the old site also listed "Associate Project
+                   Coordinator" here. It is not on your resume, so it is left out.
+                   If it was a real title, add " · Associate Project Coordinator". -->
+              <p class="role">Senior Software Engineer</p>
+              <span class="when">Oct 2022 — Dec 2024</span>
+            </div>
+            <ul class="pts">
+              <li>Led complex features and modules in React and React Native apps.</li>
+              <li>Mentored junior developers on code quality and architecture.</li>
+              <li>Coordinated with backend and QA for smooth releases, testing hands-on myself: functional, regression, mobile and edge cases.</li>
+              <li>Improved performance and maintainability through code reviews and optimisation.</li>
+            </ul>
           </div>
-          <ul class="pts">
-            <li>Led complex features and modules in React and React Native apps.</li>
-            <li>Mentored junior developers on code quality and architecture.</li>
-            <li>Coordinated with backend and QA for smooth releases, testing hands-on myself: functional, regression, mobile and edge cases.</li>
-            <li>Improved performance and maintainability through code reviews and optimisation.</li>
-          </ul>
-        </div>
 
-        <div class="post">
-          <div class="post-top">
-            <p class="role">Associate Software Engineer</p>
-            <span class="when">JUN 2021 — SEP 2022</span>
+          <div class="post">
+            <div class="post-top">
+              <p class="role">Associate Software Engineer</p>
+              <span class="when">Jun 2021 — Sep 2022</span>
+            </div>
+            <ul class="pts">
+              <li>Built and maintained web and mobile apps in React and React Native.</li>
+              <li>Integrated REST APIs with the backend team.</li>
+              <li>Broke business goals into technical tasks in requirement discussions.</li>
+            </ul>
           </div>
-          <ul class="pts">
-            <li>Built and maintained web and mobile apps in React and React Native.</li>
-            <li>Integrated REST APIs with the backend team.</li>
-            <li>Broke business goals into technical tasks in requirement discussions.</li>
-          </ul>
         </div>
       </article>
 
-      <article class="stop" data-r style="--i:2">
-        <div class="stop-top">
-          <h3>Panacloud</h3>
-          <span class="when">SEP 2020 — JUN 2021</span>
+      <article class="job" data-r style="--i:2">
+        <div class="job-id">
+          <span class="logo" style="background:linear-gradient(135deg,#F97316,#EF4444)">P</span>
+          <div>
+            <h3>Panacloud</h3>
+          </div>
+          <span class="when">Sep 2020 — Jun 2021</span>
         </div>
         <div class="post">
           <p class="role">Frontend Web Developer</p>
@@ -1278,10 +1533,13 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
         </div>
       </article>
 
-      <article class="stop" data-r style="--i:3">
-        <div class="stop-top">
-          <h3>Freelance</h3>
-          <span class="when">ABOUT 2 YEARS</span>
+      <article class="job" data-r style="--i:3">
+        <div class="job-id">
+          <span class="logo" style="background:linear-gradient(135deg,#10B981,#0D9488)">F</span>
+          <div>
+            <h3>Freelance</h3>
+          </div>
+          <span class="when">About 2 years</span>
         </div>
         <div class="post">
           <p class="role">Web &amp; mobile client projects</p>
@@ -1293,10 +1551,13 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
     </div>
 
     <div class="note" data-r>
-      <b>AI-assisted workflow</b>
-      <p>I use Claude and Cursor every day to draft user stories, requirements,
-      estimates, timelines and proposals faster. I review every AI output myself
-      before it reaches a team or a client.</p>
+      <span class="ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+      <div>
+        <b>AI-assisted workflow</b>
+        <p>I use Claude and Cursor every day to draft user stories, requirements,
+        estimates, timelines and proposals faster. I review every AI output myself
+        before it reaches a team or a client.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1305,21 +1566,20 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <section id="process">
   <div class="wrap">
     <div class="head" data-r>
-      <span class="num">05</span>
-      <h2>Process</h2>
-      <span class="of">/ idea → ship → iterate</span>
+      <div class="kicker">Process</div>
+      <h2>Idea, ship, <em class="s">iterate.</em></h2>
     </div>
 
-    <div class="steps">
-      <div class="step" data-r style="--i:0"><b>Understand</b><span>The problem, the users, the requirements.</span></div>
-      <div class="step" data-r style="--i:1"><b>Define</b><span>Clear features and user stories, not a wish list.</span></div>
-      <div class="step" data-r style="--i:2"><b>Plan</b><span>Architecture, dependencies, resources, delivery.</span></div>
-      <div class="step" data-r style="--i:3"><b>Build</b><span>With the team, not over the top of it.</span></div>
-      <div class="step" data-r style="--i:4"><b>Test</b><span>Functionality, UX, edge cases, real-world use.</span></div>
-      <div class="step" data-r style="--i:5"><b>Launch</b><span>A usable MVP beats waiting for perfect.</span></div>
-      <div class="step" data-r style="--i:6"><b>Learn</b><span>From what people actually do with it.</span></div>
-      <div class="step" data-r style="--i:7"><b>Iterate</b><span>And keep going.</span></div>
-    </div>
+    <ol class="steps">
+      <li class="step" data-r style="--i:0"><b>Understand</b><span>The problem, the users, the requirements.</span></li>
+      <li class="step" data-r style="--i:1"><b>Define</b><span>Clear features and user stories, not a wish list.</span></li>
+      <li class="step" data-r style="--i:2"><b>Plan</b><span>Architecture, dependencies, resources, delivery.</span></li>
+      <li class="step" data-r style="--i:3"><b>Build</b><span>With the team, not over the top of it.</span></li>
+      <li class="step" data-r style="--i:4"><b>Test</b><span>Functionality, UX, edge cases, real-world use.</span></li>
+      <li class="step" data-r style="--i:5"><b>Launch</b><span>A usable MVP beats waiting for perfect.</span></li>
+      <li class="step" data-r style="--i:6"><b>Learn</b><span>From what people actually do with it.</span></li>
+      <li class="step" data-r style="--i:7"><b>Iterate</b><span>And keep going.</span></li>
+    </ol>
   </div>
 </section>
 
@@ -1327,70 +1587,34 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <section id="stack">
   <div class="wrap">
     <div class="head" data-r>
-      <span class="num">06</span>
-      <h2>Stack</h2>
-      <span class="of">/ what I work with</span>
+      <div class="kicker">Stack</div>
+      <h2>What I <em class="s">work with.</em></h2>
     </div>
 
     <div class="groups">
       <div class="group" data-r style="--i:0">
-        <h3>Engineering</h3>
+        <h3><span class="ico"><svg aria-hidden="true"><use href="#i-code"/></svg></span>Engineering</h3>
         <ul><li>React</li><li>React Native</li><li>JavaScript</li><li>Node.js</li><li>Firebase</li><li>SQL</li><li>REST APIs</li><li>Git</li><li>Figma</li><li>Cross-platform</li><li>Performance</li></ul>
       </div>
       <div class="group" data-r style="--i:1">
-        <h3>Product &amp; presales</h3>
+        <h3><span class="ico t2"><svg aria-hidden="true"><use href="#i-compass"/></svg></span>Product &amp; presales</h3>
         <ul><li>Presales</li><li>Estimation</li><li>Requirements Analysis</li><li>User Stories</li><li>MVP scoping</li><li>Architecture</li><li>Feasibility</li><li>Proposals</li></ul>
       </div>
       <div class="group" data-r style="--i:2">
-        <h3>Delivery</h3>
+        <h3><span class="ico t3"><svg aria-hidden="true"><use href="#i-users"/></svg></span>Delivery</h3>
         <ul><li>Agile/Scrum</li><li>Sprint Planning</li><li>Team Leadership</li><li>Stakeholder Management</li><li>Resourcing</li><li>Dependencies</li><li>Delivery tracking</li><li>PSPO I (preparing)</li></ul>
       </div>
       <div class="group" data-r style="--i:3">
-        <h3>Quality</h3>
+        <h3><span class="ico t4"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>Quality</h3>
         <ul><li>Manual QA</li><li>Functional</li><li>Regression</li><li>Mobile</li><li>Performance</li><li>Stress</li><li>Edge cases</li><li>Release validation</li></ul>
       </div>
       <div class="group" data-r style="--i:4">
-        <h3>Growth</h3>
+        <h3><span class="ico t2"><svg aria-hidden="true"><use href="#i-mega"/></svg></span>Growth</h3>
         <ul><li>Digital Marketing</li><li>Meta Ads</li><li>ASO</li><li>Social media</li><li>Campaign management</li></ul>
       </div>
       <div class="group" data-r style="--i:5">
-        <h3>Ways of working</h3>
+        <h3><span class="ico"><svg aria-hidden="true"><use href="#i-layers"/></svg></span>Ways of working</h3>
         <ul><li>Generative AI</li><li>Claude</li><li>Cursor</li><li>Freelancing</li><li>Workflow design</li><li>Automation</li><li>Mentoring</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================================= -->
-<section id="hire">
-  <div class="wrap">
-    <div class="head" data-r>
-      <span class="num">07</span>
-      <h2>Open to work</h2>
-      <span class="of">/ full-time · remote · freelance</span>
-    </div>
-
-    <div class="cta">
-      <p data-r>
-        I'm a software engineer who also leads delivery and builds products.
-        Over 5+ years I have shipped React and React Native apps, supported
-        presales with estimates and proposals, coordinated teams of 4–6
-        developers, run marketing campaigns for my own products, and taken an
-        idea to a working MVP in 6 weeks. I'm looking for Software Engineer,
-        Technical Project Manager or Product Manager roles where I can own
-        delivery end to end, onsite in Karachi or remote.
-      </p>
-
-      <div class="links" data-r style="--i:1">
-        <a href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener">
-          <span class="k">LinkedIn</span><span class="v">saad-bawany</span>
-        </a>
-        <a href="https://github.com/saadbawani97" target="_blank" rel="noopener">
-          <span class="k">GitHub</span><span class="v">saadbawani97</span>
-        </a>
-        <a href="mailto:saad.bawanyy@gmail.com">
-          <span class="k">Email</span><span class="v">saad.bawanyy@gmail.com</span>
-        </a>
       </div>
     </div>
   </div>
@@ -1399,28 +1623,43 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 <!-- ======================================================================= -->
 <section id="contact">
   <div class="wrap">
-    <div class="head" data-r>
-      <span class="num">08</span>
-      <h2>Contact</h2>
-      <span class="of">/ say hello</span>
-    </div>
+    <div class="cta" data-r>
+      <div>
+        <span class="badge"><span class="pulse"></span>Open to work · full-time · remote · freelance</span>
+        <h2>Hiring, or got something worth <em class="s">shipping?</em></h2>
+        <p>
+          I'm looking for <b>Software Engineer, Technical Project Manager or
+          Product Manager</b> roles where I can own delivery end to end, onsite
+          in Karachi or remote.
+        </p>
+        <p>
+          Over 5+ years I have shipped React and React Native apps, supported
+          presales with estimates and proposals, coordinated teams of 4–6
+          developers, run marketing campaigns for my own products, and taken an
+          idea to a working MVP in 6 weeks. If you need someone who can hold the
+          engineering and the delivery at the same time, I'd like to hear about it.
+        </p>
+      </div>
 
-    <div class="cta">
-      <h2 class="dsp" data-r>Hiring, or got something<br>worth <s>shipping?</s></h2>
-      <p data-r style="--i:1">
-        Whether it's a role or a project, if you need someone who can hold the
-        engineering and the delivery at the same time, I'd like to hear about it.
-      </p>
-
-      <div class="links" data-r style="--i:2">
-        <a href="mailto:saad.bawanyy@gmail.com">
-          <span class="k">Email</span><span class="v">saad.bawanyy@gmail.com</span>
+      <div class="links">
+        <a class="mail" href="mailto:saad.bawanyy@gmail.com">
+          <span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <span><span class="k">Email me</span><span class="v">saad.bawanyy@gmail.com</span></span>
+          <svg class="end i" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
+        <button type="button" id="copy" data-email="saad.bawanyy@gmail.com">
+          <span class="ic"><svg aria-hidden="true"><use href="#i-copy"/></svg></span>
+          <span><span class="k">Or copy it</span><span class="v">Copy email address</span></span>
+        </button>
         <a href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener">
-          <span class="k">LinkedIn</span><span class="v">saad-bawany</span>
+          <span class="ic"><svg aria-hidden="true"><use href="#i-in"/></svg></span>
+          <span><span class="k">LinkedIn</span><span class="v">saad-bawany</span></span>
+          <svg class="end i" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
         <a href="https://github.com/saadbawani97" target="_blank" rel="noopener">
-          <span class="k">GitHub</span><span class="v">saadbawani97</span>
+          <span class="ic"><svg aria-hidden="true"><use href="#i-gh"/></svg></span>
+          <span><span class="k">GitHub</span><span class="v">saadbawani97</span></span>
+          <svg class="end i" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
       </div>
     </div>
@@ -1430,11 +1669,13 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
 </main>
 
 <footer>
-  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;width:100%">
-    <p>MUHAMMAD SAAD BAWANY</p>
-    <p>© <span id="yr">2026</span></p>
+  <div class="wrap">
+    <p>© <span id="yr">2026</span> Muhammad Saad Bawany</p>
+    <p><a href="#top">Back to top ↑</a></p>
   </div>
 </footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function () {
@@ -1447,28 +1688,11 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
   // --- Portrait ------------------------------------------------------------
   // Drop the whole frame rather than leave an empty panel, so the hero still
   // composes while a photo is being swapped out.
-  var shot = document.querySelector('.shot');
-  var img = shot && shot.querySelector('img');
+  var me = document.querySelector('.me');
+  var img = me && me.querySelector('img');
   if (img) {
-    img.addEventListener('error', function () { shot.remove(); });
-    if (img.complete && img.naturalWidth === 0) shot.remove();
-  }
-
-  // --- The prompt ----------------------------------------------------------
-  // Typed one character at a time. Faked with a CSS animation it always looks
-  // faked; the caret ends up in the wrong place and the width is a guess.
-  var TEXT = 'whoami --full';
-  var out = document.getElementById('typed');
-  if (out) {
-    if (reduced) {
-      out.textContent = TEXT;
-    } else {
-      var n = 0;
-      (function type() {
-        out.textContent = TEXT.slice(0, ++n);
-        if (n < TEXT.length) setTimeout(type, 55 + Math.random() * 45);
-      })();
-    }
+    img.addEventListener('error', function () { me.remove(); });
+    if (img.complete && img.naturalWidth === 0) me.remove();
   }
 
   // --- Marquee -------------------------------------------------------------
@@ -1476,33 +1700,43 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
   var tick = document.getElementById('tick');
   if (tick) tick.innerHTML += tick.innerHTML;
 
-  // --- Scroll progress -----------------------------------------------------
+  // --- Scroll: progress bar and a solid nav once the page moves ------------
   var bar = document.getElementById('bar');
+  var nav = document.getElementById('nav');
   var ticking = false;
-  function progress() {
+  function onScroll() {
     var h = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+    nav.classList.toggle('solid', window.scrollY > 8);
     ticking = false;
   }
   window.addEventListener('scroll', function () {
-    if (!ticking) { ticking = true; requestAnimationFrame(progress); }
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
-  progress();
+  onScroll();
 
-  // --- Pointer light -------------------------------------------------------
-  var spot = document.getElementById('spot');
-  if (spot && !reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    var x = 0, y = 0, queued = false;
-    window.addEventListener('mousemove', function (e) {
-      x = e.clientX; y = e.clientY;
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(function () {
-        spot.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0) translate(-50%,-50%)';
-        spot.classList.add('on');
-        queued = false;
-      });
-    }, { passive: true });
+  // --- Copy email ----------------------------------------------------------
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function say(msg) {
+    toast.textContent = msg;
+    toast.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('on'); }, 2200);
+  }
+  var copy = document.getElementById('copy');
+  if (copy) {
+    copy.addEventListener('click', function () {
+      var email = copy.getAttribute('data-email');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(
+          function () { say('Email copied: ' + email); },
+          function () { say(email); }
+        );
+      } else {
+        say(email);
+      }
+    });
   }
 
   // --- Counters ------------------------------------------------------------
@@ -1518,13 +1752,30 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
     })(start);
   }
 
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-r]').forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  // --- Nav: mark the section being read ------------------------------------
+  var links = {};
+  document.querySelectorAll('.nav ul a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var a = links[entry.target.id];
+      if (!a || !entry.isIntersecting) return;
+      Object.keys(links).forEach(function (k) { links[k].classList.remove('on'); });
+      a.classList.add('on');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
+
   // --- Reveal --------------------------------------------------------------
   var targets = document.querySelectorAll('[data-r]');
-  var counters = document.querySelectorAll('[data-count]');
 
-  if (!('IntersectionObserver' in window) || reduced) {
+  if (reduced) {
     targets.forEach(function (el) { el.classList.add('in'); });
-    counters.forEach(countUp);
+    document.querySelectorAll('[data-count]').forEach(countUp);
     return;
   }
 
@@ -1536,7 +1787,7 @@ footer p { font-family: var(--sans); font-size: 0.75rem; color: var(--text-3); m
       // Once only. Re-animating on the way back up is a nuisance.
       io.unobserve(entry.target);
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
   targets.forEach(function (el) { io.observe(el); });
 
