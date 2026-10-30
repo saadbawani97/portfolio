@@ -542,6 +542,13 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .creds div { padding: .8rem .95rem; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--line); font-size: .875rem; color: var(--ink-2); line-height: 1.45; }
 .creds b { display: block; color: var(--ink); font-size: .9375rem; margin-bottom: .1rem; }
 
+.lead { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); margin-top: 1rem; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 32px; background: var(--card); border: 1px solid var(--line); }
+.lead-id { display: flex; flex-direction: column; gap: 1.5rem; }
+.mono { display: grid; place-items: center; width: 100%; aspect-ratio: 4 / 3; border-radius: 26px; font-family: var(--display); font-weight: 800; font-size: clamp(4rem, 9vw, 6.5rem); letter-spacing: -.06em; color: #fff; background: radial-gradient(ellipse 70% 70% at 80% 10%, rgba(214,255,74,.35), transparent 60%), linear-gradient(150deg, #3A2F8F, #8E7BFF 55%, #5CC8FF); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.lead h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem); letter-spacing: -.035em; line-height: 1.05; margin: .4rem 0 .5rem; }
+.lead h3 em.s { color: var(--lime); }
+.lead-role { color: var(--violet); font-weight: 600; margin: 0; }
+.lead-body p { color: var(--ink-2); }
 .crew-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; margin: 3rem 0 1.25rem; }
 .crew-h h3 { font-family: var(--display); font-weight: 600; font-size: 1.4rem; letter-spacing: -.02em; margin: 0; }
 .crew-h span { color: var(--ink-3); font-size: .9375rem; }
@@ -706,7 +713,8 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 }
 @media (max-width: 58rem) {
   .hero { padding-top: 7rem; }
-  .hero-grid, .head, .feat, .founder, .faq-grid, .contact, .ai { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .head, .feat, .founder, .faq-grid, .contact, .ai, .lead { grid-template-columns: minmax(0, 1fr); }
+  .mono { aspect-ratio: 16 / 7; max-width: 24rem; }
   .stage { height: clamp(22rem, 80vw, 30rem); max-width: 34rem; width: 100%; margin: 0 auto; }
   .pillars { grid-template-columns: minmax(0, 1fr); }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -886,8 +894,8 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 
     <div class="stats" data-r>
       <div class="stat"><div class="n">4</div><div class="k">Products live on the web and Google Play</div></div>
-      <div class="stat"><div class="n">6<s>+</s></div><div class="k">Years building software</div></div>
-      <div class="stat"><div class="n">16</div><div class="k">Services under one roof</div></div>
+      <div class="stat"><div class="n">14<s>+</s></div><div class="k">Years of combined experience leading the team</div></div>
+      <div class="stat"><div class="n">18</div><div class="k">Services under one roof</div></div>
       <div class="stat"><div class="n">1</div><div class="k">Team and one point of contact</div></div>
     </div>
 
@@ -896,7 +904,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         <div class="p-top"><span class="p-ico"><svg aria-hidden="true"><use href="#i-build"/></svg></span><span class="p-num">01</span></div>
         <h3>Build <em class="s">it.</em></h3>
         <p>Fast, good-looking websites and apps that work on every phone, and that you can actually update yourself.</p>
-        <ul class="svc-list"><li>Business websites</li><li>E-commerce stores</li><li>Mobile apps (iOS &amp; Android)</li><li>Web apps &amp; dashboards</li></ul>
+        <ul class="svc-list"><li>Business websites</li><li>E-commerce stores</li><li>Mobile apps (iOS &amp; Android)</li><li>Web apps &amp; dashboards</li><li>SaaS platforms &amp; APIs</li><li>Cloud hosting on AWS</li></ul>
       </article>
       <article class="pillar p2" data-r style="--i:1">
         <div class="p-top"><span class="p-ico"><svg aria-hidden="true"><use href="#i-design"/></svg></span><span class="p-num">02</span></div>
@@ -1286,7 +1294,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         <h2>The people behind <em class="s">the work.</em></h2>
       </div>
       <p>A small team of developers, designers, marketers and automation builders,
-      led by a founder who has spent years shipping software and running delivery.</p>
+      led by a founder and a technical lead with 14+ years of shipping software between them.</p>
     </div>
 
     <article class="founder" data-r>
@@ -1320,9 +1328,40 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       </div>
     </article>
 
+    <article class="lead" data-r>
+      <div class="lead-id">
+        <span class="mono" aria-hidden="true">FK</span>
+        <div>
+          <div class="kicker">Technical lead</div>
+          <h3>Mohammad Fasih <em class="s">Khan</em></h3>
+          <p class="lead-role">Technical Lead &amp; Solutions Architect</p>
+        </div>
+      </div>
+      <div class="lead-body">
+        <p>Fasih has spent 8+ years building software, the last 4 leading engineering
+        teams and owning backend architecture. He has designed the end-to-end
+        architecture for 10+ production SaaS products, with APIs serving 50,000+ users,
+        and has mentored 8+ developers along the way.</p>
+        <p>He also builds AI agents for real work: he designed and runs a multi-agent
+        system that handles lead generation, outreach and CRM updates every day. When a
+        project needs a solid backend, payments, cloud hosting or AI, that's his part of
+        SB Studio.</p>
+        <div class="creds">
+          <div><b>Backend &amp; architecture</b>Node.js (NestJS), Laravel, microservices, multi-tenant SaaS</div>
+          <div><b>Data &amp; cloud</b>PostgreSQL, MySQL, Redis, AWS, Docker, CI/CD</div>
+          <div><b>AI</b>Multi-agent systems, OpenAI, RAG, workflow automation</div>
+          <div><b>Education</b>BS Software Engineering, DIHE · ACCP-Pro, Aptech</div>
+        </div>
+        <div class="links">
+          <a class="go" href="https://www.linkedin.com/in/mohammad-fasih-khan" target="_blank" rel="noopener">LinkedIn <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="go" href="https://github.com/Fasihkhans" target="_blank" rel="noopener">GitHub <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+        </div>
+      </div>
+    </article>
+
     <div class="crew-h" data-r>
       <h3>The crew</h3>
-      <span>Full profiles coming as the team grows</span>
+      <span>More profiles coming as the team grows</span>
     </div>
     <!-- To add a person: replace the icon with <img src="assets/team/name.jpg" alt="">,
          the <h4> with their name, and the role line with their title. -->
