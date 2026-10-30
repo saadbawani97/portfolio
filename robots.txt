@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://saadbawani97.github.io/portfolio/sitemap.xml
