@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SB Studio | Websites, Apps, Design, Marketing & AI for Businesses in Pakistan</title>
-<meta name="description" content="SB Studio is a Karachi-based team building websites, online stores, mobile apps, UI/UX and graphic design, social media marketing, and AI agents and automations for small businesses across Pakistan.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://myporfolio.goatcounter.com; connect-src 'self' https://formsubmit.co https://myporfolio.goatcounter.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>SB Studio | Websites, Apps, Design, Marketing & AI</title>
+<meta name="description" content="SB Studio is a Karachi-based team building websites, online stores, mobile apps, UI/UX and graphic design, social media marketing, and AI agents and automations for businesses in Pakistan and around the world.">
 <link rel="canonical" href="https://saadbawani97.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D6FF4A'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='14' font-weight='800' fill='%2309090C' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#09090C">
@@ -13,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SB Studio">
 <meta property="og:title" content="SB Studio | Websites, apps, design, marketing & AI">
-<meta property="og:description" content="One team for everything tech. We help small businesses across Pakistan get online, look professional and grow.">
+<meta property="og:description" content="One team for everything tech. We help businesses in Pakistan and abroad get online, look professional and grow.">
 <meta property="og:url" content="https://saadbawani97.github.io/portfolio/">
 <meta property="og:image" content="https://saadbawani97.github.io/portfolio/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -28,9 +30,9 @@
   "name": "SB Studio",
   "url": "https://saadbawani97.github.io/portfolio/",
   "email": "saad.bawanyy@gmail.com",
-  "areaServed": "PK",
+  "areaServed": ["PK", "Worldwide"],
   "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
-  "founder": { "@type": "Person", "name": "Muhammad Saad Bawany" },
+  "member": [{ "@type": "Person", "name": "Muhammad Saad Bawany" }, { "@type": "Person", "name": "Mohammad Fasih Khan" }],
   "knowsAbout": ["Website development","E-commerce","Mobile app development","UI/UX design","Graphic design","Social media marketing","n8n automation","AI agents"]
 }
 </script>
@@ -446,7 +448,6 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .b-logo { aspect-ratio: auto; min-height: 9.5rem; }
 .social { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; width: 100%; max-width: 24rem; }
 .social > div:last-child { flex-wrap: wrap; gap: .2rem .6rem; }
-.f-pic { align-self: start; }
 .c .st { height: 20rem; }
 .c.wide .st { height: 21rem; }
 .st.app { padding: .75rem; }
@@ -530,25 +531,20 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .steps p { color: var(--ink-2); font-size: .9688rem; margin: 0; line-height: 1.6; }
 
 /* --- Team --- */
-.founder { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 32px; background: var(--card); border: 1px solid var(--line); }
-.f-pic { position: relative; border-radius: 26px; overflow: hidden; aspect-ratio: 4 / 4.6; background: linear-gradient(160deg, #2A2540, #191820); }
-.f-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
-.f-pic figcaption { position: absolute; left: .9rem; bottom: .9rem; right: .9rem; display: flex; justify-content: space-between; align-items: center; gap: .5rem; padding: .7rem .9rem; border-radius: 16px; background: rgba(9,9,12,.72); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--line-2); font-size: .8125rem; color: var(--ink-2); }
-.f-pic figcaption b { display: block; color: var(--ink); font-size: .9688rem; }
-.founder h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem); letter-spacing: -.035em; line-height: 1.05; margin: .4rem 0 1rem; }
-.founder h3 em.s { color: var(--lime); }
-.founder p { color: var(--ink-2); }
+.people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.person { display: flex; flex-direction: column; padding: clamp(1.25rem, 3vw, 2rem); border-radius: 30px; background: var(--card); border: 1px solid var(--line); }
+.person .ph { border-radius: 22px; overflow: hidden; aspect-ratio: 16 / 10; margin-bottom: 1.5rem; background: linear-gradient(160deg, #2A2540, #191820); }
+.person .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.person .kicker { margin-bottom: .6rem; }
+.person h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -.035em; line-height: 1.05; margin: 0 0 1rem; }
+.person h3 em.s { color: var(--lime); }
+.person > p { color: var(--ink-2); }
+.person .links { margin-top: auto; }
 .creds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin: 1.4rem 0 1.6rem; }
 .creds div { padding: .8rem .95rem; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--line); font-size: .875rem; color: var(--ink-2); line-height: 1.45; }
 .creds b { display: block; color: var(--ink); font-size: .9375rem; margin-bottom: .1rem; }
 
-.lead { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); margin-top: 1rem; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 32px; background: var(--card); border: 1px solid var(--line); }
-.lead-id { display: flex; flex-direction: column; gap: 1.5rem; }
-.mono { display: grid; place-items: center; width: 100%; aspect-ratio: 4 / 3; border-radius: 26px; font-family: var(--display); font-weight: 800; font-size: clamp(4rem, 9vw, 6.5rem); letter-spacing: -.06em; color: #fff; background: radial-gradient(ellipse 70% 70% at 80% 10%, rgba(214,255,74,.35), transparent 60%), linear-gradient(150deg, #3A2F8F, #8E7BFF 55%, #5CC8FF); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
-.lead h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem); letter-spacing: -.035em; line-height: 1.05; margin: .4rem 0 .5rem; }
-.lead h3 em.s { color: var(--lime); }
-.lead-role { color: var(--violet); font-weight: 600; margin: 0; }
-.lead-body p { color: var(--ink-2); }
+.mono { display: grid; place-items: center; width: 100%; height: 100%; font-family: var(--display); font-weight: 800; font-size: clamp(4rem, 9vw, 6.5rem); letter-spacing: -.06em; color: #fff; background: radial-gradient(ellipse 70% 70% at 80% 10%, rgba(214,255,74,.35), transparent 60%), linear-gradient(150deg, #3A2F8F, #8E7BFF 55%, #5CC8FF); }
 .crew-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; margin: 3rem 0 1.25rem; }
 .crew-h h3 { font-family: var(--display); font-weight: 600; font-size: 1.4rem; letter-spacing: -.02em; margin: 0; }
 .crew-h span { color: var(--ink-3); font-size: .9375rem; }
@@ -648,6 +644,7 @@ form .wz-sub { margin: 0; }
   transition: border-color .2s, background-color .2s, transform .2s var(--ease);
 }
 .opts button:hover { border-color: var(--ink-3); transform: translateY(-2px); }
+.opts button small { color: var(--ink-3); font-size: .8125rem; font-weight: 400; margin-left: auto; }
 .opts button b { font-size: 1.25rem; line-height: 1; font-weight: 400; }
 .opts button.sel { border-color: var(--lime); background: rgba(214,255,74,.1); }
 .opts.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -682,6 +679,13 @@ form .wz-sub { margin: 0; }
 .nudge .x:hover { background: rgba(255,255,255,.12); color: var(--ink); }
 .nudge .btn { width: 100%; }
 
+/* --- Join --- */
+.join { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 4rem); padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 36px; background: radial-gradient(ellipse 60% 70% at 100% 0%, rgba(255,122,89,.16), transparent 60%), var(--bg-2); border: 1px solid var(--line); }
+.join h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem; }
+.join > div > p { color: var(--ink-2); font-size: 1.0625rem; }
+.roles { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.roles li { padding: .4rem .85rem; border-radius: 999px; border: 1px solid var(--line-2); font-size: .875rem; color: var(--ink-2); }
+
 /* --- Footer --- */
 footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 2rem; }
 .f-top { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, .6fr)); gap: 2rem; }
@@ -713,14 +717,12 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 }
 @media (max-width: 58rem) {
   .hero { padding-top: 7rem; }
-  .hero-grid, .head, .feat, .founder, .faq-grid, .contact, .ai, .lead { grid-template-columns: minmax(0, 1fr); }
-  .mono { aspect-ratio: 16 / 7; max-width: 24rem; }
+  .hero-grid, .head, .feat, .faq-grid, .contact, .ai, .people, .join { grid-template-columns: minmax(0, 1fr); }
   .stage { height: clamp(22rem, 80vw, 30rem); max-width: 34rem; width: 100%; margin: 0 auto; }
   .pillars { grid-template-columns: minmax(0, 1fr); }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat:nth-child(2) { border-right: 0; }
   .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .f-pic { max-width: 24rem; }
   .f-top { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .f-top > div:first-child { grid-column: 1 / -1; }
 }
@@ -748,7 +750,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   .c .st { height: 17rem; }
   .st.app .side { display: none; }
   .faq details p { padding-right: 0; }
-  .contact { border-radius: 26px; }
+  .contact, .join { border-radius: 26px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -788,6 +790,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       <li><a href="#lab">Concepts</a></li>
       <li><a href="#ai">AI</a></li>
       <li><a href="#team">Team</a></li>
+      <li><a href="#join">Join us</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-end">
@@ -802,6 +805,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   <a href="#lab">Concepts</a>
   <a href="#ai">AI</a>
   <a href="#team">Team</a>
+  <a href="#join">Join us</a>
   <a href="#faq">FAQ</a>
   <a class="btn pri" href="#contact">Start a project</a>
 </div>
@@ -813,7 +817,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="pill" data-r><span class="dot"></span>Taking new projects · Karachi, Pakistan</span>
+        <span class="pill" data-r><span class="dot"></span>Taking new projects · Pakistan &amp; worldwide</span>
 
         <h1 data-r style="--i:1">
           We build the
@@ -826,7 +830,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 
         <p class="lede" data-r style="--i:2">
           SB Studio is a team of <b>developers, designers and marketers</b>
-          helping small businesses across Pakistan get online, look professional
+          helping businesses in Pakistan and around the world get online, look professional
           and grow. One team for everything tech, at prices that make sense.
         </p>
 
@@ -838,10 +842,10 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         <div class="shipped" data-r style="--i:4">
           <span>Products we've shipped</span>
           <ul>
-            <li><a href="https://play.google.com/store/apps/details?id=com.sbstudioz.quickstop" target="_blank" rel="noopener"><i><img src="assets/work/qs-icon.png" alt=""></i>QuickStop AI</a></li>
-            <li><a href="https://kaiora.co/" target="_blank" rel="noopener"><i style="background:linear-gradient(135deg,#5B3DF5,#8B5CF6)">K</i>Kaiora</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener"><i style="background:linear-gradient(135deg,#0F9D63,#34C38F)">W</i>Wayzos</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener"><i style="background:linear-gradient(135deg,#F97316,#FBBF24)">B</i>Brainic</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.sbstudioz.quickstop" target="_blank" rel="noopener noreferrer"><i><img src="assets/work/qs-icon.png" alt=""></i>QuickStop AI</a></li>
+            <li><a href="https://kaiora.co/" target="_blank" rel="noopener noreferrer"><i style="background:linear-gradient(135deg,#5B3DF5,#8B5CF6)">K</i>Kaiora</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener noreferrer"><i style="background:linear-gradient(135deg,#0F9D63,#34C38F)">W</i>Wayzos</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener noreferrer"><i style="background:linear-gradient(135deg,#F97316,#FBBF24)">B</i>Brainic</a></li>
           </ul>
         </div>
       </div>
@@ -956,7 +960,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <li>Friends, messages, notifications and in-app purchases through Google Play</li>
           </ul>
           <div class="links">
-            <a class="go pri" href="https://play.google.com/store/apps/details?id=com.sbstudioz.quickstop" target="_blank" rel="noopener">Get it on Google Play <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+            <a class="go pri" href="https://play.google.com/store/apps/details?id=com.sbstudioz.quickstop" target="_blank" rel="noopener noreferrer">Get it on Google Play <svg aria-hidden="true"><use href="#i-out"/></svg></a>
           </div>
         </div>
         <div class="phones" aria-label="QuickStop AI screens">
@@ -973,7 +977,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <div class="tagrow"><span class="chip live">Live</span><span>SaaS · Web</span></div>
             <h3>Kaiora</h3>
             <p>Booking and front-desk software for salons, barbers and spas. One calendar for every booking, reminders that cut no-shows, and loyalty that brings clients back.</p>
-            <div class="links"><a class="go" href="https://kaiora.co/" target="_blank" rel="noopener">kaiora.co <svg aria-hidden="true"><use href="#i-out"/></svg></a></div>
+            <div class="links"><a class="go" href="https://kaiora.co/" target="_blank" rel="noopener noreferrer">kaiora.co <svg aria-hidden="true"><use href="#i-out"/></svg></a></div>
           </div>
         </article>
 
@@ -984,8 +988,8 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <h3>Wayzos</h3>
             <p>Carpooling for Pakistan. Matches riders and drivers already going the same way, with person-verified members, female-only matching and chat without sharing numbers.</p>
             <div class="links">
-              <a class="go" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener">Google Play <svg aria-hidden="true"><use href="#i-out"/></svg></a>
-              <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener">wayzos.com <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+              <a class="go" href="https://play.google.com/store/apps/details?id=com.wayzos.app" target="_blank" rel="noopener noreferrer">Google Play <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+              <a class="go" href="https://wayzos.com/" target="_blank" rel="noopener noreferrer">wayzos.com <svg aria-hidden="true"><use href="#i-out"/></svg></a>
             </div>
           </div>
         </article>
@@ -1007,7 +1011,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <div class="tagrow"><span class="chip live">Live</span><span>Android · React Native</span></div>
             <h3>Brainic</h3>
             <p>Every mind game in one app: 2048, Sudoku, Connect Four, Battleship and more, with leaderboards and online play.</p>
-            <div class="links"><a class="go" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener">Google Play <svg aria-hidden="true"><use href="#i-out"/></svg></a></div>
+            <div class="links"><a class="go" href="https://play.google.com/store/apps/details?id=com.brainic.mindgames" target="_blank" rel="noopener noreferrer">Google Play <svg aria-hidden="true"><use href="#i-out"/></svg></a></div>
           </div>
         </article>
 
@@ -1264,7 +1268,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       <div class="w" data-r style="--i:0"><div class="n">01</div><h3>One team for everything</h3><p>Website, app, design, ads and automation from the same people, so nothing gets lost between freelancers.</p></div>
       <div class="w" data-r style="--i:1"><div class="n">02</div><h3>Fair prices</h3><p>Priced for small and growing businesses, with a clear quote before any work starts.</p></div>
       <div class="w" data-r style="--i:2"><div class="n">03</div><h3>Business first</h3><p>We care about your sales, leads and bookings, not just how the code looks.</p></div>
-      <div class="w" data-r style="--i:3"><div class="n">04</div><h3>Right here in Pakistan</h3><p>Based in Karachi. We talk in Urdu or English, on WhatsApp or a call, whatever's easier for you.</p></div>
+      <div class="w" data-r style="--i:3"><div class="n">04</div><h3>Local and international</h3><p>Based in Karachi, working with clients at home and abroad. Urdu or English, on WhatsApp, email or a video call.</p></div>
     </div>
   </div>
 </section>
@@ -1293,29 +1297,20 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         <div class="kicker">The team</div>
         <h2>The people behind <em class="s">the work.</em></h2>
       </div>
-      <p>A small team of developers, designers, marketers and automation builders,
-      led by a founder and a technical lead with 14+ years of shipping software between them.</p>
+      <p>A team, not a hierarchy. Each of us owns what we're best at, and together
+      we bring 14+ years of shipping software to businesses in Pakistan and abroad.</p>
     </div>
 
-    <article class="founder" data-r>
-      <figure class="f-pic" style="margin:0">
-        <img src="assets/saad.jpg" alt="Muhammad Saad Bawany" width="600" height="600" loading="lazy">
-        <figcaption><span><b>Saad Bawany</b>Founder &amp; lead</span><span>Karachi</span></figcaption>
-      </figure>
-      <div>
-        <div class="kicker">Founder</div>
+    <div class="people">
+      <article class="person" data-r style="--i:0">
+        <div class="ph"><img src="assets/saad.jpg" alt="Muhammad Saad Bawany" width="600" height="600" loading="lazy"></div>
+        <div class="kicker">Product, mobile &amp; growth</div>
         <h3>Muhammad Saad <em class="s">Bawany</em></h3>
-        <p>Saad has been in the industry for 6 to 7 years, building React and
-        React Native products and leading delivery for teams of 4 to 6 developers:
-        turning ideas into user stories, planning sprints, testing every release
-        himself and getting it out the door.</p>
-        <p>Since AI arrived he has gone all in on it, and now runs AI agents across
-        planning, design and code every day. It's why SB Studio ships in days what
-        used to take weeks.</p>
-        <p>He's also worked on Fiverr, Upwork and as a freelancer, and has run
-        marketing campaigns for his own products. He started SB Studio to help
-        small ventures grow at reasonable prices, with the same care he puts into
-        his own apps.</p>
+        <p>6 to 7 years building React and React Native products and running delivery
+        for teams of 4 to 6 developers, from user stories and sprint plans to hands-on
+        QA and launch. He works with AI agents every day across planning, design and
+        code, has freelanced on Fiverr and Upwork, and runs marketing campaigns for the
+        products he ships.</p>
         <div class="creds">
           <div><b>Engineering &amp; AI</b>React, React Native, Firebase, AI agents</div>
           <div><b>Product &amp; delivery</b>Project management, presales, QA</div>
@@ -1323,41 +1318,30 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
           <div><b>Education</b>Bachelor's, Iqra University · diplomas, APWA</div>
         </div>
         <div class="links">
-          <a class="go" href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener">LinkedIn <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="go" href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true"><use href="#i-out"/></svg></a>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="lead" data-r>
-      <div class="lead-id">
-        <span class="mono" aria-hidden="true">FK</span>
-        <div>
-          <div class="kicker">Technical lead</div>
-          <h3>Mohammad Fasih <em class="s">Khan</em></h3>
-          <p class="lead-role">Technical Lead &amp; Solutions Architect</p>
-        </div>
-      </div>
-      <div class="lead-body">
-        <p>Fasih has spent 8+ years building software, the last 4 leading engineering
-        teams and owning backend architecture. He has designed the end-to-end
-        architecture for 10+ production SaaS products, with APIs serving 50,000+ users,
-        and has mentored 8+ developers along the way.</p>
-        <p>He also builds AI agents for real work: he designed and runs a multi-agent
-        system that handles lead generation, outreach and CRM updates every day. When a
-        project needs a solid backend, payments, cloud hosting or AI, that's his part of
-        SB Studio.</p>
+      <article class="person" data-r style="--i:1">
+        <div class="ph"><span class="mono" aria-hidden="true">FK</span></div>
+        <div class="kicker">Backend, cloud &amp; AI</div>
+        <h3>Mohammad Fasih <em class="s">Khan</em></h3>
+        <p>8+ years building software, 4 of them leading engineering teams and owning
+        backend architecture. He has designed the architecture for 10+ production SaaS
+        products with APIs serving 50,000+ users, mentored 8+ developers, and runs a
+        multi-agent AI system for lead generation, outreach and CRM every day.</p>
         <div class="creds">
-          <div><b>Backend &amp; architecture</b>Node.js (NestJS), Laravel, microservices, multi-tenant SaaS</div>
+          <div><b>Backend &amp; architecture</b>Node.js (NestJS), Laravel, microservices, SaaS</div>
           <div><b>Data &amp; cloud</b>PostgreSQL, MySQL, Redis, AWS, Docker, CI/CD</div>
-          <div><b>AI</b>Multi-agent systems, OpenAI, RAG, workflow automation</div>
+          <div><b>AI</b>Multi-agent systems, OpenAI, RAG, automation</div>
           <div><b>Education</b>BS Software Engineering, DIHE · ACCP-Pro, Aptech</div>
         </div>
         <div class="links">
-          <a class="go" href="https://www.linkedin.com/in/mohammad-fasih-khan" target="_blank" rel="noopener">LinkedIn <svg aria-hidden="true"><use href="#i-out"/></svg></a>
-          <a class="go" href="https://github.com/Fasihkhans" target="_blank" rel="noopener">GitHub <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="go" href="https://www.linkedin.com/in/mohammad-fasih-khan" target="_blank" rel="noopener noreferrer">LinkedIn <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="go" href="https://github.com/Fasihkhans" target="_blank" rel="noopener noreferrer">GitHub <svg aria-hidden="true"><use href="#i-out"/></svg></a>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
 
     <div class="crew-h" data-r>
       <h3>The crew</h3>
@@ -1370,6 +1354,56 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       <div class="mate m2" data-r style="--i:1"><span class="avatar"><svg aria-hidden="true"><use href="#i-design"/></svg></span><h4>Design</h4><p class="role">UI/UX &amp; graphics</p><p>Brands, screens, posts and everything else people see first.</p></div>
       <div class="mate m3" data-r style="--i:2"><span class="avatar"><svg aria-hidden="true"><use href="#i-grow"/></svg></span><h4>Marketing</h4><p class="role">Social &amp; ads</p><p>Campaigns, content calendars and page handling that bring customers in.</p></div>
       <div class="mate m4" data-r style="--i:3"><span class="avatar"><svg aria-hidden="true"><use href="#i-auto"/></svg></span><h4>Automation</h4><p class="role">n8n &amp; AI</p><p>Workflows and AI agents that take the busywork off your plate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="join" data-r>
+      <div>
+        <div class="kicker">Join us</div>
+        <h2>Good at what you do? <em class="s">Work with us.</em></h2>
+        <p>We're always looking for designers, developers, marketers and automation
+        builders, in Pakistan or anywhere else. Freelance, part-time or project by
+        project. Tell us what you're great at and show us something you've made.</p>
+        <ul class="roles">
+          <li>UI/UX &amp; graphic design</li><li>Web &amp; mobile development</li>
+          <li>Backend &amp; cloud</li><li>Social media &amp; ads</li><li>n8n &amp; AI automation</li><li>Video &amp; motion</li>
+        </ul>
+      </div>
+
+      <form id="join-form" novalidate>
+        <div class="f"><label for="j-name">Your name <i>*</i></label><input id="j-name" name="name" maxlength="80" autocomplete="name" required></div>
+        <div class="f"><label for="j-email">Email <i>*</i></label><input id="j-email" name="email" type="email" maxlength="120" autocomplete="email" required></div>
+        <div class="f"><label for="j-role">What do you do? <i>*</i></label>
+          <select id="j-role" name="role" required>
+            <option value="">Choose one</option>
+            <option>Design (UI/UX, graphics)</option>
+            <option>Development (web, mobile)</option>
+            <option>Backend &amp; cloud</option>
+            <option>Marketing (social, ads)</option>
+            <option>Automation &amp; AI</option>
+            <option>Video &amp; motion</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="f"><label for="j-city">City &amp; country</label><input id="j-city" name="location" maxlength="80" placeholder="Karachi, Pakistan"></div>
+        <div class="f full"><label for="j-link">Portfolio, LinkedIn or GitHub <i>*</i></label><input id="j-link" name="portfolio" type="url" maxlength="300" required placeholder="https://"></div>
+        <div class="f full"><label for="j-msg">About you</label><textarea id="j-msg" name="message" maxlength="2000" placeholder="Your experience, what you'd like to work on, and how much time you have."></textarea></div>
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="status" id="j-status" role="alert"></div>
+        <div class="send">
+          <button class="btn pri" type="submit" id="j-submit">Send application <svg aria-hidden="true"><use href="#i-right"/></svg></button>
+          <p>Read how we handle your details in our <a href="privacy.html" style="text-decoration:underline">privacy policy</a>.</p>
+        </div>
+        <div class="done" role="status">
+          <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+          <h3>Thanks for reaching out!</h3>
+          <p>We read every application and will get in touch if there's a good fit.</p>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1392,8 +1426,8 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         <p>Yes. Plenty of clients start with one thing, like a logo, a website or a month of social media, and add more later.</p>
       </details>
       <details>
-        <summary>Do you only work with businesses in Karachi?</summary>
-        <p>We're based in Karachi and work with businesses all over Pakistan. Most of the work happens on WhatsApp and calls, so distance isn't a problem.</p>
+        <summary>Do you work with clients outside Pakistan?</summary>
+        <p>Yes. We're based in Karachi and work with businesses across Pakistan and abroad. Most of the work happens over WhatsApp, email and video calls, so distance isn't a problem.</p>
       </details>
       <details>
         <summary>Can I see work you've done for clients?</summary>
@@ -1422,13 +1456,13 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
             <span><small>Email us</small><b>saad.bawanyy@gmail.com</b></span>
           </a>
-          <a id="wa-link" href="#" hidden target="_blank" rel="noopener">
+          <a id="wa-link" href="#" hidden target="_blank" rel="noopener noreferrer">
             <span class="ic"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
             <span><small>WhatsApp</small><b id="wa-num"></b></span>
           </a>
-          <a href="https://maps.google.com/?q=Karachi,Pakistan" target="_blank" rel="noopener">
+          <a href="https://maps.google.com/?q=Karachi,Pakistan" target="_blank" rel="noopener noreferrer">
             <span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <span><small>Based in</small><b>Karachi, Pakistan</b></span>
+            <span><small>Based in Karachi</small><b>Working with clients worldwide</b></span>
           </a>
         </div>
       </div>
@@ -1458,10 +1492,10 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
           <p class="wz-sub">An estimate is fine. It helps us suggest what's worth spending on right now.</p>
           <div class="opts">
             <button type="button" data-v="0">Not earning yet</button>
-            <button type="button" data-v="1">Under Rs 1 lakh</button>
-            <button type="button" data-v="2">Rs 1 to 5 lakh</button>
-            <button type="button" data-v="3">Rs 5 to 20 lakh</button>
-            <button type="button" data-v="4">Above Rs 20 lakh</button>
+            <button type="button" data-v="1">Under Rs 1 lakh <small>(~$350)</small></button>
+            <button type="button" data-v="2">Rs 1 to 5 lakh <small>(~$350 to $1,800)</small></button>
+            <button type="button" data-v="3">Rs 5 to 20 lakh <small>(~$1,800 to $7,000)</small></button>
+            <button type="button" data-v="4">Above Rs 20 lakh <small>(~$7,000+)</small></button>
             <button type="button" data-v="x">Prefer not to say</button>
           </div>
         </div>
@@ -1512,16 +1546,16 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       <form id="form" class="wz-step" data-q="form" novalidate>
         <h3 class="full" id="form-h">Where can we reach you?</h3>
         <p class="wz-sub full" id="form-sub">We'll send your plan and suggest a first step. No pressure, no spam.</p>
-        <div class="f"><label for="name">Your name <i>*</i></label><input id="name" name="name" autocomplete="name" required placeholder="Ali Khan"></div>
-        <div class="f"><label for="biz">Business name</label><input id="biz" name="business" autocomplete="organization" placeholder="Khan Traders"></div>
-        <div class="f"><label for="phone">Phone / WhatsApp <i>*</i></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="03xx xxxxxxx"></div>
-        <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@business.com"></div>
-        <div class="f full"><label for="msg">Anything else? <i id="msg-req" hidden>*</i></label><textarea id="msg" name="message" placeholder="Tell us a bit about your business or what you'd like help with."></textarea></div>
+        <div class="f"><label for="name">Your name <i>*</i></label><input id="name" name="name" maxlength="80" autocomplete="name" required placeholder="Ali Khan"></div>
+        <div class="f"><label for="biz">Business name</label><input id="biz" name="business" maxlength="120" autocomplete="organization" placeholder="Khan Traders"></div>
+        <div class="f"><label for="phone">Phone / WhatsApp <i>*</i></label><input id="phone" name="phone" maxlength="30" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+92 3xx xxxxxxx"></div>
+        <div class="f"><label for="email">Email</label><input id="email" name="email" maxlength="120" type="email" autocomplete="email" placeholder="you@business.com"></div>
+        <div class="f full"><label for="msg">Anything else? <i id="msg-req" hidden>*</i></label><textarea id="msg" name="message" maxlength="2000" placeholder="Tell us a bit about your business or what you'd like help with."></textarea></div>
         <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="status" id="status" role="alert"></div>
         <div class="send">
           <button class="btn pri" type="submit" id="submit">Send message <svg aria-hidden="true"><use href="#i-right"/></svg></button>
-          <p>We only use your details to reply to you.</p>
+          <p>We only use your details to reply to you. See our <a href="privacy.html" style="text-decoration:underline">privacy policy</a>.</p>
         </div>
         <div class="done" role="status">
           <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
@@ -1548,21 +1582,21 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     <div class="f-top">
       <div>
         <a class="logo" href="#top"><i>SB</i><span>SB <b>Studio</b></span></a>
-        <p>Websites, apps, design, marketing and AI for businesses across Pakistan.</p>
+        <p>Websites, apps, design, marketing and AI for businesses in Pakistan and worldwide.</p>
       </div>
       <div>
         <h4>Studio</h4>
-        <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#lab">Concepts</a></li><li><a href="#team">Team</a></li></ul>
+        <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#lab">Concepts</a></li><li><a href="#team">Team</a></li><li><a href="#join">Join us</a></li></ul>
       </div>
       <div>
         <h4>Contact</h4>
-        <ul><li><a href="#contact">Start a project</a></li><li><a href="mailto:saad.bawanyy@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener">LinkedIn</a></li></ul>
+        <ul><li><a href="#contact">Start a project</a></li><li><a href="mailto:saad.bawanyy@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/saad-bawany-2097a5212" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul>
       </div>
     </div>
     <div class="mega" aria-hidden="true">SB <b>Studio</b></div>
     <div class="f-bot">
       <span>© <span id="yr">2026</span> SB Studio · Karachi, Pakistan</span>
-      <a href="#top">Back to top ↑</a>
+      <span><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="#top">Back to top ↑</a></span>
     </div>
   </div>
 </footer>
@@ -1741,7 +1775,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         w: 'People need to recognise you before they trust you. A clean logo and colours make every post, page and signboard look professional.' },
       { id: 'wa', tier: idea ? 1 : 0, done: h.wa && (h.maps || !mapsMatters),
         t: mapsMatters ? 'WhatsApp Business and Google Maps' : 'WhatsApp Business, set up properly',
-        w: mapsMatters ? 'Both are free, and they\'re where most customers look first. A proper WhatsApp profile with a catalogue, and a Maps listing so people can find and review you.' : 'Free, and it\'s where most customers in Pakistan reach out. A business profile, catalogue and quick replies make you look ready.' },
+        w: mapsMatters ? 'Both are free, and they\'re where most customers look first. A proper WhatsApp profile with a catalogue, and a Maps listing so people can find and review you.' : 'Free, and it\'s where most customers reach out first. A business profile, catalogue and quick replies make you look ready.' },
       { id: 'social', tier: 0, done: h.ig && h.fb,
         t: 'Instagram and Facebook pages',
         w: 'Your shop window online. Set them up with your brand, prices and contact details, so people can check you out before they message.' },
@@ -1827,6 +1861,33 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   nudge.querySelector('.x').addEventListener('click', hideNudge);
   nudge.querySelector('.btn').addEventListener('click', hideNudge);
 
+  // Sending forms. GitHub Pages has no server, so FormSubmit relays the message
+  // by email. The honeypot, the minimum time on the page and the cool-down keep
+  // most automated spam out.
+  var loadedAt = Date.now();
+  function sendForm(data) {
+    var last = 0;
+    try { last = +sessionStorage.getItem('sb-sent') || 0; } catch (e) {}
+    if (Date.now() - loadedAt < 3000) return Promise.resolve();
+    if (Date.now() - last < 30000) return Promise.reject({ wait: true });
+    data._template = 'table';
+    data._captcha = 'false';
+    return fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) !== 'true') throw j; }); })
+      .then(function () { try { sessionStorage.setItem('sb-sent', String(Date.now())); } catch (e) {} });
+  }
+  function failText(err) {
+    var span = document.createElement('span');
+    if (err && err.wait) { span.textContent = 'You just sent a message. Please wait a few seconds before sending another.'; return span; }
+    span.appendChild(document.createTextNode('Sorry, that didn\'t go through. Please email us at '));
+    var a = document.createElement('a'); a.href = 'mailto:' + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; a.style.textDecoration = 'underline';
+    span.appendChild(a); span.appendChild(document.createTextNode('.'));
+    return span;
+  }
+
   // Contact form
   var form = document.getElementById('form');
   var status = document.getElementById('status');
@@ -1862,22 +1923,45 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       data['Suggested plan'] = planText;
     }
     data._subject = (answered ? 'New digital plan lead: ' : 'New project enquiry from ') + fd.get('name');
-    data._template = 'table';
-    data._captcha = 'false';
     if (data.email) data._replyto = data.email;
     submit.disabled = true;
     submit.firstChild.textContent = 'Sending… ';
-    fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) !== 'true') throw j; }); })
+    sendForm(data)
       .then(function () { form.classList.add('sent'); })
-      .catch(function () {
-        status.className = 'status err';
-        status.innerHTML = 'Sorry, that didn\'t go through. Please email us at <a href="mailto:' + CONTACT_EMAIL + '" style="text-decoration:underline">' + CONTACT_EMAIL + '</a>.';
-      })
+      .catch(function (err) { status.className = 'status err'; status.textContent = ''; status.appendChild(failText(err)); })
       .then(function () { submit.disabled = false; submit.firstChild.textContent = 'Send message '; });
+  });
+
+  // Join form
+  var jForm = document.getElementById('join-form');
+  var jStatus = document.getElementById('j-status');
+  var jSubmit = document.getElementById('j-submit');
+  jForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    jStatus.className = 'status'; jStatus.textContent = '';
+    var bad = null;
+    ['j-name', 'j-email', 'j-role', 'j-link'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!bad && (!el.value.trim() || !el.checkValidity())) bad = el;
+    });
+    if (bad) {
+      jStatus.className = 'status err';
+      jStatus.textContent = 'Please add your name, a valid email, what you do and a link to your work (starting with https://).';
+      bad.focus();
+      return;
+    }
+    var fd = new FormData(jForm);
+    if (fd.get('_honey')) return;
+    jSubmit.disabled = true;
+    jSubmit.firstChild.textContent = 'Sending… ';
+    sendForm({
+      name: fd.get('name'), email: fd.get('email'), role: fd.get('role'),
+      location: fd.get('location') || '-', portfolio: fd.get('portfolio'), message: fd.get('message') || '-',
+      _replyto: fd.get('email'), _subject: 'Join request: ' + fd.get('role') + ' from ' + fd.get('name')
+    })
+      .then(function () { jForm.classList.add('sent'); })
+      .catch(function (err) { jStatus.className = 'status err'; jStatus.textContent = ''; jStatus.appendChild(failText(err)); })
+      .then(function () { jSubmit.disabled = false; jSubmit.firstChild.textContent = 'Send application '; });
   });
 
   if (reduced || !('IntersectionObserver' in window)) document.getElementById('term').classList.add('go');
@@ -1922,6 +2006,6 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 })();
 </script>
 <!-- Visitor counting: https://myporfolio.goatcounter.com. No cookies. -->
-<script data-goatcounter="https://myporfolio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://myporfolio.goatcounter.com/count" async src="https://gc.zgo.at/count.v4.js" integrity="sha384-nRw6qfbWyJha9LhsOtSb2YJDyZdKvvCFh0fJYlkquSFjUxp9FVNugbfy8q1jdxI+" crossorigin="anonymous"></script>
 </body>
 </html>
