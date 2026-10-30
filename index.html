@@ -570,6 +570,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .contact .intro > p { color: var(--ink-2); font-size: 1.0938rem; }
 .direct { display: grid; gap: .6rem; margin-top: 2rem; }
 .direct a { display: flex; align-items: center; gap: .9rem; padding: .95rem 1.1rem; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--line); transition: background-color .2s, border-color .2s; }
+.direct a[hidden] { display: none; }
 .direct a:hover { background: rgba(255,255,255,.07); border-color: var(--line-2); }
 .direct .ic { width: 2.5rem; height: 2.5rem; border-radius: 12px; display: grid; place-items: center; background: rgba(214,255,74,.12); color: var(--lime); flex: none; }
 .direct .ic svg { width: 1.15rem; height: 1.15rem; }
@@ -612,6 +613,67 @@ fieldset.f { border: 0; margin: 0; padding: 0; min-width: 0; }
 .done p { color: var(--ink-2); }
 form.sent > :not(.done) { display: none; }
 form.sent .done { display: block; }
+
+/* --- Wizard --- */
+.wiz { position: relative; min-width: 0; }
+.wz-top { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.5rem; font-size: .875rem; color: var(--ink-3); }
+.wz-top span { white-space: nowrap; }
+.wz-bar { flex: 1; height: 4px; border-radius: 4px; background: rgba(255,255,255,.08); overflow: hidden; }
+.wz-bar i { display: block; height: 100%; width: 25%; background: var(--lime); border-radius: 4px; transition: width .5s var(--ease); }
+.wz-back { width: 2.4rem; height: 2.4rem; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; cursor: pointer; font-size: 1.05rem; flex: none; transition: background-color .2s; }
+.wz-back:hover { background: rgba(255,255,255,.06); }
+.wz-back[hidden] { display: none; }
+.wz-step { display: none; }
+.wz-step.on { display: block; animation: wz-in .45s var(--ease); }
+form.wz-step.on { display: grid; }
+@keyframes wz-in { from { opacity: 0; transform: translateY(10px); } }
+.wz-step h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.35rem, 2.6vw, 1.75rem); letter-spacing: -.03em; line-height: 1.15; margin: 0 0 .5rem; }
+.wz-sub { color: var(--ink-2); margin: 0 0 1.25rem; font-size: .9688rem; }
+.wiz .full { grid-column: 1 / -1; }
+form .wz-sub { margin: 0; }
+.opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin-top: 1.25rem; }
+.wz-sub + .opts { margin-top: 0; }
+.opts button {
+  display: flex; align-items: center; gap: .7rem; text-align: left;
+  min-height: 3.6rem; padding: .8rem 1rem; border-radius: 16px;
+  border: 1px solid var(--line-2); background: rgba(9,9,12,.55);
+  font-size: .9688rem; font-weight: 500; cursor: pointer;
+  transition: border-color .2s, background-color .2s, transform .2s var(--ease);
+}
+.opts button:hover { border-color: var(--ink-3); transform: translateY(-2px); }
+.opts button b { font-size: 1.25rem; line-height: 1; font-weight: 400; }
+.opts button.sel { border-color: var(--lime); background: rgba(214,255,74,.1); }
+.opts.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.opts.chips button { min-height: 2.6rem; padding: .45rem 1rem; border-radius: 999px; }
+.opts.chips button.sel { background: var(--lime); color: var(--lime-ink); font-weight: 600; }
+.wz-next { margin-top: 1.5rem; }
+.wz-next:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
+.wz-skip { margin-top: 1.25rem; background: none; border: 0; padding: .25rem 0; color: var(--ink-3); font-size: .875rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.wz-skip:hover { color: var(--ink); }
+.stage-tag { display: inline-flex; align-items: center; gap: .45rem; padding: .3rem .8rem; border-radius: 999px; background: rgba(214,255,74,.12); color: var(--lime); font-size: .8125rem; font-weight: 600; margin-bottom: .9rem; }
+.road { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; counter-reset: r; }
+.road li { position: relative; counter-increment: r; padding: 1rem 1.1rem 1rem 3.6rem; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
+.road li::before { content: counter(r); position: absolute; left: 1rem; top: 1rem; width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: .875rem; background: rgba(255,255,255,.08); }
+.road li:first-child { border-color: rgba(214,255,74,.5); background: rgba(214,255,74,.07); }
+.road li:first-child::before { background: var(--lime); color: var(--lime-ink); }
+.road b { display: block; font-family: var(--display); font-weight: 600; font-size: 1rem; letter-spacing: -.01em; margin-bottom: .2rem; }
+.road b em { font-style: normal; font-family: var(--sans); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--lime-ink); background: var(--lime); padding: .12rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: 2px; }
+.road span { color: var(--ink-2); font-size: .9375rem; line-height: 1.55; display: block; }
+.later { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; font-size: .875rem; color: var(--ink-3); }
+.later > span { margin-right: .25rem; }
+.later div { display: contents; }
+.later i { font-style: normal; padding: .3rem .75rem; border-radius: 999px; border: 1px dashed var(--line-2); color: var(--ink-3); }
+.tip { margin: 1.25rem 0 0; padding: .9rem 1rem; border-radius: 14px; background: rgba(142,123,255,.1); border: 1px solid rgba(142,123,255,.25); color: #D6D0FF; font-size: .9375rem; }
+.wz-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+
+/* Nudge */
+.nudge { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; width: min(22rem, calc(100vw - 2rem)); padding: 1.1rem 1.2rem 1.2rem; border-radius: 20px; background: rgba(20,20,26,.94); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1px solid var(--line-2); box-shadow: 0 30px 60px -20px rgba(0,0,0,.9); transform: translateY(130%); opacity: 0; transition: transform .6s var(--ease), opacity .6s var(--ease); }
+.nudge.on { transform: none; opacity: 1; }
+.nudge b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.05rem; letter-spacing: -.02em; margin: 0 1.75rem .3rem 0; }
+.nudge p { color: var(--ink-2); font-size: .9063rem; line-height: 1.5; margin: 0 0 .9rem; }
+.nudge .x { position: absolute; top: .7rem; right: .7rem; width: 2rem; height: 2rem; border-radius: 50%; border: 0; background: rgba(255,255,255,.06); color: var(--ink-2); cursor: pointer; font-size: 1rem; }
+.nudge .x:hover { background: rgba(255,255,255,.12); color: var(--ink); }
+.nudge .btn { width: 100%; }
 
 /* --- Footer --- */
 footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 2rem; }
@@ -762,7 +824,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 
         <div class="btns" data-r style="--i:3">
           <a class="btn pri" href="#contact">Start a project <svg aria-hidden="true"><use href="#i-right"/></svg></a>
-          <a class="btn" href="#work">See our work</a>
+          <a class="btn" href="#contact">Get a free digital plan</a>
         </div>
 
         <div class="shipped" data-r style="--i:4">
@@ -792,8 +854,8 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         </div>
         <div class="s-chat glass">
           <h5>AI assistant</h5>
-          <div class="bubble u">Kal 5 baje slot mil jayega?</div>
-          <div class="bubble b">Ji, 5:30 PM book kar diya ✓</div>
+          <div class="bubble u">Any slot free tomorrow at 5?</div>
+          <div class="bubble b">Booked you for 5:30 PM ✓</div>
         </div>
       </div>
     </div>
@@ -1027,14 +1089,14 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
           <div class="glass side l"><b>Order placed</b><span>Rider on the way</span></div>
           <div class="phone"><div class="scr">
             <div class="groc">
-              <div class="hi">Assalam o Alaikum<b>Hira 👋</b></div>
-              <div class="search">Search atta, doodh, sabzi…</div>
+              <div class="hi">Good morning<b>Hira 👋</b></div>
+              <div class="search">Search flour, milk, vegetables…</div>
               <div class="cats"><span>Fruits</span><span>Dairy</span><span>Bakery</span></div>
               <div class="items">
-                <div><i style="background:#FFF6D8">🍌</i><b>Kela, 1 dozen</b><span>Rs 220</span></div>
-                <div><i style="background:#EAF4FF">🥛</i><b>Doodh, 1 L</b><span>Rs 240</span></div>
+                <div><i style="background:#FFF6D8">🍌</i><b>Bananas, 12</b><span>Rs 220</span></div>
+                <div><i style="background:#EAF4FF">🥛</i><b>Milk, 1 L</b><span>Rs 240</span></div>
                 <div><i style="background:#FBEFE3">🍞</i><b>Bread</b><span>Rs 180</span></div>
-                <div><i style="background:#E8F7EC">🥬</i><b>Palak</b><span>Rs 90</span></div>
+                <div><i style="background:#E8F7EC">🥬</i><b>Spinach</b><span>Rs 90</span></div>
               </div>
               <div class="cartbar"><span>3 items</span><span>Rs 640 →</span></div>
             </div>
@@ -1054,10 +1116,10 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
           <div class="wa-chat" aria-label="Example conversation with an AI booking assistant">
             <div class="wa-top"><i>✚</i><div><b>City Care Clinic</b><span>AI assistant · online</span></div></div>
             <div class="wa-body" id="chat">
-              <div class="msg me">Assalam o Alaikum, kal Dr. Ayesha available hain?<small>4:02 PM</small></div>
-              <div class="msg in">Wa Alaikum Assalam! Kal Dr. Ayesha ke 4:00 PM aur 5:30 PM ke slots khaali hain. Kaunsa chahiye?<small>4:02 PM</small></div>
-              <div class="msg me">5:30 theek hai<small>4:03 PM</small></div>
-              <div class="msg in">Done ✅ Kal 5:30 PM, Dr. Ayesha. Ek ghanta pehle reminder bhej denge.<small>4:03 PM</small></div>
+              <div class="msg me">Hi, is Dr. Ayesha available tomorrow?<small>4:02 PM</small></div>
+              <div class="msg in">Hello! Dr. Ayesha has 4:00 PM and 5:30 PM free tomorrow. Which one works for you?<small>4:02 PM</small></div>
+              <div class="msg me">5:30 please<small>4:03 PM</small></div>
+              <div class="msg in">Done ✅ Tomorrow, 5:30 PM with Dr. Ayesha. We'll send you a reminder an hour before.<small>4:03 PM</small></div>
               <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
             </div>
           </div>
@@ -1311,10 +1373,11 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   <div class="wrap">
     <div class="contact" data-r>
       <div class="intro">
-        <div class="kicker">Start a project</div>
-        <h2>Let's build something <em class="s">together.</em></h2>
-        <p>Tell us a little about your business and what you need. We'll get back
-        to you with ideas and a clear next step.</p>
+        <div class="kicker">Free digital plan</div>
+        <h2>Not sure where to start? <em class="s">Let's find out.</em></h2>
+        <p>Answer 4 quick questions about your business. We'll show you what to do
+        first, what can wait, and how to go digital step by step without wasting
+        money.</p>
         <div class="direct">
           <a href="mailto:saad.bawanyy@gmail.com">
             <span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
@@ -1331,37 +1394,90 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         </div>
       </div>
 
-      <form id="form" novalidate>
+      <div class="wiz" id="wiz">
+        <div class="wz-top">
+          <button type="button" class="wz-back" id="wz-back" aria-label="Previous question" hidden>←</button>
+          <span id="wz-count">Question 1 of 4</span>
+          <div class="wz-bar" aria-hidden="true"><i id="wz-fill"></i></div>
+        </div>
+
+        <div class="wz-step on" data-q="biz">
+          <h3>What kind of business do you run?</h3>
+          <div class="opts">
+            <button type="button" data-v="food"><b>🍽</b>Restaurant, café or food</button>
+            <button type="button" data-v="retail"><b>🛍</b>Shop or clothing brand</button>
+            <button type="button" data-v="service"><b>💇</b>Salon, clinic or services</button>
+            <button type="button" data-v="home"><b>🏠</b>Home or online business</button>
+            <button type="button" data-v="company"><b>🏢</b>Company or B2B</button>
+            <button type="button" data-v="idea"><b>💡</b>Just an idea, not started yet</button>
+          </div>
+          <button type="button" class="wz-skip" data-skip>Skip the questions, just send a message</button>
+        </div>
+
+        <div class="wz-step" data-q="rev">
+          <h3>Roughly how much does it earn in a month?</h3>
+          <p class="wz-sub">An estimate is fine. It helps us suggest what's worth spending on right now.</p>
+          <div class="opts">
+            <button type="button" data-v="0">Not earning yet</button>
+            <button type="button" data-v="1">Under Rs 1 lakh</button>
+            <button type="button" data-v="2">Rs 1 to 5 lakh</button>
+            <button type="button" data-v="3">Rs 5 to 20 lakh</button>
+            <button type="button" data-v="4">Above Rs 20 lakh</button>
+            <button type="button" data-v="x">Prefer not to say</button>
+          </div>
+        </div>
+
+        <div class="wz-step" data-q="have" data-multi>
+          <h3>What do you already have?</h3>
+          <p class="wz-sub">Pick everything that applies.</p>
+          <div class="opts chips">
+            <button type="button" data-v="logo">Logo / brand</button>
+            <button type="button" data-v="wa">WhatsApp Business</button>
+            <button type="button" data-v="maps">Google Maps listing</button>
+            <button type="button" data-v="ig">Instagram page</button>
+            <button type="button" data-v="fb">Facebook page</button>
+            <button type="button" data-v="post">We post regularly</button>
+            <button type="button" data-v="site">Website</button>
+            <button type="button" data-v="store">Online store</button>
+            <button type="button" data-v="ads">We run ads</button>
+            <button type="button" data-v="app">Mobile app</button>
+            <button type="button" data-v="none">None of these yet</button>
+          </div>
+          <button type="button" class="btn pri wz-next" id="wz-next" disabled>Next <svg aria-hidden="true"><use href="#i-right"/></svg></button>
+        </div>
+
+        <div class="wz-step" data-q="goal">
+          <h3>What matters most right now?</h3>
+          <div class="opts">
+            <button type="button" data-v="customers"><b>📈</b>Getting more customers</button>
+            <button type="button" data-v="online"><b>🛒</b>Selling online</button>
+            <button type="button" data-v="brand"><b>✨</b>Looking more professional</button>
+            <button type="button" data-v="time"><b>⏱</b>Saving time on repetitive work</button>
+            <button type="button" data-v="launch"><b>🚀</b>Launching a new idea</button>
+          </div>
+        </div>
+
+        <div class="wz-step" data-q="plan">
+          <span class="stage-tag" id="wz-stage"></span>
+          <h3>Your digital roadmap</h3>
+          <p class="wz-sub" id="wz-intro"></p>
+          <ol class="road" id="wz-road"></ol>
+          <div class="later" id="wz-later-wrap"><span>Later, as you grow</span><div id="wz-later"></div></div>
+          <p class="tip" id="wz-tip"></p>
+          <div class="wz-actions">
+            <button type="button" class="btn pri" data-goto="form">Talk to us about this plan <svg aria-hidden="true"><use href="#i-right"/></svg></button>
+            <button type="button" class="btn" data-restart>Start over</button>
+          </div>
+        </div>
+
+      <form id="form" class="wz-step" data-q="form" novalidate>
+        <h3 class="full" id="form-h">Where can we reach you?</h3>
+        <p class="wz-sub full" id="form-sub">We'll send your plan and suggest a first step. No pressure, no spam.</p>
         <div class="f"><label for="name">Your name <i>*</i></label><input id="name" name="name" autocomplete="name" required placeholder="Ali Khan"></div>
         <div class="f"><label for="biz">Business name</label><input id="biz" name="business" autocomplete="organization" placeholder="Khan Traders"></div>
         <div class="f"><label for="phone">Phone / WhatsApp <i>*</i></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="03xx xxxxxxx"></div>
         <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@business.com"></div>
-        <fieldset class="f full">
-          <legend>What do you need?</legend>
-          <div class="needs">
-            <label><input type="checkbox" name="needs" value="Website"><span>Website</span></label>
-            <label><input type="checkbox" name="needs" value="Online store"><span>Online store</span></label>
-            <label><input type="checkbox" name="needs" value="Mobile app"><span>Mobile app</span></label>
-            <label><input type="checkbox" name="needs" value="UI/UX design"><span>UI/UX design</span></label>
-            <label><input type="checkbox" name="needs" value="Logo & branding"><span>Logo &amp; branding</span></label>
-            <label><input type="checkbox" name="needs" value="Social media"><span>Social media</span></label>
-            <label><input type="checkbox" name="needs" value="Ads"><span>Ads</span></label>
-            <label><input type="checkbox" name="needs" value="Automation / AI"><span>Automation / AI</span></label>
-            <label><input type="checkbox" name="needs" value="Not sure yet"><span>Not sure yet</span></label>
-          </div>
-        </fieldset>
-        <div class="f full">
-          <label for="budget">Rough budget</label>
-          <select id="budget" name="budget">
-            <option value="">Choose one (optional)</option>
-            <option>Under Rs 50,000</option>
-            <option>Rs 50,000 to 150,000</option>
-            <option>Rs 150,000 to 500,000</option>
-            <option>Above Rs 500,000</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="f full"><label for="msg">Tell us about it <i>*</i></label><textarea id="msg" name="message" required placeholder="What does your business do, and what would you like help with?"></textarea></div>
+        <div class="f full"><label for="msg">Anything else? <i id="msg-req" hidden>*</i></label><textarea id="msg" name="message" placeholder="Tell us a bit about your business or what you'd like help with."></textarea></div>
         <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="status" id="status" role="alert"></div>
         <div class="send">
@@ -1370,15 +1486,23 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         </div>
         <div class="done" role="status">
           <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
-          <h3>Message sent. Shukriya!</h3>
+          <h3>Message sent. Thank you!</h3>
           <p>We'll get back to you soon on the number or email you gave us.</p>
         </div>
       </form>
+      </div>
     </div>
   </div>
 </section>
 
 </main>
+
+<aside class="nudge" id="nudge" aria-label="Free digital plan">
+  <button type="button" class="x" aria-label="Close">✕</button>
+  <b>Not sure where to start online?</b>
+  <p>Answer 4 quick questions and get a free step-by-step plan for your business.</p>
+  <a class="btn pri sm" href="#contact">Get my plan <svg aria-hidden="true"><use href="#i-right"/></svg></a>
+</aside>
 
 <footer>
   <div class="wrap">
@@ -1492,6 +1616,178 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     })();
   }
 
+  // Digital plan: four questions, then a roadmap built from the answers
+  var wiz = document.getElementById('wiz');
+  var steps = wiz.querySelectorAll('.wz-step');
+  var order = ['biz', 'rev', 'have', 'goal', 'plan', 'form'];
+  var ans = { biz: '', rev: '', have: [], goal: '' };
+  var hist = [];
+  var current = 'biz';
+  var plainContact = false;
+  var LABEL = {};
+  wiz.querySelectorAll('.wz-step[data-q] .opts button').forEach(function (b) {
+    var q = b.closest('.wz-step').getAttribute('data-q');
+    LABEL[q + ':' + b.getAttribute('data-v')] = [].filter.call(b.childNodes, function (n) { return n.nodeType === 3; })
+      .map(function (n) { return n.textContent; }).join('').trim();
+  });
+
+  function show(q, back) {
+    if (!back && current !== q) hist.push(current);
+    current = q;
+    steps.forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-q') === q); });
+    var i = order.indexOf(q);
+    var asking = i < 4;
+    document.getElementById('wz-count').textContent = asking ? 'Question ' + (i + 1) + ' of 4' : (q === 'plan' ? 'Your plan' : (plainContact ? 'Send us a message' : 'Last step'));
+    document.getElementById('wz-fill').style.width = (asking ? (i + 1) * 25 : 100) + '%';
+    document.getElementById('wz-back').hidden = hist.length === 0;
+    var msgReq = document.getElementById('msg-req');
+    msgReq.hidden = !plainContact;
+    document.getElementById('form-h').textContent = plainContact ? 'Tell us what you need' : 'Where can we reach you?';
+    document.getElementById('form-sub').textContent = plainContact ? 'We\'ll get back to you with ideas and a clear next step.' : 'We\'ll send your plan and suggest a first step. No pressure, no spam.';
+  }
+
+  wiz.querySelectorAll('.wz-step[data-q] .opts').forEach(function (box) {
+    var step = box.closest('.wz-step');
+    var q = step.getAttribute('data-q');
+    var multi = step.hasAttribute('data-multi');
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      var v = b.getAttribute('data-v');
+      if (multi) {
+        if (v === 'none') {
+          box.querySelectorAll('button').forEach(function (x) { x.classList.toggle('sel', x === b && !b.classList.contains('sel')); });
+        } else {
+          box.querySelector('[data-v="none"]').classList.remove('sel');
+          b.classList.toggle('sel');
+        }
+        ans.have = [].map.call(box.querySelectorAll('.sel'), function (x) { return x.getAttribute('data-v'); });
+        document.getElementById('wz-next').disabled = ans.have.length === 0;
+        return;
+      }
+      box.querySelectorAll('button').forEach(function (x) { x.classList.toggle('sel', x === b); });
+      ans[q] = v;
+      setTimeout(function () {
+        if (q === 'goal') { buildPlan(); show('plan'); }
+        else show(order[order.indexOf(q) + 1]);
+      }, 220);
+    });
+  });
+  document.getElementById('wz-next').addEventListener('click', function () { show('goal'); });
+  document.getElementById('wz-back').addEventListener('click', function () {
+    var prev = hist.pop();
+    if (prev === 'biz') plainContact = false;
+    if (prev) show(prev, true);
+  });
+  wiz.querySelector('[data-skip]').addEventListener('click', function () { plainContact = true; show('form'); document.getElementById('name').focus(); });
+  wiz.querySelector('[data-goto="form"]').addEventListener('click', function () { show('form'); document.getElementById('name').focus(); });
+  wiz.querySelector('[data-restart]').addEventListener('click', function () {
+    ans = { biz: '', rev: '', have: [], goal: '' }; hist = []; plainContact = false;
+    wiz.querySelectorAll('.opts .sel').forEach(function (x) { x.classList.remove('sel'); });
+    document.getElementById('wz-next').disabled = true;
+    show('biz', true);
+  });
+
+  var planText = '';
+  function buildPlan() {
+    var h = {}; ans.have.forEach(function (k) { h[k] = true; });
+    var tier = ans.rev === 'x' ? 2 : parseInt(ans.rev, 10);
+    var idea = ans.biz === 'idea';
+    var sellsOnline = ans.biz === 'retail' || ans.goal === 'online';
+    var mapsMatters = !(ans.biz === 'home' || ans.biz === 'idea' || ans.biz === 'company');
+
+    var all = [
+      { id: 'brand', tier: 0, done: h.logo,
+        t: 'A simple logo and brand look',
+        w: 'People need to recognise you before they trust you. A clean logo and colours make every post, page and signboard look professional.' },
+      { id: 'wa', tier: idea ? 1 : 0, done: h.wa && (h.maps || !mapsMatters),
+        t: mapsMatters ? 'WhatsApp Business and Google Maps' : 'WhatsApp Business, set up properly',
+        w: mapsMatters ? 'Both are free, and they\'re where most customers look first. A proper WhatsApp profile with a catalogue, and a Maps listing so people can find and review you.' : 'Free, and it\'s where most customers in Pakistan reach out. A business profile, catalogue and quick replies make you look ready.' },
+      { id: 'social', tier: 0, done: h.ig && h.fb,
+        t: 'Instagram and Facebook pages',
+        w: 'Your shop window online. Set them up with your brand, prices and contact details, so people can check you out before they message.' },
+      { id: 'post', tier: 1, done: h.post,
+        t: 'Regular posting (social media handling)',
+        w: 'A page that hasn\'t posted in months looks closed. Three or four good posts a week keeps you in front of customers.' },
+      { id: 'site', tier: idea ? 0 : 1, done: sellsOnline ? h.store : (h.site || h.store),
+        t: idea ? 'A one-page website to test your idea' : (sellsOnline ? 'An online store' : 'A simple business website'),
+        w: idea ? 'Before spending big, put the idea in front of real people and see who signs up or asks for prices.' : (sellsOnline ? 'Take orders around the clock, with cash on delivery or online payment, without answering every DM by hand.' : 'Your own address online: services, prices, location and a WhatsApp button. Google sends people here.') },
+      { id: 'ads', tier: 2, done: h.ads,
+        t: 'Meta and Instagram ads',
+        w: 'Once your pages and site look good, small targeted ads bring in new customers. Start with a small budget and grow what works.' },
+      { id: 'auto', tier: ans.goal === 'time' ? 2 : 3, done: false,
+        t: 'WhatsApp automation and an AI assistant',
+        w: 'When messages and orders pile up, an AI assistant answers common questions, takes bookings and logs orders, day and night.' },
+      { id: 'app', tier: 4, done: h.app,
+        t: 'Your own mobile app',
+        w: 'An app makes sense once you have lots of repeat customers. Until then, a good website does the same job for far less.' }
+    ];
+    var goalStep = { customers: 'post', online: 'site', brand: 'brand', time: 'auto', launch: 'site' }[ans.goal];
+
+    var open = all.filter(function (s) { return !s.done; });
+    var plan = open.filter(function (s) { return s.tier <= tier; }).slice(0, 3);
+    var g = open.filter(function (s) { return s.id === goalStep && s.tier <= tier + 1; })[0];
+    if (g && plan.indexOf(g) < 0) {
+      if (plan.length === 3) plan[2] = g; else plan.push(g);
+      plan.sort(function (a, b) { return all.indexOf(a) - all.indexOf(b); });
+    }
+    var ahead = false;
+    if (!plan.length) { plan = open.slice(0, 2); ahead = true; }
+    var later = open.filter(function (s) { return plan.indexOf(s) < 0; }).slice(0, 3);
+
+    var basics = all.slice(0, 5).filter(function (s) { return s.done; }).length;
+    var stage = idea ? 'Idea stage' : basics <= 1 ? 'Just getting started' : basics <= 3 ? 'Getting online' : 'Ready to grow';
+    document.getElementById('wz-stage').textContent = '● ' + stage;
+
+    var intro;
+    if (!open.length) intro = 'You already have everything on our list. The next step is making each piece work harder: a quick review of your pages, site and ads to find what\'s holding you back.';
+    else if (ahead) intro = 'You\'ve covered the basics for a business your size. When you\'re ready to grow, these are the next moves.';
+    else if (basics <= 1) intro = 'Start with the basics. They cost little, and everything after them works better because of them.';
+    else intro = 'You\'ve got a good base. Here\'s what we\'d do next, in this order.';
+    document.getElementById('wz-intro').textContent = intro;
+
+    var road = document.getElementById('wz-road');
+    road.innerHTML = '';
+    plan.forEach(function (s, i) {
+      var li = document.createElement('li');
+      var b = document.createElement('b'); b.textContent = s.t;
+      if (i === 0) { var tag = document.createElement('em'); tag.textContent = 'Start here'; b.appendChild(tag); }
+      var sp = document.createElement('span'); sp.textContent = s.w;
+      li.appendChild(b); li.appendChild(sp); road.appendChild(li);
+    });
+    var lw = document.getElementById('wz-later');
+    lw.innerHTML = '';
+    later.forEach(function (s) { var i = document.createElement('i'); i.textContent = s.t; lw.appendChild(i); });
+    document.getElementById('wz-later-wrap').hidden = !later.length;
+
+    var tip;
+    if (idea || ans.goal === 'launch') tip = 'Test the idea cheaply first: a one-page site and an Instagram page will tell you more than an expensive app ever could.';
+    else if (h.app && basics <= 2) tip = 'You have an app, but the basics are missing. Customers check your Instagram and Google before they download anything, so fix those first.';
+    else if (open.length > 3) tip = 'Don\'t try to do everything at once. Get one step working, then add the next. That\'s how small businesses go digital without wasting money.';
+    else tip = 'Each step builds on the last, so the order matters as much as the steps.';
+    document.getElementById('wz-tip').textContent = tip;
+
+    planText = plan.map(function (s, i) { return (i + 1) + '. ' + s.t; }).join(' | ') + (later.length ? ' || Later: ' + later.map(function (s) { return s.t; }).join(', ') : '');
+  }
+
+  // Nudge: a small, dismissible prompt rather than a popup over the page
+  var nudge = document.getElementById('nudge');
+  var nudgeSeen = false;
+  try { nudgeSeen = localStorage.getItem('sb-nudge') === '1'; } catch (e) {}
+  function hideNudge() {
+    nudge.classList.remove('on');
+    try { localStorage.setItem('sb-nudge', '1'); } catch (e) {}
+  }
+  if (!nudgeSeen) {
+    setTimeout(function () {
+      var c = document.getElementById('contact').getBoundingClientRect();
+      if (c.top < window.innerHeight && c.bottom > 0) return;
+      nudge.classList.add('on');
+    }, 6000);
+  }
+  nudge.querySelector('.x').addEventListener('click', hideNudge);
+  nudge.querySelector('.btn').addEventListener('click', hideNudge);
+
   // Contact form
   var form = document.getElementById('form');
   var status = document.getElementById('status');
@@ -1500,7 +1796,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     e.preventDefault();
     status.className = 'status'; status.textContent = '';
     var bad = null;
-    ['name', 'phone', 'msg'].forEach(function (id) {
+    (plainContact ? ['name', 'phone', 'msg'] : ['name', 'phone']).forEach(function (id) {
       var el = document.getElementById(id);
       if (!bad && !el.value.trim()) bad = el;
     });
@@ -1508,20 +1804,27 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     if (!bad && email.value && !email.checkValidity()) bad = email;
     if (bad) {
       status.className = 'status err';
-      status.textContent = bad === email ? 'That email address doesn\'t look right.' : 'Please fill in your name, phone number and a short message.';
+      status.textContent = bad === email ? 'That email address doesn\'t look right.' : (plainContact ? 'Please fill in your name, phone number and a short message.' : 'Please fill in your name and phone number.');
       bad.focus();
       return;
     }
     var fd = new FormData(form);
     if (fd.get('_honey')) return;
-    var needs = fd.getAll('needs').join(', ');
+    var answered = !plainContact && ans.goal;
     var data = {
       name: fd.get('name'), business: fd.get('business'), phone: fd.get('phone'),
-      email: fd.get('email'), needs: needs || '-', budget: fd.get('budget') || '-',
-      message: fd.get('message'),
-      _subject: 'New project enquiry from ' + fd.get('name'),
-      _template: 'table', _captcha: 'false'
+      email: fd.get('email'), message: fd.get('message') || '-'
     };
+    if (answered) {
+      data['Business type'] = LABEL['biz:' + ans.biz];
+      data['Monthly revenue'] = LABEL['rev:' + ans.rev];
+      data['Already has'] = ans.have.map(function (v) { return LABEL['have:' + v]; }).join(', ');
+      data['Main goal'] = LABEL['goal:' + ans.goal];
+      data['Suggested plan'] = planText;
+    }
+    data._subject = (answered ? 'New digital plan lead: ' : 'New project enquiry from ') + fd.get('name');
+    data._template = 'table';
+    data._captcha = 'false';
     if (data.email) data._replyto = data.email;
     submit.disabled = true;
     submit.firstChild.textContent = 'Sending… ';
