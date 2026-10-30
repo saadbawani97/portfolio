@@ -8,7 +8,7 @@
 <title>SB Studio | Websites, Apps, Design, Marketing & AI</title>
 <meta name="description" content="SB Studio is a Karachi-based team building websites, online stores, mobile apps, UI/UX and graphic design, social media marketing, and AI agents and automations for businesses in Pakistan and around the world.">
 <link rel="canonical" href="https://saadbawani97.github.io/portfolio/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D6FF4A'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='14' font-weight='800' fill='%2309090C' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23DCD2FF'/%3E%3Cstop offset='.5' stop-color='%23A7B9FF'/%3E%3Cstop offset='1' stop-color='%237FE3D8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' rx='11' fill='%23121219'/%3E%3Cpath d='M26.5 14c-1.4-1.9-3.8-3-6.5-3-3.9 0-6.6 2-6.6 4.9 0 3.1 2.9 4.1 6.6 4.8 3.8.7 6.8 1.9 6.8 5.1 0 3-2.9 5.2-6.8 5.2-2.8 0-5.4-1.1-7-3' stroke='url(%23g)' stroke-width='3.2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='29.5' cy='10.5' r='2.3' fill='url(%23g)'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#09090C">
 <meta name="color-scheme" content="dark">
 
@@ -55,8 +55,10 @@ window.addEventListener('load', function () { setTimeout(function () { if (!wind
   --ink: #F4F2EE;
   --ink-2: #B9B7C2;
   --ink-3: #8C8A96;
-  --lime: #D6FF4A;
-  --lime-ink: #0B0D02;
+  --lime: #B9A6FF;
+  --lime-ink: #0E0A24;
+  --green: #4ADE80;
+  --grad: linear-gradient(100deg, #DCD2FF 0%, #A7B9FF 45%, #7FE3D8 100%);
   --violet: #8E7BFF;
   --coral: #FF7A59;
   --sky: #5CC8FF;
@@ -104,8 +106,10 @@ em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-s
   transition: transform .25s var(--ease), background-color .25s, border-color .25s, color .25s, box-shadow .25s;
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--ink-3); }
-.btn.pri { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
-.btn.pri:hover { box-shadow: 0 10px 34px -10px rgba(214, 255, 74, .55); }
+.btn.pri { position: relative; overflow: hidden; isolation: isolate; background: var(--ink); border-color: var(--ink); color: #0B0B10; }
+.btn.pri::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--grad); opacity: 0; transition: opacity .35s var(--ease); }
+.btn.pri:hover { border-color: transparent; box-shadow: 0 14px 40px -12px rgba(167, 185, 255, .6); }
+.btn.pri:hover::before { opacity: 1; }
 .btn.sm { min-height: 2.5rem; padding: .45rem 1.05rem; font-size: .875rem; }
 .btn svg { width: 1em; height: 1em; transition: transform .25s var(--ease); }
 .btn:hover svg { transform: translateX(3px); }
@@ -115,8 +119,9 @@ em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-s
 .nav.solid { background: rgba(9, 9, 12, .78); -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4); box-shadow: 0 1px 0 var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4.5rem; }
 .logo { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--display); font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; }
-.logo i { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 11px; background: var(--lime); color: var(--lime-ink); font-style: normal; font-size: .78rem; font-weight: 800; }
-.logo span b { color: var(--lime); font-weight: 700; }
+.logo .mark { width: 2.4rem; height: 2.4rem; flex: none; transition: transform .6s var(--ease), filter .6s; }
+.logo:hover .mark { transform: rotate(-10deg) scale(1.06); filter: drop-shadow(0 0 14px rgba(167,185,255,.45)); }
+.logo span em { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.2em; letter-spacing: 0; padding-right: .06em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .nav ul { display: flex; gap: .2rem; list-style: none; margin: 0; padding: 0; }
 .nav ul a { display: block; padding: .45rem .85rem; border-radius: 999px; font-size: .9375rem; color: var(--ink-2); transition: color .2s, background-color .2s; }
 .nav ul a:hover { color: var(--ink); background: rgba(255,255,255,.06); }
@@ -150,8 +155,13 @@ em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-s
   opacity: .55; pointer-events: none;
 }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
-.orb.a { width: 34rem; height: 34rem; right: -10rem; top: -8rem; background: rgba(142, 123, 255, .28); }
-.orb.b { width: 26rem; height: 26rem; left: -10rem; top: 24rem; background: rgba(214, 255, 74, .12); }
+.orb.a { width: 34rem; height: 34rem; right: -10rem; top: -8rem; background: rgba(142, 123, 255, .3); }
+.orb.b { width: 26rem; height: 26rem; left: -10rem; top: 24rem; background: rgba(127, 227, 216, .12); }
+.orb.c { width: 22rem; height: 22rem; left: 38%; top: 6rem; background: rgba(120, 150, 255, .14); }
+.js .orb.a { animation: drift 18s ease-in-out infinite alternate; }
+.js .orb.b { animation: drift 22s ease-in-out -6s infinite alternate-reverse; }
+.js .orb.c { animation: drift 26s ease-in-out -12s infinite alternate; }
+@keyframes drift { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-5rem, 3rem) scale(1.12); } 100% { transform: translate(3rem, -2rem) scale(.94); } }
 .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 
 .pill {
@@ -160,8 +170,8 @@ em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-s
   border: 1px solid var(--line-2); background: rgba(255,255,255,.03);
   font-size: .875rem; color: var(--ink-2);
 }
-.dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); flex: none; }
-.dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--lime); animation: ping 2s var(--ease) infinite; }
+.dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex: none; }
+.dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: ping 2s var(--ease) infinite; }
 @keyframes ping { 0% { transform: scale(1); opacity: .7; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
 
 h1 {
@@ -188,11 +198,12 @@ html:not(.js) h1 .rot span:first-child { transform: none; opacity: 1; }
 /* Hero composition */
 .stage { position: relative; height: clamp(26rem, 44vw, 36rem); }
 .stage > * { position: absolute; }
-.s-browser { left: 0; top: 8%; width: 82%; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 40px 90px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); transform: rotate(-3deg); }
+.s-browser { left: 0; top: 8%; width: 82%; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 40px 90px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); transform: rotate(-3deg) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0); }
+.stage > * { transition: transform .5s var(--ease); }
 .s-browser img { width: 100%; }
-.s-phone { right: 2%; top: 0; width: 34%; transform: rotate(5deg); }
-.s-flow { left: -3%; bottom: 4%; width: 15.5rem; }
-.s-chat { right: 0; bottom: 10%; width: 15rem; }
+.s-phone { right: 2%; top: 0; width: 34%; transform: rotate(5deg) translate3d(calc(var(--px, 0) * 22px), calc(var(--py, 0) * 16px), 0); }
+.s-flow { left: -3%; bottom: 4%; width: 15.5rem; transform: translate3d(calc(var(--px, 0) * 30px), calc(var(--py, 0) * 22px), 0); }
+.s-chat { right: 0; bottom: 10%; width: 15rem; transform: translate3d(calc(var(--px, 0) * -26px), calc(var(--py, 0) * 18px), 0); }
 .js .stage > * { animation: bob 7s ease-in-out infinite; }
 .js .stage .s-phone { animation-delay: -2s; }
 .js .stage .s-flow { animation-delay: -4s; }
@@ -276,7 +287,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .feat {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: center;
   padding: clamp(1.5rem, 4vw, 3.25rem); border-radius: 32px; overflow: hidden; position: relative;
-  background: radial-gradient(ellipse 70% 90% at 90% 10%, rgba(142,123,255,.38), transparent 60%), radial-gradient(ellipse 50% 60% at 0% 100%, rgba(214,255,74,.08), transparent 70%), #110F1F;
+  background: radial-gradient(ellipse 70% 90% at 90% 10%, rgba(142,123,255,.38), transparent 60%), radial-gradient(ellipse 50% 60% at 0% 100%, rgba(185,166,255,.08), transparent 70%), #110F1F;
   border: 1px solid rgba(142,123,255,.22);
 }
 .tagrow { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-size: .8125rem; color: var(--ink-3); }
@@ -291,7 +302,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .feat p { color: var(--ink-2); }
 .ticks { list-style: none; margin: 1.25rem 0 1.5rem; padding: 0; display: grid; gap: .55rem; }
 .ticks li { position: relative; padding-left: 1.75rem; color: var(--ink-2); font-size: .9688rem; }
-.ticks li::before { content: ""; position: absolute; left: 0; top: .32em; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: rgba(214,255,74,.12); }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .32em; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: rgba(185,166,255,.12); }
 .ticks li::after { content: ""; position: absolute; left: .34rem; top: calc(.32em + .32rem); width: .4rem; height: .22rem; border-left: 2px solid var(--lime); border-bottom: 2px solid var(--lime); transform: rotate(-45deg); }
 .links { display: flex; flex-wrap: wrap; gap: .6rem; }
 .go { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.6rem; padding: .5rem 1.05rem; border-radius: 999px; border: 1px solid var(--line-2); font-size: .9063rem; font-weight: 600; transition: background-color .2s, border-color .2s, transform .2s var(--ease); }
@@ -327,13 +338,13 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .proj.kh .body { justify-content: center; padding: 2rem 2.25rem; }
 .proj.kh h3 { font-size: 2rem; }
 .proj.kh p { max-width: 34rem; font-size: 1.0313rem; }
-.proj.kh .shot { background: radial-gradient(ellipse at 50% 120%, rgba(214,255,74,.18), transparent 60%), linear-gradient(160deg, #0E1F18, #0A1410); }
-.kh-mark { text-align: center; color: #E9F7D2; }
+.proj.kh .shot { background: radial-gradient(ellipse at 50% 120%, rgba(185,166,255,.18), transparent 60%), linear-gradient(160deg, #0E1F18, #0A1410); }
+.kh-mark { text-align: center; color: #ECE6FF; }
 .kh-mark b { display: block; font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.03em; }
-.kh-mark span { font-size: .8125rem; color: #9FC2A8; letter-spacing: .14em; text-transform: uppercase; }
-.kh-ring { width: 5.5rem; height: 5.5rem; margin: 0 auto 1rem; border-radius: 50%; border: 2px dashed rgba(214,255,74,.5); display: grid; place-items: center; }
+.kh-mark span { font-size: .8125rem; color: #A9A2C9; letter-spacing: .14em; text-transform: uppercase; }
+.kh-ring { width: 5.5rem; height: 5.5rem; margin: 0 auto 1rem; border-radius: 50%; border: 2px dashed rgba(185,166,255,.5); display: grid; place-items: center; }
 .js .kh-ring { animation: spin 18s linear infinite; }
-.kh-ring i { width: 2.6rem; height: 2.6rem; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #F2FFC4, var(--lime)); box-shadow: 0 0 40px rgba(214,255,74,.45); }
+.kh-ring i { width: 2.6rem; height: 2.6rem; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ECE6FF, var(--lime)); box-shadow: 0 0 40px rgba(185,166,255,.45); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* --- Lab (concepts) --- */
@@ -405,7 +416,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .side span { color: var(--ink-3); }
 
 /* Concept: AI agent */
-.st.agent { background: radial-gradient(ellipse at 0% 0%, rgba(214,255,74,.12), transparent 55%), #0E1411; place-items: stretch center; }
+.st.agent { background: radial-gradient(ellipse at 0% 0%, rgba(185,166,255,.12), transparent 55%), #0E1411; place-items: stretch center; }
 .wa-chat { width: 100%; max-width: 24rem; border-radius: 16px; overflow: hidden; background: #0B141A; border: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; font-size: .8125rem; }
 .wa-top { display: flex; align-items: center; gap: .6rem; padding: .6rem .8rem; background: #1F2C33; }
 .wa-top i { width: 1.9rem; height: 1.9rem; border-radius: 50%; background: linear-gradient(135deg, #1FA855, #0B7A4B); display: grid; place-items: center; font-style: normal; font-size: .8rem; }
@@ -436,7 +447,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .node { position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; gap: .45rem; padding: .45rem .6rem; border-radius: 12px; background: #1B1A26; border: 1px solid var(--line-2); font-size: .72rem; font-weight: 600; white-space: nowrap; box-shadow: 0 10px 24px -12px rgba(0,0,0,.8); }
 .node i { width: 1.45rem; height: 1.45rem; border-radius: 7px; display: grid; place-items: center; font-style: normal; font-size: .72rem; flex: none; }
 .node small { display: block; font-weight: 400; color: var(--ink-3); font-size: .62rem; }
-.node.hub { padding: .65rem .8rem; border-color: rgba(214,255,74,.5); box-shadow: 0 0 0 4px rgba(214,255,74,.06), 0 0 40px -6px rgba(214,255,74,.35); }
+.node.hub { padding: .65rem .8rem; border-color: rgba(185,166,255,.5); box-shadow: 0 0 0 4px rgba(185,166,255,.06), 0 0 40px -6px rgba(185,166,255,.35); }
 
 /* Concept: brand */
 .st.brand { background: #F1ECE3; color: #2A2017; }
@@ -466,8 +477,80 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .b-card { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; border-radius: 10px; background: #2A2017; color: #F6E7CF; padding: .6rem .8rem; font-size: .68rem; transform: rotate(-1.5deg); }
 .b-card b { font-family: var(--display); font-size: .78rem; }
 
+/* Scrolling website concepts */
+.site { width: 100%; max-width: 23rem; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -24px rgba(0,0,0,.9); font-size: 9px; line-height: 1.35; background: #fff; transition: transform .5s var(--ease); }
+.c:hover .site { transform: translateY(-4px) scale(1.02); }
+.site .vp { height: 15rem; overflow: hidden; position: relative; }
+.js .site .pg { animation: pgscroll 18s cubic-bezier(.45,.05,.55,.95) infinite; }
+.c:hover .site .pg { animation-play-state: paused; }
+@keyframes pgscroll { 0%, 10% { transform: translateY(0); } 45%, 55% { transform: translateY(calc(-100% + 15rem)); } 90%, 100% { transform: translateY(0); } }
+.sec-h { font-family: var(--display); font-weight: 700; font-size: 1.2em; letter-spacing: -.02em; margin: 1.1em 0 .6em; }
+.cafe-site p { color: #5A4433; margin: 0 0 .7em; }
+.cafe-menu { grid-template-columns: repeat(3, 1fr); }
+.branches { display: grid; grid-template-columns: repeat(3, 1fr); gap: .45em; }
+.branches div { background: #2B1A0F; color: #F6EBDD; border-radius: 8px; padding: .6em; font-size: .95em; }
+.branches b { display: block; font-size: 1.1em; }
+.quote { margin: 1em 0; padding: .8em; border-radius: 8px; background: #fff; color: #B5541E; font-size: 1em; }
+.quote i { color: #2B1A0F; }
+.cafe-foot { display: flex; justify-content: space-between; align-items: center; padding: .9em; border-radius: 10px; background: #2B1A0F; color: #F6EBDD; }
+.cafe-foot b { font-family: var(--serif); font-style: italic; font-size: 1.3em; font-weight: 400; }
+.banner { border-radius: 8px; padding: 1.1em; margin-bottom: .2em; color: #fff; background: linear-gradient(120deg, #D63E6F, #F08A5D); display: grid; gap: .2em; }
+.banner small { opacity: .85; letter-spacing: .12em; text-transform: uppercase; font-size: .85em; }
+.banner b { font-family: var(--display); font-size: 1.9em; letter-spacing: -.03em; line-height: 1.05; }
+.banner span { font-weight: 600; }
+.f4 { background: radial-gradient(circle at 50% 50%, #C7B8FF 0 18%, transparent 19%) 0 0 / 12px 12px, #2A2350; }
+.f5 { background: linear-gradient(135deg, #BDEBDD 25%, #DDF6EE 25% 50%, #BDEBDD 50% 75%, #DDF6EE 75%) 0 0 / 14px 14px; }
+.f6 { background: repeating-linear-gradient(90deg, #B6563A 0 3px, #D98463 3px 9px); }
+.prods { row-gap: .8em; }
+.usp { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4em; margin: 1.1em 0; }
+.usp div { background: #F7F1F4; border-radius: 6px; padding: .55em; text-align: center; font-weight: 600; }
+.news { display: flex; align-items: center; gap: .5em; padding: .8em; border-radius: 8px; background: #1C1418; color: #fff; }
+.news b { flex: 1; }
+.news span { background: #fff; color: #9A8E94; border-radius: 5px; padding: .35em .5em; }
+.news i { font-style: normal; background: #D63E6F; padding: .35em .7em; border-radius: 5px; font-weight: 600; }
+.st.saas { background: radial-gradient(ellipse at 80% 0%, rgba(127,227,216,.18), transparent 55%), radial-gradient(ellipse at 0% 100%, rgba(142,123,255,.25), transparent 60%), #0B0B14; }
+.bar.dark { background: #16161F; border-color: #23232E; }
+.bar.dark span { background: #23232E; color: #9A98A8; }
+.saas-site { background: #0C0C16; color: #EDEBFA; }
+.saas-site .pg { padding: .9em 1em 1em; }
+.fl-nav { display: flex; align-items: center; gap: .8em; margin-bottom: 1.4em; }
+.fl-nav b { display: flex; align-items: center; gap: .35em; font-family: var(--display); font-size: 1.15em; }
+.fl-nav b i { width: 1em; height: 1em; border-radius: 4px; background: var(--grad); }
+.fl-nav span { flex: 1; color: #8C8AA3; }
+.fl-nav em, .fl-btns em { font-style: normal; background: #EDEBFA; color: #0C0C16; padding: .35em .7em; border-radius: 99px; font-weight: 600; }
+.fl-hero { text-align: center; }
+.fl-hero small { display: inline-block; padding: .25em .7em; border-radius: 99px; border: 1px solid #2D2D44; color: #B9A6FF; }
+.fl-hero h6 { font-family: var(--display); font-size: 2.1em; line-height: 1.05; letter-spacing: -.04em; margin: .5em 0 .4em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.fl-hero p { color: #9C9AB3; margin: 0 auto .9em; max-width: 26em; }
+.fl-btns { display: flex; gap: .5em; justify-content: center; }
+.fl-btns span { padding: .35em .7em; border-radius: 99px; border: 1px solid #2D2D44; }
+.fl-dash { display: flex; gap: .5em; margin: 1.3em 0; padding: .6em; border-radius: 10px; background: #13131F; border: 1px solid #23233A; box-shadow: 0 0 40px -10px rgba(142,123,255,.4); }
+.fl-side { display: grid; gap: .4em; align-content: start; }
+.fl-side i { width: 1.4em; height: 1.4em; border-radius: 5px; background: #23233A; }
+.fl-side i:first-child { background: var(--grad); }
+.fl-main { flex: 1; }
+.fl-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4em; }
+.fl-kpis div { background: #1A1A2A; border-radius: 6px; padding: .45em; color: #8C8AA3; }
+.fl-kpis b { display: block; color: #EDEBFA; font-size: 1.25em; }
+.fl-bars { display: flex; align-items: flex-end; gap: .35em; height: 5em; margin-top: .5em; padding: .4em; border-radius: 6px; background: #1A1A2A; }
+.fl-bars i { flex: 1; height: var(--h); border-radius: 3px 3px 0 0; background: linear-gradient(180deg, #A7B9FF, #6C5CE7); transform-origin: bottom; }
+.js .fl-bars i { animation: grow 3s var(--ease) infinite alternate; }
+.fl-bars i:nth-child(2n) { animation-delay: -1s; } .fl-bars i:nth-child(3n) { animation-delay: -2s; }
+@keyframes grow { from { transform: scaleY(.55); } to { transform: scaleY(1); } }
+.fl-logos { text-align: center; color: #6F6D86; margin-bottom: 1.2em; }
+.fl-logos b { color: #B4B2C8; }
+.fl-feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .45em; }
+.fl-feats div { background: #13131F; border: 1px solid #23233A; border-radius: 8px; padding: .6em; color: #8C8AA3; }
+.fl-feats i { font-style: normal; color: #7FE3D8; }
+.fl-feats b { display: block; color: #EDEBFA; margin: .2em 0; }
+.fl-price { display: grid; grid-template-columns: repeat(3, 1fr); gap: .45em; margin: 1.2em 0; }
+.fl-price div { text-align: center; padding: .8em .4em; border-radius: 8px; border: 1px solid #23233A; color: #8C8AA3; }
+.fl-price b { display: block; font-family: var(--display); font-size: 1.4em; color: #EDEBFA; }
+.fl-price .hl { border-color: #8E7BFF; background: rgba(142,123,255,.12); }
+.fl-foot { text-align: center; color: #5A586F; padding-top: .6em; border-top: 1px solid #1E1E2E; }
+
 /* --- AI --- */
-.ai { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 36px; border: 1px solid var(--line); background: radial-gradient(ellipse 55% 70% at 100% 50%, rgba(214,255,74,.1), transparent 65%), var(--bg-2); }
+.ai { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 36px; border: 1px solid var(--line); background: radial-gradient(ellipse 55% 70% at 100% 50%, rgba(185,166,255,.1), transparent 65%), var(--bg-2); }
 .ai h2 { font-size: clamp(1.9rem, 3.8vw, 3rem); }
 .ai-lede { color: var(--ink-2); font-size: 1.0938rem; margin: 1.25rem 0 1.75rem; max-width: 38rem; }
 .gains { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
@@ -500,7 +583,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .mo { position: relative; width: 13rem; height: 13rem; }
 .mo i { position: absolute; display: block; }
 .mo .r1 { inset: 0; border-radius: 50%; border: 1.5px solid rgba(142,123,255,.5); }
-.mo .r2 { inset: 1.8rem; border-radius: 50%; border: 1.5px dashed rgba(214,255,74,.45); }
+.mo .r2 { inset: 1.8rem; border-radius: 50%; border: 1.5px dashed rgba(185,166,255,.45); }
 .mo .sq { left: 50%; top: 50%; width: 4.4rem; height: 4.4rem; margin: -2.2rem 0 0 -2.2rem; border-radius: 1.2rem; background: linear-gradient(135deg, var(--violet), var(--coral)); box-shadow: 0 0 60px -6px rgba(142,123,255,.7); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 1.2rem; color: #fff; font-style: normal; }
 .mo .p { width: .8rem; height: .8rem; border-radius: 50%; left: 50%; top: -.4rem; margin-left: -.4rem; background: var(--lime); box-shadow: 0 0 18px var(--lime); }
 .mo .orbit { inset: 0; }
@@ -515,17 +598,47 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .js .mo-tl::after { animation: tl 4s linear infinite; }
 @keyframes tl { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
+/* --- Pricing --- */
+.price-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
+.tabs { display: flex; flex-wrap: wrap; gap: .3rem; padding: .35rem; border-radius: 999px; background: var(--bg-2); border: 1px solid var(--line); }
+.tabs button { border: 0; background: transparent; padding: .6rem 1.05rem; border-radius: 999px; color: var(--ink-2); font-weight: 500; font-size: .9063rem; cursor: pointer; transition: background-color .25s, color .25s; }
+.tabs button:hover { color: var(--ink); }
+.tabs button.on { background: var(--ink); color: #0B0B10; }
+.cty { display: inline-flex; align-items: center; gap: .65rem; font-size: .875rem; color: var(--ink-3); }
+.sel-country { appearance: none; min-height: 2.75rem; padding: .5rem 2.5rem .5rem 1rem; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink); font-weight: 500; font-size: .9375rem; cursor: pointer; background: rgba(9,9,12,.6) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23B9B7C2' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat right .95rem center / .9rem; }
+.sel-country option { background: #15151B; }
+.pkgs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+.pkg { position: relative; display: flex; flex-direction: column; padding: 1.9rem 1.75rem 1.75rem; border-radius: 26px; background: var(--card); border: 1px solid var(--line); transition: transform .35s var(--ease), border-color .35s; animation: wz-in .5s var(--ease) both; }
+.pkg:nth-child(2) { animation-delay: .06s; } .pkg:nth-child(3) { animation-delay: .12s; }
+.pkg:hover { transform: translateY(-6px); border-color: var(--line-2); }
+.pkg.pop { border: 1px solid transparent; background: linear-gradient(var(--card), var(--card)) padding-box, var(--grad) border-box; box-shadow: 0 40px 90px -50px rgba(167,185,255,.7); }
+.pkg .badge { position: absolute; top: -.8rem; left: 1.75rem; padding: .28rem .8rem; border-radius: 999px; background: var(--grad); color: #0E0A24; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.pkg h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; letter-spacing: -.025em; margin: 0 0 .3rem; }
+.pkg .tg { color: var(--ink-2); font-size: .9375rem; margin: 0; }
+.price { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .45rem; margin: 1.4rem 0 .35rem; }
+.price small { width: 100%; color: var(--ink-3); font-size: .8125rem; }
+.price b { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 3.4vw, 2.5rem); letter-spacing: -.045em; line-height: 1; }
+.price span { color: var(--ink-3); font-size: .875rem; }
+.days { display: inline-flex; align-self: flex-start; gap: .4rem; font-size: .8125rem; color: var(--ink-2); padding: .25rem .7rem; border-radius: 999px; background: rgba(255,255,255,.05); margin-bottom: .25rem; }
+.pkg .ticks { margin: 1.1rem 0 1.6rem; }
+.pkg .btn { margin-top: auto; width: 100%; }
+.pr-note { margin: 1.5rem auto 0; max-width: 44rem; text-align: center; color: var(--ink-3); font-size: .875rem; }
+.pk-link { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .3rem; margin-top: .65rem; padding: .35rem .8rem; border-radius: 999px; border: 1px solid var(--line-2); background: transparent; color: var(--ink); font-size: .8438rem; font-weight: 500; cursor: pointer; text-align: left; transition: background-color .2s, border-color .2s; }
+.pk-link:hover { background: rgba(255,255,255,.06); border-color: var(--ink-3); }
+.road .pk-link b { font-family: var(--sans); font-size: inherit; display: inline; margin: 0; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.wz-select { width: 100%; border-radius: 16px; min-height: 3.4rem; font-size: 1rem; margin-top: .25rem; }
+
 /* --- Why --- */
 .why { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 .w { padding: 1.6rem; border-radius: var(--r); background: var(--card); border: 1px solid var(--line); }
-.w .n { font-family: var(--display); font-weight: 800; font-size: 2.4rem; letter-spacing: -.05em; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(214,255,74,.6); margin-bottom: 1.1rem; }
+.w .n { font-family: var(--display); font-weight: 800; font-size: 2.4rem; letter-spacing: -.05em; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(185,166,255,.6); margin-bottom: 1.1rem; }
 .w h3 { font-family: var(--display); font-weight: 600; font-size: 1.1rem; letter-spacing: -.02em; margin: 0 0 .45rem; }
 .w p { color: var(--ink-2); font-size: .9688rem; margin: 0; line-height: 1.6; }
 
 /* --- Process --- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); counter-reset: s; }
 .steps li { position: relative; padding: 1.75rem 1.5rem 0 0; counter-increment: s; }
-.steps li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(214,255,74,.12); }
+.steps li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(185,166,255,.12); }
 .steps li::after { content: "0" counter(s); position: absolute; top: 1.4rem; right: 1.5rem; font-family: var(--display); font-size: .8125rem; color: var(--ink-3); }
 .steps h3 { font-family: var(--display); font-weight: 600; font-size: 1.25rem; letter-spacing: -.02em; margin: 0 0 .5rem; }
 .steps p { color: var(--ink-2); font-size: .9688rem; margin: 0; line-height: 1.6; }
@@ -544,7 +657,7 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .creds div { padding: .8rem .95rem; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--line); font-size: .875rem; color: var(--ink-2); line-height: 1.45; }
 .creds b { display: block; color: var(--ink); font-size: .9375rem; margin-bottom: .1rem; }
 
-.mono { display: grid; place-items: center; width: 100%; height: 100%; font-family: var(--display); font-weight: 800; font-size: clamp(4rem, 9vw, 6.5rem); letter-spacing: -.06em; color: #fff; background: radial-gradient(ellipse 70% 70% at 80% 10%, rgba(214,255,74,.35), transparent 60%), linear-gradient(150deg, #3A2F8F, #8E7BFF 55%, #5CC8FF); }
+.mono { display: grid; place-items: center; width: 100%; height: 100%; font-family: var(--display); font-weight: 800; font-size: clamp(4rem, 9vw, 6.5rem); letter-spacing: -.06em; color: #fff; background: radial-gradient(ellipse 70% 70% at 80% 10%, rgba(185,166,255,.35), transparent 60%), linear-gradient(150deg, #3A2F8F, #8E7BFF 55%, #5CC8FF); }
 .crew-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; margin: 3rem 0 1.25rem; }
 .crew-h h3 { font-family: var(--display); font-weight: 600; font-size: 1.4rem; letter-spacing: -.02em; margin: 0; }
 .crew-h span { color: var(--ink-3); font-size: .9375rem; }
@@ -568,14 +681,14 @@ h2 em.s { color: var(--lime); font-size: 1.08em; }
 .faq details p { color: var(--ink-2); padding: 0 3rem 1.4rem 0; margin: 0; }
 
 /* --- Contact --- */
-.contact { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 4rem); padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 36px; background: radial-gradient(ellipse 60% 70% at 0% 0%, rgba(214,255,74,.14), transparent 60%), radial-gradient(ellipse 60% 70% at 100% 100%, rgba(142,123,255,.22), transparent 60%), var(--bg-2); border: 1px solid var(--line); }
+.contact { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 4rem); padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 36px; background: radial-gradient(ellipse 60% 70% at 0% 0%, rgba(185,166,255,.14), transparent 60%), radial-gradient(ellipse 60% 70% at 100% 100%, rgba(142,123,255,.22), transparent 60%), var(--bg-2); border: 1px solid var(--line); }
 .contact h2 { font-size: clamp(2.2rem, 5vw, 3.75rem); margin-bottom: 1.25rem; }
 .contact .intro > p { color: var(--ink-2); font-size: 1.0938rem; }
 .direct { display: grid; gap: .6rem; margin-top: 2rem; }
 .direct a { display: flex; align-items: center; gap: .9rem; padding: .95rem 1.1rem; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--line); transition: background-color .2s, border-color .2s; }
 .direct a[hidden] { display: none; }
 .direct a:hover { background: rgba(255,255,255,.07); border-color: var(--line-2); }
-.direct .ic { width: 2.5rem; height: 2.5rem; border-radius: 12px; display: grid; place-items: center; background: rgba(214,255,74,.12); color: var(--lime); flex: none; }
+.direct .ic { width: 2.5rem; height: 2.5rem; border-radius: 12px; display: grid; place-items: center; background: rgba(185,166,255,.12); color: var(--lime); flex: none; }
 .direct .ic svg { width: 1.15rem; height: 1.15rem; }
 .direct small { display: block; color: var(--ink-3); font-size: .8125rem; }
 .direct b { font-weight: 600; font-size: .9688rem; word-break: break-all; }
@@ -594,7 +707,7 @@ form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1re
 .f select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23B9B7C2' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem; padding-right: 2.6rem; }
 .f select option { background: #15151B; }
 .f input::placeholder, .f textarea::placeholder { color: #6E6C78; }
-.f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 4px rgba(214,255,74,.12); }
+.f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 4px rgba(185,166,255,.12); }
 fieldset.f { border: 0; margin: 0; padding: 0; min-width: 0; }
 .needs { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .2rem; }
 .needs label { position: relative; cursor: pointer; }
@@ -646,7 +759,7 @@ form .wz-sub { margin: 0; }
 .opts button:hover { border-color: var(--ink-3); transform: translateY(-2px); }
 .opts button small { color: var(--ink-3); font-size: .8125rem; font-weight: 400; margin-left: auto; }
 .opts button b { font-size: 1.25rem; line-height: 1; font-weight: 400; }
-.opts button.sel { border-color: var(--lime); background: rgba(214,255,74,.1); }
+.opts button.sel { border-color: var(--lime); background: rgba(185,166,255,.1); }
 .opts.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .opts.chips button { min-height: 2.6rem; padding: .45rem 1rem; border-radius: 999px; }
 .opts.chips button.sel { background: var(--lime); color: var(--lime-ink); font-weight: 600; }
@@ -654,11 +767,11 @@ form .wz-sub { margin: 0; }
 .wz-next:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
 .wz-skip { margin-top: 1.25rem; background: none; border: 0; padding: .25rem 0; color: var(--ink-3); font-size: .875rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .wz-skip:hover { color: var(--ink); }
-.stage-tag { display: inline-flex; align-items: center; gap: .45rem; padding: .3rem .8rem; border-radius: 999px; background: rgba(214,255,74,.12); color: var(--lime); font-size: .8125rem; font-weight: 600; margin-bottom: .9rem; }
+.stage-tag { display: inline-flex; align-items: center; gap: .45rem; padding: .3rem .8rem; border-radius: 999px; background: rgba(185,166,255,.12); color: var(--lime); font-size: .8125rem; font-weight: 600; margin-bottom: .9rem; }
 .road { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; counter-reset: r; }
 .road li { position: relative; counter-increment: r; padding: 1rem 1.1rem 1rem 3.6rem; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
 .road li::before { content: counter(r); position: absolute; left: 1rem; top: 1rem; width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: .875rem; background: rgba(255,255,255,.08); }
-.road li:first-child { border-color: rgba(214,255,74,.5); background: rgba(214,255,74,.07); }
+.road li:first-child { border-color: rgba(185,166,255,.5); background: rgba(185,166,255,.07); }
 .road li:first-child::before { background: var(--lime); color: var(--lime-ink); }
 .road b { display: block; font-family: var(--display); font-weight: 600; font-size: 1rem; letter-spacing: -.01em; margin-bottom: .2rem; }
 .road b em { font-style: normal; font-family: var(--sans); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--lime-ink); background: var(--lime); padding: .12rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: 2px; }
@@ -699,8 +812,15 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 .f-bot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 1.5rem; font-size: .875rem; color: var(--ink-3); }
 .f-bot a:hover { color: var(--lime); }
 
+/* --- Accent text, scroll progress, cursor light --- */
+h1 .rot span, h2 em.s, .person h3 em.s, .feat .tag { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent !important; padding-right: .08em; }
+#prog { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 70; background: var(--grad); transform-origin: left; transform: scaleX(0); }
+.spot { position: fixed; left: 0; top: 0; width: 44rem; height: 44rem; margin: -22rem 0 0 -22rem; border-radius: 50%; pointer-events: none; z-index: 1; mix-blend-mode: screen; background: radial-gradient(circle, rgba(167,185,255,.075), transparent 62%); transform: translate3d(-100vw, -100vh, 0); transition: opacity .4s; }
+@media (hover: none), (pointer: coarse) { .spot { display: none; } }
+
 /* --- Reveal --- */
-.js [data-r] { opacity: 0; transform: translateY(24px); }
+.js [data-r] { opacity: 0; transform: translateY(28px); }
+@media (hover: hover) { .js [data-r]:not(.in) { filter: blur(6px); } .js [data-r].in { transition-property: opacity, transform, filter !important; } }
 .js [data-r].in { opacity: 1; transform: none; transition: opacity .8s var(--ease) calc(var(--i, 0) * 70ms), transform .8s var(--ease) calc(var(--i, 0) * 70ms); }
 
 /* --- Responsive --- */
@@ -709,6 +829,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   .nav-end .btn { display: none; }
   .burger { display: grid; }
   .projs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pkgs { grid-template-columns: minmax(0, 1fr); max-width: 34rem; margin: 0 auto; gap: 1.5rem; }
   .lab { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .c, .c.wide { grid-column: span 1; }
   .why, .crew { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -763,9 +884,13 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 </head>
 
 <body>
+<div id="prog" aria-hidden="true"></div>
+<div class="spot" id="spot" aria-hidden="true"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCD2FF"/><stop offset=".5" stop-color="#A7B9FF"/><stop offset="1" stop-color="#7FE3D8"/></linearGradient>
+    <symbol id="i-mark" viewBox="0 0 40 40"><rect x=".75" y=".75" width="38.5" height="38.5" rx="11" fill="#121219" stroke="url(#g-brand)" stroke-opacity=".55" stroke-width="1.5"/><path d="M26.5 14c-1.4-1.9-3.8-3-6.5-3-3.9 0-6.6 2-6.6 4.9 0 3.1 2.9 4.1 6.6 4.8 3.8.7 6.8 1.9 6.8 5.1 0 3-2.9 5.2-6.8 5.2-2.8 0-5.4-1.1-7-3" stroke="url(#g-brand)" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="29.5" cy="10.5" r="2.2" fill="url(#g-brand)"/></symbol>
     <symbol id="i-right" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
     <symbol id="i-out" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 11.5l7-7M6 4.5h5.5V10"/></symbol>
     <symbol id="i-build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="15" rx="2.5"/><path d="M2.5 8.5h19M9 13l-2 2 2 2M15 13l2 2-2 2"/></symbol>
@@ -783,15 +908,14 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 <!-- ===================================================================== -->
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="SB Studio, back to top"><i>SB</i><span>SB <b>Studio</b></span></a>
+    <a class="logo" href="#top" aria-label="SB Studio, back to top"><svg class="mark" aria-hidden="true"><use href="#i-mark"/></svg><span>SB <em>Studio</em></span></a>
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#lab">Concepts</a></li>
-      <li><a href="#ai">AI</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#join">Join us</a></li>
-      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-end">
       <a class="btn pri sm" href="#contact">Start a project</a>
@@ -803,6 +927,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   <a href="#services">Services</a>
   <a href="#work">Work</a>
   <a href="#lab">Concepts</a>
+  <a href="#pricing">Pricing</a>
   <a href="#ai">AI</a>
   <a href="#team">Team</a>
   <a href="#join">Join us</a>
@@ -814,6 +939,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 <header class="hero" id="top">
   <div class="orb a" aria-hidden="true"></div>
   <div class="orb b" aria-hidden="true"></div>
+  <div class="orb c" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -861,7 +987,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
           <div class="mini-flow">
             <div><i style="background:rgba(92,200,255,.16);color:#5CC8FF">⚡</i>New order<em>now</em></div>
             <div><i style="background:rgba(31,168,85,.18);color:#4ADE80">✓</i>WhatsApp sent<em>1s</em></div>
-            <div><i style="background:rgba(214,255,74,.14);color:#D6FF4A">▦</i>Added to sheet<em>2s</em></div>
+            <div><i style="background:rgba(185,166,255,.14);color:#D6FF4A">▦</i>Added to sheet<em>2s</em></div>
           </div>
         </div>
         <div class="s-chat glass">
@@ -897,10 +1023,10 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     </div>
 
     <div class="stats" data-r>
-      <div class="stat"><div class="n">4</div><div class="k">Products live on the web and Google Play</div></div>
-      <div class="stat"><div class="n">14<s>+</s></div><div class="k">Years of combined experience leading the team</div></div>
-      <div class="stat"><div class="n">18</div><div class="k">Services under one roof</div></div>
-      <div class="stat"><div class="n">1</div><div class="k">Team and one point of contact</div></div>
+      <div class="stat"><div class="n"><span data-count="40">40</span><s>+</s></div><div class="k">Projects delivered by our team</div></div>
+      <div class="stat"><div class="n"><span data-count="25">25</span><s>+</s></div><div class="k">Clients in Pakistan and abroad</div></div>
+      <div class="stat"><div class="n"><span data-count="14">14</span><s>+</s></div><div class="k">Years of combined experience</div></div>
+      <div class="stat"><div class="n"><span data-count="4">4</span></div><div class="k">Products of our own, live today</div></div>
     </div>
 
     <div class="pillars" style="margin-top:1rem">
@@ -1042,56 +1168,107 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     </div>
 
     <div class="lab">
-      <!-- Website -->
-      <article class="c wide" data-r style="--i:0">
+      <!-- Website: café -->
+      <article class="c" data-r style="--i:0">
         <div class="st cafe" aria-hidden="true">
-          <div class="mock">
+          <div class="site">
             <div class="bar"><b></b><b></b><b></b><span>karakhouse.pk</span></div>
-            <div class="cafe-site">
+            <div class="vp"><div class="pg cafe-site">
               <div class="cafe-nav"><b>Karak House</b><span><i>Menu</i><i>Branches</i><i>Catering</i></span></div>
               <div class="cafe-hero">
                 <div>
                   <h6>Doodh patti, <em>done right.</em></h6>
-                  <p style="margin:0 0 .6rem;opacity:.75">Fresh karak, bun kabab and paratha rolls. Delivered hot across Karachi.</p>
+                  <p>Fresh karak, bun kabab and paratha rolls. Delivered hot across Karachi.</p>
                   <span class="wa">● Order on WhatsApp</span>
                 </div>
                 <div class="cup"></div>
               </div>
+              <div class="sec-h">Today's menu</div>
               <div class="cafe-menu">
                 <div><b>Karak chai</b><span>Rs 180</span></div>
+                <div><b>Doodh patti</b><span>Rs 160</span></div>
                 <div><b>Bun kabab</b><span>Rs 350</span></div>
                 <div><b>Paratha roll</b><span>Rs 420</span></div>
+                <div><b>Club sandwich</b><span>Rs 550</span></div>
+                <div><b>Gulab jamun</b><span>Rs 220</span></div>
               </div>
-            </div>
+              <div class="sec-h">Our branches</div>
+              <div class="branches"><div><b>Clifton</b>8 AM to 2 AM</div><div><b>Gulshan</b>8 AM to 2 AM</div><div><b>DHA</b>24 hours</div></div>
+              <div class="quote">★★★★★ <i>"The only karak that tastes like home."</i></div>
+              <div class="cafe-foot"><b>Karak House</b><span class="wa">● Order now</span></div>
+            </div></div>
           </div>
         </div>
         <div class="cap">
           <div class="tagrow"><span class="chip concept">Concept</span><span>Website</span></div>
           <h3>Karak House, a café website</h3>
-          <p>Menu, branches and one-tap WhatsApp ordering. The kind of site that turns a scroll into an order.</p>
+          <p>Menu, branches, reviews and one-tap WhatsApp ordering. The kind of site that turns a scroll into an order.</p>
         </div>
       </article>
 
-      <!-- Store -->
-      <article class="c wide" data-r style="--i:1">
+      <!-- Website: store -->
+      <article class="c" data-r style="--i:1">
         <div class="st store" aria-hidden="true">
-          <div class="mock store-site">
-            <div class="bar"><b></b><b></b><b></b><span>libaas.pk/new-arrivals</span></div>
-            <div class="cod">Cash on delivery all over Pakistan · Free shipping over Rs 5,000</div>
-            <div class="store-in">
-              <div class="store-nav"><b>LIBAAS</b><span class="cart">◍<i>2</i></span></div>
-              <div class="prods">
-                <div><div class="im f1"></div><b>Gulabi lawn, 3 pc</b><span>Rs 4,950</span><s>6,500</s></div>
-                <div><div class="im f2"></div><b>Firozi print, 2 pc</b><span>Rs 3,800</span></div>
-                <div><div class="im f3"></div><b>Haldi chikankari</b><span>Rs 5,400</span></div>
+          <div class="site store-site">
+            <div class="bar"><b></b><b></b><b></b><span>libaas.pk</span></div>
+            <div class="vp"><div class="pg">
+              <div class="cod">Cash on delivery all over Pakistan · Free shipping over Rs 5,000</div>
+              <div class="store-in">
+                <div class="store-nav"><b>LIBAAS</b><span class="cart">◍<i>2</i></span></div>
+                <div class="banner"><small>Eid Edit '26</small><b>Up to 30% off</b><span>Shop the collection →</span></div>
+                <div class="sec-h">New arrivals</div>
+                <div class="prods">
+                  <div><div class="im f1"></div><b>Gulabi lawn, 3 pc</b><span>Rs 4,950</span><s>6,500</s></div>
+                  <div><div class="im f2"></div><b>Firozi print, 2 pc</b><span>Rs 3,800</span></div>
+                  <div><div class="im f3"></div><b>Haldi chikankari</b><span>Rs 5,400</span></div>
+                  <div><div class="im f4"></div><b>Midnight khaddar</b><span>Rs 6,200</span></div>
+                  <div><div class="im f5"></div><b>Mint organza</b><span>Rs 7,900</span></div>
+                  <div><div class="im f6"></div><b>Rust linen, 2 pc</b><span>Rs 4,300</span></div>
+                </div>
+                <div class="usp"><div>🚚 Free delivery over Rs 5,000</div><div>↺ 7-day exchange</div><div>💵 Cash on delivery</div></div>
+                <div class="news"><b>Get 10% off your first order</b><span>your@email.com</span><i>Join</i></div>
               </div>
-            </div>
+            </div></div>
           </div>
         </div>
         <div class="cap">
           <div class="tagrow"><span class="chip concept">Concept</span><span>E-commerce</span></div>
           <h3>Libaas, an online clothing store</h3>
           <p>Collections, sale prices, cash on delivery and a checkout made for how Pakistan shops.</p>
+        </div>
+      </article>
+
+      <!-- Website: international SaaS -->
+      <article class="c" data-r style="--i:2">
+        <div class="st saas" aria-hidden="true">
+          <div class="site saas-site">
+            <div class="bar dark"><b></b><b></b><b></b><span>flowly.io</span></div>
+            <div class="vp"><div class="pg">
+              <div class="fl-nav"><b><i></i>Flowly</b><span>Product · Pricing · Login</span><em>Start free</em></div>
+              <div class="fl-hero">
+                <small>New · AI scheduling</small>
+                <h6>Scheduling that runs your clinic.</h6>
+                <p>Bookings, reminders and follow-ups on autopilot, so your front desk can focus on patients.</p>
+                <div class="fl-btns"><em>Start free trial</em><span>Book a demo</span></div>
+              </div>
+              <div class="fl-dash">
+                <div class="fl-side"><i></i><i></i><i></i><i></i></div>
+                <div class="fl-main">
+                  <div class="fl-kpis"><div><b>1,284</b>bookings</div><div><b>-38%</b>no-shows</div><div><b>4.9★</b>rating</div></div>
+                  <div class="fl-bars"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:52%"></i><i style="--h:80%"></i><i style="--h:70%"></i><i style="--h:92%"></i><i style="--h:76%"></i></div>
+                </div>
+              </div>
+              <div class="fl-logos">Trusted by clinics in <b>London</b> · <b>Toronto</b> · <b>Dubai</b> · <b>Sydney</b></div>
+              <div class="fl-feats"><div><i>⚡</i><b>Smart booking</b>Patients book in 30 seconds.</div><div><i>✉</i><b>Auto reminders</b>SMS and email, sent for you.</div><div><i>✦</i><b>AI follow-ups</b>Re-book patients automatically.</div></div>
+              <div class="fl-price"><div><b>$29</b>Starter</div><div class="hl"><b>$79</b>Clinic</div><div><b>Custom</b>Group</div></div>
+              <div class="fl-foot">© Flowly · Privacy · Terms</div>
+            </div></div>
+          </div>
+        </div>
+        <div class="cap">
+          <div class="tagrow"><span class="chip concept">Concept</span><span>SaaS website</span></div>
+          <h3>Flowly, a SaaS landing page</h3>
+          <p>A modern product site for an international startup: live dashboard, features, pricing and a clear sign-up path.</p>
         </div>
       </article>
 
@@ -1160,7 +1337,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <div class="node" style="left:16%;top:50%"><i style="background:rgba(92,200,255,.16);color:#5CC8FF">⚡</i><span>New order<small>Website</small></span></div>
             <div class="node hub" style="left:46%;top:50%"><i style="background:var(--lime);color:var(--lime-ink);width:auto;padding:0 .3rem">n8n</i></div>
             <div class="node" style="left:80%;top:18%"><i style="background:rgba(31,168,85,.18);color:#4ADE80">✓</i><span>WhatsApp<small>to customer</small></span></div>
-            <div class="node" style="left:80%;top:50%"><i style="background:rgba(214,255,74,.14);color:#D6FF4A">▦</i><span>Google Sheet<small>order logged</small></span></div>
+            <div class="node" style="left:80%;top:50%"><i style="background:rgba(185,166,255,.14);color:#D6FF4A">▦</i><span>Google Sheet<small>order logged</small></span></div>
             <div class="node" style="left:80%;top:82%"><i style="background:rgba(255,122,89,.16);color:#FF7A59">✉</i><span>Daily report<small>9 PM to owner</small></span></div>
           </div>
         </div>
@@ -1220,6 +1397,33 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="head" data-r>
+      <div>
+        <div class="kicker">Packages &amp; pricing</div>
+        <h2>Clear packages, <em class="s">fair prices.</em></h2>
+      </div>
+      <p>Pick a starting point. Prices are shown in your currency, and every project
+      gets a written quote before we begin, so there are no surprises.</p>
+    </div>
+    <div class="price-bar" data-r>
+      <div class="tabs" role="tablist" aria-label="Package type">
+        <button type="button" role="tab" data-cat="web" aria-selected="true" class="on">Websites</button>
+        <button type="button" role="tab" data-cat="apps" aria-selected="false">Mobile apps</button>
+        <button type="button" role="tab" data-cat="design" aria-selected="false">Design</button>
+        <button type="button" role="tab" data-cat="social" aria-selected="false">Social &amp; ads</button>
+        <button type="button" role="tab" data-cat="ai" aria-selected="false">Automation &amp; AI</button>
+      </div>
+      <label class="cty"><span>Prices for</span><select id="pr-country" class="sel-country" aria-label="Your country"></select></label>
+    </div>
+    <div class="pkgs" id="pkgs" role="tabpanel"></div>
+    <noscript><p class="pr-note">Turn on JavaScript to see our packages, or email us for a quote.</p></noscript>
+    <p class="pr-note" id="pr-note"></p>
   </div>
 </section>
 
@@ -1419,7 +1623,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     <div class="faq" data-r>
       <details>
         <summary>How much does a website or app cost?</summary>
-        <p>It depends on what you need. A simple business website costs far less than a full online store or a mobile app. Tell us what you have in mind and we'll send a clear quote before any work starts.</p>
+        <p>Our <a href="#pricing" style="color:var(--lime)">packages</a> show starting prices in your currency. The final price depends on what you need, and we always send a clear written quote before any work starts.</p>
       </details>
       <details>
         <summary>Can I hire you for just one thing?</summary>
@@ -1448,7 +1652,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       <div class="intro">
         <div class="kicker">Free digital plan</div>
         <h2>Not sure where to start? <em class="s">Let's find out.</em></h2>
-        <p>Answer 4 quick questions about your business. We'll show you what to do
+        <p>Answer 5 quick questions about your business. We'll show you what to do
         first, what can wait, and how to go digital step by step without wasting
         money.</p>
         <div class="direct">
@@ -1470,11 +1674,19 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       <div class="wiz" id="wiz">
         <div class="wz-top">
           <button type="button" class="wz-back" id="wz-back" aria-label="Previous question" hidden>←</button>
-          <span id="wz-count">Question 1 of 4</span>
+          <span id="wz-count">Question 1 of 5</span>
           <div class="wz-bar" aria-hidden="true"><i id="wz-fill"></i></div>
         </div>
 
-        <div class="wz-step on" data-q="biz">
+        <div class="wz-step on" data-q="country">
+          <h3>Where is your business based?</h3>
+          <p class="wz-sub">So we can show prices and suggestions that fit your market.</p>
+          <select id="wz-country" class="sel-country wz-select" aria-label="Country"></select>
+          <button type="button" class="btn pri wz-next" id="wz-cnext">Continue <svg aria-hidden="true"><use href="#i-right"/></svg></button>
+          <br><button type="button" class="wz-skip" data-skip>Skip the questions, just send a message</button>
+        </div>
+
+        <div class="wz-step" data-q="biz">
           <h3>What kind of business do you run?</h3>
           <div class="opts">
             <button type="button" data-v="food"><b>🍽</b>Restaurant, café or food</button>
@@ -1484,20 +1696,12 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
             <button type="button" data-v="company"><b>🏢</b>Company or B2B</button>
             <button type="button" data-v="idea"><b>💡</b>Just an idea, not started yet</button>
           </div>
-          <button type="button" class="wz-skip" data-skip>Skip the questions, just send a message</button>
         </div>
 
         <div class="wz-step" data-q="rev">
           <h3>Roughly how much does it earn in a month?</h3>
           <p class="wz-sub">An estimate is fine. It helps us suggest what's worth spending on right now.</p>
-          <div class="opts">
-            <button type="button" data-v="0">Not earning yet</button>
-            <button type="button" data-v="1">Under Rs 1 lakh <small>(~$350)</small></button>
-            <button type="button" data-v="2">Rs 1 to 5 lakh <small>(~$350 to $1,800)</small></button>
-            <button type="button" data-v="3">Rs 5 to 20 lakh <small>(~$1,800 to $7,000)</small></button>
-            <button type="button" data-v="4">Above Rs 20 lakh <small>(~$7,000+)</small></button>
-            <button type="button" data-v="x">Prefer not to say</button>
-          </div>
+          <div class="opts" id="rev-opts"></div>
         </div>
 
         <div class="wz-step" data-q="have" data-multi>
@@ -1573,7 +1777,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 <aside class="nudge" id="nudge" aria-label="Free digital plan">
   <button type="button" class="x" aria-label="Close">✕</button>
   <b>Not sure where to start online?</b>
-  <p>Answer 4 quick questions and get a free step-by-step plan for your business.</p>
+  <p>Answer 5 quick questions and get a free step-by-step plan for your business.</p>
   <a class="btn pri sm" href="#contact">Get my plan <svg aria-hidden="true"><use href="#i-right"/></svg></a>
 </aside>
 
@@ -1581,12 +1785,12 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
   <div class="wrap">
     <div class="f-top">
       <div>
-        <a class="logo" href="#top"><i>SB</i><span>SB <b>Studio</b></span></a>
+        <a class="logo" href="#top"><svg class="mark" aria-hidden="true"><use href="#i-mark"/></svg><span>SB <em>Studio</em></span></a>
         <p>Websites, apps, design, marketing and AI for businesses in Pakistan and worldwide.</p>
       </div>
       <div>
         <h4>Studio</h4>
-        <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#lab">Concepts</a></li><li><a href="#team">Team</a></li><li><a href="#join">Join us</a></li></ul>
+        <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#lab">Concepts</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#team">Team</a></li><li><a href="#join">Join us</a></li></ul>
       </div>
       <div>
         <h4>Contact</h4>
@@ -1619,6 +1823,44 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     wa.href = 'https://wa.me/' + WHATSAPP;
     document.getElementById('wa-num').textContent = '+' + WHATSAPP;
     wa.hidden = false;
+  }
+
+  // Scroll progress, cursor light and hero parallax
+  var prog = document.getElementById('prog');
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+  }, { passive: true });
+  if (finePointer && !reduced) {
+    var spot = document.getElementById('spot');
+    var stage = document.querySelector('.stage');
+    var hero = document.querySelector('.hero');
+    var raf = 0, mx = 0, my = 0;
+    window.addEventListener('pointermove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        raf = 0;
+        spot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
+        var r = hero.getBoundingClientRect();
+        if (my < r.bottom) {
+          stage.style.setProperty('--px', ((mx / window.innerWidth) - .5) * 2);
+          stage.style.setProperty('--py', (((my - r.top) / r.height) - .5) * 2);
+        }
+      });
+    }, { passive: true });
+  }
+
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (reduced || !target) return;
+    var start = performance.now(), dur = 1400;
+    (function frame(now) {
+      var t = Math.min(1, (now - start) / dur);
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
+      if (t < 1) requestAnimationFrame(frame);
+    })(start);
   }
 
   // Nav
@@ -1689,34 +1931,198 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     })();
   }
 
-  // Digital plan: four questions, then a roadmap built from the answers
+  // Countries and currencies. Pakistan sees local rupee prices; everyone else
+  // sees the international price in their own currency, rounded to look natural.
+  var COUNTRIES = [
+    ['PK', 'Pakistan', 'PKR'], ['US', 'United States', 'USD'], ['GB', 'United Kingdom', 'GBP'],
+    ['CA', 'Canada', 'CAD'], ['AU', 'Australia', 'AUD'], ['AE', 'United Arab Emirates', 'AED'],
+    ['SA', 'Saudi Arabia', 'SAR'], ['QA', 'Qatar', 'QAR'], ['DE', 'Germany', 'EUR'],
+    ['FR', 'France', 'EUR'], ['NL', 'Netherlands', 'EUR'], ['IE', 'Ireland', 'EUR'],
+    ['IT', 'Italy', 'EUR'], ['ES', 'Spain', 'EUR'], ['OT', 'Another country', 'USD']
+  ];
+  var CUR = {
+    PKR: { sym: 'Rs ', rate: 0 }, USD: { sym: '$', rate: 1 }, GBP: { sym: '£', rate: 0.79 },
+    EUR: { sym: '€', rate: 0.92 }, CAD: { sym: 'CA$', rate: 1.37 }, AUD: { sym: 'A$', rate: 1.52 },
+    AED: { sym: 'AED ', rate: 3.67 }, SAR: { sym: 'SAR ', rate: 3.75 }, QAR: { sym: 'QAR ', rate: 3.64 }
+  };
+  function guessCountry() {
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    var map = { 'Asia/Karachi': 'PK', 'Europe/London': 'GB', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Asia/Qatar': 'QA',
+      'Europe/Berlin': 'DE', 'Europe/Paris': 'FR', 'Europe/Amsterdam': 'NL', 'Europe/Dublin': 'IE', 'Europe/Rome': 'IT', 'Europe/Madrid': 'ES' };
+    if (map[tz]) return map[tz];
+    if (/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|Regina|St_Johns)/.test(tz)) return 'CA';
+    if (/^America\//.test(tz)) return 'US';
+    if (/^Australia\//.test(tz)) return 'AU';
+    return 'OT';
+  }
+  var country = guessCountry();
+  try { var savedC = localStorage.getItem('sb-country'); if (savedC) country = savedC; } catch (e) {}
+  function cinfo() {
+    for (var i = 0; i < COUNTRIES.length; i++) if (COUNTRIES[i][0] === country) return COUNTRIES[i];
+    return COUNTRIES[COUNTRIES.length - 1];
+  }
+  function isPK() { return country === 'PK'; }
+  function nice(v) {
+    var step = v < 100 ? 5 : v < 1000 ? 10 : v < 10000 ? 50 : 100;
+    return Math.max(step, Math.round(v / step) * step);
+  }
+  function band(usd) {
+    var code = cinfo()[2], c = CUR[code];
+    var v = usd * c.rate, step = v < 10000 ? 500 : v < 100000 ? 5000 : 10000;
+    return c.sym + (Math.round(v / step) * step).toLocaleString('en-US');
+  }
+  function money(pkr, usd) {
+    var code = cinfo()[2], c = CUR[code];
+    var v = code === 'PKR' ? pkr : (code === 'USD' ? usd : nice(usd * c.rate));
+    return c.sym + v.toLocaleString('en-US');
+  }
+
+  var PKGS = {
+    web: [
+      { id: 'landing', name: 'Landing Page', tg: 'One page that turns visitors into enquiries', pk: 5000, usd: 50, per: 'once', days: '3 to 5 days',
+        f: ['One-page website that works on every phone', 'Up to 5 sections of your content', 'Contact form and WhatsApp button', 'Basic SEO and Google Analytics', '1 round of revisions'] },
+      { id: 'business', name: 'Business Website', tg: 'A full site that makes you look established', pk: 15000, usd: 250, per: 'once', days: '7 to 10 days', pop: true,
+        f: ['Up to 6 pages with a custom design', 'Services, gallery, reviews and map', 'Blog or news section', 'Speed and on-page SEO setup', '2 rounds of revisions'] },
+      { id: 'store', name: 'E-commerce Store', tg: 'Sell online around the clock', pk: 25000, usd: 500, per: 'once', days: '2 to 3 weeks',
+        f: ['Products, categories and search', 'Cart, checkout and order emails', { pk: 'Cash on delivery, JazzCash and Easypaisa', intl: 'Card payments with Stripe or PayPal' }, 'Up to 50 products uploaded for you', 'Video guide to run your store'] }
+    ],
+    apps: [
+      { id: 'app1', name: 'Starter App', tg: 'Your idea, live on the app stores', pk: 80000, usd: 1500, per: 'once', days: '4 to 6 weeks',
+        f: ['Android and iOS from one codebase', 'Up to 8 screens', 'Sign-in and user profiles', 'Simple admin panel', 'Published on Google Play and the App Store'] },
+      { id: 'app2', name: 'Business App', tg: 'A complete app your customers use every day', pk: 180000, usd: 4000, per: 'once', days: '8 to 12 weeks', pop: true,
+        f: ['Up to 20 screens with custom UI/UX', 'In-app payments and subscriptions', 'Push notifications and chat', 'Admin dashboard and analytics', '3 months of bug fixes after launch'] },
+      { id: 'app3', name: 'Custom Platform', tg: 'Real-time, AI-powered or built to scale', pk: 350000, usd: 8000, plus: true, per: 'once', days: 'Quoted per project',
+        f: ['Real-time features and live updates', 'AI features built in', 'Scalable backend on AWS', 'Web app plus mobile apps', 'Weekly demos as we build'] }
+    ],
+    design: [
+      { id: 'logo', name: 'Logo Design', tg: 'A mark people remember', pk: 6000, usd: 100, per: 'once', days: '3 to 5 days',
+        f: ['3 logo concepts to choose from', '2 rounds of revisions', 'All file formats (PNG, SVG, PDF)', 'Light and dark versions', 'Social media profile kit'] },
+      { id: 'brand', name: 'Brand Identity', tg: 'Look professional everywhere', pk: 15000, usd: 300, per: 'once', days: '1 to 2 weeks', pop: true,
+        f: ['Logo, colour palette and fonts', 'Business card and letterhead', '10 social media templates', 'Brand guide PDF', 'Signboard and packaging mockups'] },
+      { id: 'uiux', name: 'UI/UX Design', tg: 'Screens that are easy and enjoyable to use', pk: 30000, usd: 600, per: 'once', days: '2 to 3 weeks',
+        f: ['App or website design, up to 10 screens', 'User flows and wireframes', 'Clickable prototype in Figma', 'Design system for developers', '2 rounds of revisions'] }
+    ],
+    social: [
+      { id: 'social1', name: 'Social Starter', tg: 'Show up consistently', pk: 15000, usd: 250, per: 'month', days: 'Starts within 3 days',
+        f: ['12 designed posts a month', '2 platforms (Instagram and Facebook)', 'Captions and hashtags', 'Content calendar for your approval', 'Monthly performance summary'] },
+      { id: 'social2', name: 'Social Growth', tg: 'Grow your following and enquiries', pk: 30000, usd: 500, per: 'month', days: 'Starts within 3 days', pop: true,
+        f: ['20 posts and 4 reels a month', '3 platforms, adding TikTok or LinkedIn', 'Replies to comments and messages', 'Stories and highlight covers', 'Detailed monthly report'] },
+      { id: 'ads', name: 'Ads Management', tg: 'Turn ad spend into customers', pk: 20000, usd: 400, per: 'month', note: 'plus ad budget', days: 'Live within 5 days',
+        f: ['Meta and Instagram ad campaigns', 'Audience research and setup', 'Ad creatives and copy', 'Weekly optimisation', 'Results report every month'] }
+    ],
+    ai: [
+      { id: 'auto1', name: 'Automation Starter', tg: 'Stop doing the same task twice', pk: 15000, usd: 300, per: 'once', days: '5 to 7 days',
+        f: ['One n8n workflow, built and hosted', 'For example: new order to WhatsApp to Google Sheet', 'Email or WhatsApp alerts', 'Setup guide and handover', '2 weeks of support'] },
+      { id: 'chat', name: 'AI Assistant', tg: 'Answers customers day and night', pk: 40000, usd: 900, per: 'once', days: '2 to 3 weeks', pop: true,
+        f: ['AI assistant on WhatsApp or your website', 'Trained on your services, prices and FAQs', 'Takes bookings or orders', 'Hands over to a person when needed', { pk: 'Replies in Urdu, Roman Urdu and English', intl: 'Replies in English or your customers\' language' }] },
+      { id: 'agents', name: 'Custom AI Agents', tg: 'Agents that run whole workflows', pk: 100000, usd: 2500, plus: true, per: 'once', days: 'Quoted per project',
+        f: ['Multi-step agents for sales, support or operations', 'Connected to your CRM, sheets and tools', 'Human review where it matters', 'Dashboard to see what agents do', 'Ongoing tuning available'] }
+    ]
+  };
+  var PKG_BY_ID = {};
+  Object.keys(PKGS).forEach(function (k) { PKGS[k].forEach(function (p) { PKG_BY_ID[p.id] = p; }); });
+  function priceLabel(p) { return money(p.pk, p.usd) + (p.plus ? '+' : '') + (p.per === 'month' ? ' a month' : ''); }
+
+  var cat = 'web';
+  var pkgsEl = document.getElementById('pkgs');
+  function renderPkgs() {
+    pkgsEl.innerHTML = '';
+    PKGS[cat].forEach(function (p) {
+      var el = document.createElement('article');
+      el.className = 'pkg' + (p.pop ? ' pop' : '');
+      if (p.pop) { var bd = document.createElement('span'); bd.className = 'badge'; bd.textContent = 'Most popular'; el.appendChild(bd); }
+      var h = document.createElement('h3'); h.textContent = p.name; el.appendChild(h);
+      var tg = document.createElement('p'); tg.className = 'tg'; tg.textContent = p.tg; el.appendChild(tg);
+      var pr = document.createElement('div'); pr.className = 'price';
+      var sm = document.createElement('small'); sm.textContent = 'Starting from'; pr.appendChild(sm);
+      var b = document.createElement('b'); b.textContent = money(p.pk, p.usd) + (p.plus ? '+' : ''); pr.appendChild(b);
+      var per = document.createElement('span'); per.textContent = (p.per === 'month' ? 'per month' : 'one-time') + (p.note ? ', ' + p.note : ''); pr.appendChild(per);
+      el.appendChild(pr);
+      var d = document.createElement('span'); d.className = 'days'; d.textContent = '⏱ ' + p.days; el.appendChild(d);
+      var ul = document.createElement('ul'); ul.className = 'ticks';
+      p.f.forEach(function (f) { var li = document.createElement('li'); li.textContent = typeof f === 'string' ? f : (isPK() ? f.pk : f.intl); ul.appendChild(li); });
+      el.appendChild(ul);
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'btn' + (p.pop ? ' pri' : '');
+      btn.textContent = 'Contact us for this package';
+      btn.addEventListener('click', function () { askAbout(p.id); });
+      el.appendChild(btn);
+      pkgsEl.appendChild(el);
+    });
+    var code = cinfo()[2];
+    document.getElementById('pr-note').textContent = (isPK()
+      ? 'Prices in Pakistani rupees for businesses based in Pakistan. '
+      : 'Prices in ' + code + (code === 'USD' ? '' : ', converted from US dollars and rounded') + '. ') +
+      'Domain, hosting, ad budget and other third-party costs are extra. Every project gets a written quote before we start.';
+  }
+  document.querySelectorAll('.tabs button').forEach(function (t) {
+    t.addEventListener('click', function () {
+      cat = t.getAttribute('data-cat');
+      document.querySelectorAll('.tabs button').forEach(function (x) { var on = x === t; x.classList.toggle('on', on); x.setAttribute('aria-selected', String(on)); });
+      renderPkgs();
+    });
+  });
+
+  var countrySelects = document.querySelectorAll('.sel-country');
+  countrySelects.forEach(function (sel) {
+    COUNTRIES.forEach(function (c) { var o = document.createElement('option'); o.value = c[0]; o.textContent = c[1]; sel.appendChild(o); });
+    sel.value = country;
+    sel.addEventListener('change', function () { setCountry(sel.value); });
+  });
+  function setCountry(c) {
+    country = c;
+    try { localStorage.setItem('sb-country', c); } catch (e) {}
+    countrySelects.forEach(function (sel) { sel.value = c; });
+    renderPkgs();
+    renderRev();
+  }
+
+  // Digital plan: five questions, then a roadmap built from the answers
   var wiz = document.getElementById('wiz');
   var steps = wiz.querySelectorAll('.wz-step');
-  var order = ['biz', 'rev', 'have', 'goal', 'plan', 'form'];
+  var order = ['country', 'biz', 'rev', 'have', 'goal', 'plan', 'form'];
   var ans = { biz: '', rev: '', have: [], goal: '' };
   var hist = [];
-  var current = 'biz';
+  var current = 'country';
+  var askedPkg = null;
   var plainContact = false;
   var LABEL = {};
-  wiz.querySelectorAll('.wz-step[data-q] .opts button').forEach(function (b) {
-    var q = b.closest('.wz-step').getAttribute('data-q');
-    LABEL[q + ':' + b.getAttribute('data-v')] = [].filter.call(b.childNodes, function (n) { return n.nodeType === 3; })
-      .map(function (n) { return n.textContent; }).join('').trim();
-  });
+  function readLabels() {
+    wiz.querySelectorAll('.wz-step[data-q] .opts button').forEach(function (b) {
+      var q = b.closest('.wz-step').getAttribute('data-q');
+      LABEL[q + ':' + b.getAttribute('data-v')] = [].filter.call(b.childNodes, function (n) { return n.nodeType === 3; })
+        .map(function (n) { return n.textContent; }).join('').trim();
+    });
+  }
+  function renderRev() {
+    var box = document.getElementById('rev-opts');
+    var opts = isPK()
+      ? [['0', 'Not earning yet'], ['1', 'Under Rs 1 lakh'], ['2', 'Rs 1 to 5 lakh'], ['3', 'Rs 5 to 20 lakh'], ['4', 'Above Rs 20 lakh'], ['x', 'Prefer not to say']]
+      : [['0', 'Not earning yet'], ['1', 'Under ' + band(3000)], ['2', band(3000) + ' to ' + band(15000)],
+         ['3', band(15000) + ' to ' + band(60000)], ['4', 'Above ' + band(60000)], ['x', 'Prefer not to say']];
+    box.innerHTML = '';
+    opts.forEach(function (o) {
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('data-v', o[0]); b.textContent = o[1];
+      if (ans.rev === o[0]) b.classList.add('sel');
+      box.appendChild(b);
+    });
+    readLabels();
+  }
 
   function show(q, back) {
     if (!back && current !== q) hist.push(current);
     current = q;
     steps.forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-q') === q); });
     var i = order.indexOf(q);
-    var asking = i < 4;
-    document.getElementById('wz-count').textContent = asking ? 'Question ' + (i + 1) + ' of 4' : (q === 'plan' ? 'Your plan' : (plainContact ? 'Send us a message' : 'Last step'));
-    document.getElementById('wz-fill').style.width = (asking ? (i + 1) * 25 : 100) + '%';
+    var asking = i < 5;
+    document.getElementById('wz-count').textContent = asking ? 'Question ' + (i + 1) + ' of 5' : (q === 'plan' ? 'Your plan' : (askedPkg ? 'About this package' : plainContact ? 'Send us a message' : 'Last step'));
+    document.getElementById('wz-fill').style.width = (asking ? (i + 1) * 20 : 100) + '%';
     document.getElementById('wz-back').hidden = hist.length === 0;
     var msgReq = document.getElementById('msg-req');
-    msgReq.hidden = !plainContact;
-    document.getElementById('form-h').textContent = plainContact ? 'Tell us what you need' : 'Where can we reach you?';
-    document.getElementById('form-sub').textContent = plainContact ? 'We\'ll get back to you with ideas and a clear next step.' : 'We\'ll send your plan and suggest a first step. No pressure, no spam.';
+    msgReq.hidden = !(plainContact && !askedPkg);
+    var pkg = askedPkg && PKG_BY_ID[askedPkg];
+    document.getElementById('form-h').textContent = pkg ? 'Ask about ' + pkg.name : plainContact ? 'Tell us what you need' : 'Where can we reach you?';
+    document.getElementById('form-sub').textContent = pkg ? 'Starting from ' + priceLabel(pkg) + '. Tell us a little about your project and we\'ll send a clear quote.' : plainContact ? 'We\'ll get back to you with ideas and a clear next step.' : 'We\'ll send your plan and suggest a first step. No pressure, no spam.';
   }
 
   wiz.querySelectorAll('.wz-step[data-q] .opts').forEach(function (box) {
@@ -1747,18 +2153,26 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     });
   });
   document.getElementById('wz-next').addEventListener('click', function () { show('goal'); });
+  document.getElementById('wz-cnext').addEventListener('click', function () { setCountry(document.getElementById('wz-country').value); show('biz'); });
+  function askAbout(id) {
+    askedPkg = id; plainContact = true;
+    show('form');
+    document.getElementById('contact').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(function () { document.getElementById('name').focus({ preventScroll: true }); }, reduced ? 0 : 700);
+  }
   document.getElementById('wz-back').addEventListener('click', function () {
     var prev = hist.pop();
-    if (prev === 'biz') plainContact = false;
+    if (order.indexOf(prev) < 6) { plainContact = false; askedPkg = null; }
     if (prev) show(prev, true);
   });
-  wiz.querySelector('[data-skip]').addEventListener('click', function () { plainContact = true; show('form'); document.getElementById('name').focus(); });
+  wiz.querySelector('[data-skip]').addEventListener('click', function () { setCountry(document.getElementById('wz-country').value); askedPkg = null; plainContact = true; show('form'); document.getElementById('name').focus(); });
   wiz.querySelector('[data-goto="form"]').addEventListener('click', function () { show('form'); document.getElementById('name').focus(); });
   wiz.querySelector('[data-restart]').addEventListener('click', function () {
-    ans = { biz: '', rev: '', have: [], goal: '' }; hist = []; plainContact = false;
+    ans = { biz: '', rev: '', have: [], goal: '' }; hist = []; plainContact = false; askedPkg = null;
     wiz.querySelectorAll('.opts .sel').forEach(function (x) { x.classList.remove('sel'); });
     document.getElementById('wz-next').disabled = true;
-    show('biz', true);
+    renderRev();
+    show('country', true);
   });
 
   var planText = '';
@@ -1773,9 +2187,12 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       { id: 'brand', tier: 0, done: h.logo,
         t: 'A simple logo and brand look',
         w: 'People need to recognise you before they trust you. A clean logo and colours make every post, page and signboard look professional.' },
-      { id: 'wa', tier: idea ? 1 : 0, done: h.wa && (h.maps || !mapsMatters),
+      isPK() ? { id: 'wa', tier: idea ? 1 : 0, done: h.wa && (h.maps || !mapsMatters),
         t: mapsMatters ? 'WhatsApp Business and Google Maps' : 'WhatsApp Business, set up properly',
-        w: mapsMatters ? 'Both are free, and they\'re where most customers look first. A proper WhatsApp profile with a catalogue, and a Maps listing so people can find and review you.' : 'Free, and it\'s where most customers reach out first. A business profile, catalogue and quick replies make you look ready.' },
+        w: mapsMatters ? 'Both are free, and they\'re where most customers look first. A proper WhatsApp profile with a catalogue, and a Maps listing so people can find and review you.' : 'Free, and it\'s where most customers reach out first. A business profile, catalogue and quick replies make you look ready.' }
+        : { id: 'wa', tier: idea ? 1 : 0, done: mapsMatters ? h.maps : true,
+        t: 'A Google Business Profile',
+        w: 'Free, and it\'s how people find you on Google Search and Maps, with your hours, photos and reviews in one place.' },
       { id: 'social', tier: 0, done: h.ig && h.fb,
         t: 'Instagram and Facebook pages',
         w: 'Your shop window online. Set them up with your brand, prices and contact details, so people can check you out before they message.' },
@@ -1796,6 +2213,8 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
         w: 'An app makes sense once you have lots of repeat customers. Until then, a good website does the same job for far less.' }
     ];
     var goalStep = { customers: 'post', online: 'site', brand: 'brand', time: 'auto', launch: 'site' }[ans.goal];
+    var PKG_FOR = { brand: tier <= 1 ? 'logo' : 'brand', social: 'social1', post: tier >= 2 ? 'social2' : 'social1',
+      site: idea ? 'landing' : (sellsOnline ? 'store' : 'business'), ads: 'ads', auto: tier >= 3 ? 'chat' : 'auto1', app: 'app1' };
 
     var open = all.filter(function (s) { return !s.done; });
     var plan = open.filter(function (s) { return s.tier <= tier; }).slice(0, 3);
@@ -1826,7 +2245,18 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       var b = document.createElement('b'); b.textContent = s.t;
       if (i === 0) { var tag = document.createElement('em'); tag.textContent = 'Start here'; b.appendChild(tag); }
       var sp = document.createElement('span'); sp.textContent = s.w;
-      li.appendChild(b); li.appendChild(sp); road.appendChild(li);
+      li.appendChild(b); li.appendChild(sp);
+      var pid = PKG_FOR[s.id];
+      if (pid) {
+        var pk = PKG_BY_ID[pid];
+        var link = document.createElement('button'); link.type = 'button'; link.className = 'pk-link';
+        link.appendChild(document.createTextNode('Our ' + pk.name + ' package from '));
+        var pb = document.createElement('b'); pb.textContent = priceLabel(pk); link.appendChild(pb);
+        link.appendChild(document.createTextNode(' →'));
+        link.addEventListener('click', function () { askAbout(pid); });
+        li.appendChild(link);
+      }
+      road.appendChild(li);
     });
     var lw = document.getElementById('wz-later');
     lw.innerHTML = '';
@@ -1842,6 +2272,9 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
 
     planText = plan.map(function (s, i) { return (i + 1) + '. ' + s.t; }).join(' | ') + (later.length ? ' || Later: ' + later.map(function (s) { return s.t; }).join(', ') : '');
   }
+
+  renderPkgs();
+  renderRev();
 
   // Nudge: a small, dismissible prompt rather than a popup over the page
   var nudge = document.getElementById('nudge');
@@ -1896,7 +2329,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     e.preventDefault();
     status.className = 'status'; status.textContent = '';
     var bad = null;
-    (plainContact ? ['name', 'phone', 'msg'] : ['name', 'phone']).forEach(function (id) {
+    (plainContact && !askedPkg ? ['name', 'phone', 'msg'] : ['name', 'phone']).forEach(function (id) {
       var el = document.getElementById(id);
       if (!bad && !el.value.trim()) bad = el;
     });
@@ -1904,7 +2337,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     if (!bad && email.value && !email.checkValidity()) bad = email;
     if (bad) {
       status.className = 'status err';
-      status.textContent = bad === email ? 'That email address doesn\'t look right.' : (plainContact ? 'Please fill in your name, phone number and a short message.' : 'Please fill in your name and phone number.');
+      status.textContent = bad === email ? 'That email address doesn\'t look right.' : (plainContact && !askedPkg ? 'Please fill in your name, phone number and a short message.' : 'Please fill in your name and phone number.');
       bad.focus();
       return;
     }
@@ -1913,8 +2346,9 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     var answered = !plainContact && ans.goal;
     var data = {
       name: fd.get('name'), business: fd.get('business'), phone: fd.get('phone'),
-      email: fd.get('email'), message: fd.get('message') || '-'
+      email: fd.get('email'), Country: cinfo()[1], message: fd.get('message') || '-'
     };
+    if (askedPkg) data.Package = PKG_BY_ID[askedPkg].name + ' (from ' + priceLabel(PKG_BY_ID[askedPkg]) + ')';
     if (answered) {
       data['Business type'] = LABEL['biz:' + ans.biz];
       data['Monthly revenue'] = LABEL['rev:' + ans.rev];
@@ -1922,7 +2356,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
       data['Main goal'] = LABEL['goal:' + ans.goal];
       data['Suggested plan'] = planText;
     }
-    data._subject = (answered ? 'New digital plan lead: ' : 'New project enquiry from ') + fd.get('name');
+    data._subject = (answered ? 'New digital plan lead: ' : askedPkg ? 'Package enquiry (' + PKG_BY_ID[askedPkg].name + '): ' : 'New project enquiry from ') + fd.get('name');
     if (data.email) data._replyto = data.email;
     submit.disabled = true;
     submit.firstChild.textContent = 'Sending… ';
@@ -1989,6 +2423,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
       en.target.classList.add('in');
+      en.target.querySelectorAll('[data-count]').forEach(countUp);
       en.target.querySelectorAll('.term-body').forEach(function (t) { t.classList.add('go'); });
       io.unobserve(en.target);
     });
@@ -1998,6 +2433,7 @@ footer { padding: 4rem 0 2.5rem; border-top: 1px solid var(--line); margin-top: 
     targets.forEach(function (el) {
       if (el.getBoundingClientRect().top < window.innerHeight) {
         el.classList.add('in');
+        el.querySelectorAll('[data-count]').forEach(countUp);
         el.querySelectorAll('.term-body').forEach(function (t) { t.classList.add('go'); });
         io.unobserve(el);
       }
